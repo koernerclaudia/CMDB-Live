@@ -17,6 +17,7 @@ frameworks, databases, business logic, authentication, data security, and more.
 
 A frontend was created using
 - React
+- Using Parcel as a build tool
 
 ## Content & Functionalities
 

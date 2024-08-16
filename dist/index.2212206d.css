@@ -1,4 +1,12 @@
+body {
+  line-height: 1.6em;
+}
+
 .my-flix {
   color: red;
+}
+
+img {
+  max-width: 300px;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

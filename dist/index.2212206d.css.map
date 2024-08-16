@@ -1,1 +1,1 @@
-{"mappings":"AAEA","sources":["src/index.scss"],"sourcesContent":["$color: red;\n\n.my-flix {\n  color: $color;\n}\n"],"names":[],"version":3,"file":"index.2212206d.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AACA;;;;AAMA;;;;AAIA","sources":["src/index.scss"],"sourcesContent":["\nbody {\n  line-height: 1.6em;\n}\n\n$color: red;\n\n.my-flix {\n  color: $color;\n}\n\nimg {\n  max-width: 300px;\n}\n\n\n"],"names":[],"version":3,"file":"index.2212206d.css.map","sourceRoot":"/__parcel_source_root/"}

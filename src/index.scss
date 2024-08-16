@@ -1,5 +1,16 @@
+
+body {
+  line-height: 1.6em;
+}
+
 $color: red;
 
 .my-flix {
   color: $color;
 }
+
+img {
+  max-width: 300px;
+}
+
+

@@ -2953,23 +2953,15 @@ $parcel$ReactRefreshHelpers$98a3.prelude(module);
 try {
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _client = require("react-dom/client");
+var _mainView = require("./components/main-view");
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 const CMDB = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "cmdb",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: "Hello there"
-        }, void 0, false, {
-            fileName: "src/index.jsx",
-            lineNumber: 11,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 10,
-        columnNumber: 5
+        lineNumber: 11,
+        columnNumber: 10
     }, undefined);
 };
 _c = CMDB;
@@ -2979,7 +2971,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(CMDB, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 21,
+    lineNumber: 19,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -2990,7 +2982,7 @@ $RefreshReg$(_c, "CMDB");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB","./components/main-view":"6mZ9W"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27371,6 +27363,496 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"96aef7a96249d46a":"hQ6C1"}]},["3D6o9","dDB8h","d8Dch"], "d8Dch", "parcelRequire0ac5")
+},{"96aef7a96249d46a":"hQ6C1"}],"6mZ9W":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4f22 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4f22.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _movieCard = require("./movie-card/movie-card");
+var _movieView = require("./movie-view/movie-view");
+var _s = $RefreshSig$();
+const MainView = ()=>{
+    _s();
+    const [movies, setMovies] = (0, _react.useState)([
+        // {
+        //   id: 1,
+        //   title: "Interstellar",
+        //   description: "",
+        //   director: "Christopher Nolan",
+        //   image:
+        //     "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_SL1500_.jpg",
+        //   genre: "Sci-Fi",
+        //   actors: "Matthew McConaughey",
+        // },
+        {
+            "id": "66a374b384a37c5b1b60c5c8",
+            "Description": "A ballerina's role in a New York City ballet creates a consuming obsession that leads to her psychological unraveling",
+            "DirectorName": "Darren Aronofsky",
+            "DirectorBirthyear": "1969",
+            "GenreType": "Thriller",
+            "GenreDescription": "Gives you the chills.",
+            "Title": "Black Swan",
+            "Actors": [
+                "Natalie Portman",
+                "Mila Kunis"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/41EWw6SaPxL._SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c0",
+            "Description": "A young boy befriends a stranded extraterrestrial and aids him return home while avoiding government capture",
+            "DirectorName": "Steven Spielberg",
+            "DirectorBirthyear": "1946",
+            "GenreType": "Sci-Fi",
+            "GenreDescription": "Science Fiction - stuff that cannot be real.",
+            "Title": "E.T.",
+            "Actors": [
+                "Henry Thomas",
+                "Drew Barrymore"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/51nD3pDsEiL._SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5ca",
+            "Description": "With the help of a German bounty hunter...",
+            "DirectorName": "Quentin Tarantino",
+            "DirectorBirthyear": "1963",
+            "GenreType": "Thriller",
+            "GenreDescription": "Gives you the chills.",
+            "Title": "Django Unchained",
+            "Actors": [
+                "Jamie Foxx",
+                "Leonardo DiCaprio",
+                "Christoph Waltz"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/51uWBx3U4nL._SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c9",
+            "Description": "A protagonist armed with only one word\u2014Tenet\u2014and fighting for the survival of the world",
+            "DirectorName": "Christopher Nolan",
+            "DirectorBirthyear": "1970",
+            "GenreType": "Drama",
+            "GenreDescription": "Tough stories.",
+            "Title": "Tenet",
+            "Actors": [
+                "John David Washington",
+                "Robert Pattinson",
+                "Elisabeth Debicki",
+                "Kenneth Branagh"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/51FiVHaGNRL._SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5cc",
+            "Description": "Follows intertwined stories of several mobsters and small-time criminals in Los Angeles.",
+            "DirectorName": "Quentin Tarantino",
+            "DirectorBirthyear": "1963",
+            "GenreType": "Thriller",
+            "GenreDescription": "Gives you the chills.",
+            "Title": "Pulp Fiction",
+            "Actors": [
+                "John Travolta",
+                "Samuel L. Jackson",
+                "Uma Thurman"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/71mlgE7nUdL.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5cb",
+            "Description": "A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.",
+            "DirectorName": "Quentin Tarantino",
+            "DirectorBirthyear": "1963",
+            "GenreType": "Thriller",
+            "GenreDescription": "Gives you the chills.",
+            "Title": "Once Upon a Time in Hollywood",
+            "Actors": [
+                "Leonardo DiCaprio",
+                "Margo Robbie",
+                "Brad Pitt"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/71wv593z05L.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c7",
+            "Description": "A suburbanite becomes convinced that his new neighbors are a murderous satanic cult",
+            "DirectorName": "Joe Dante",
+            "DirectorBirthyear": "1946",
+            "GenreType": "Thriller",
+            "GenreDescription": "Gives you the chills.",
+            "Title": "The Burbs",
+            "Actors": [
+                "Tom Hanks",
+                "Bruce Dern",
+                "Carrie Fisher"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/81WbORFlfcL._AC_UY218_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c4",
+            "Description": "A rock musician and his fianc\xe9e are brutally murdered",
+            "DirectorName": "Alex Proyas",
+            "DirectorBirthyear": "1963",
+            "GenreType": "Thriller",
+            "GenreDescription": "Gives you the chills.",
+            "Title": "The Crow",
+            "Actors": [
+                "Brandon Lee",
+                "Ernie Hudson"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/51QGQOeUoRL.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c2",
+            "Description": "Thor must fight to prevent the destruction of his home and the end of Asgard",
+            "DirectorName": "Taika Waititi",
+            "DirectorBirthyear": "1975",
+            "GenreType": "Comic",
+            "GenreDescription": "Superheros and stuff...",
+            "Title": "Thor: Ragnarok",
+            "Actors": [
+                "Chris Hemsworth",
+                "Tom Hiddleston",
+                "Natalie Portman"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/71YxFqhNB8L.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c5",
+            "Description": "A reformed neo-Nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did",
+            "DirectorName": "Tony Kaye",
+            "DirectorBirthyear": "1952",
+            "GenreType": "Drama",
+            "GenreDescription": "Tough stories.",
+            "Title": "American History X",
+            "Actors": [
+                "Edward Norton",
+                "Edward Furlong"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/517YcrbTxjL._SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c1",
+            "Description": "A former assassin seeks revenge against the team of assassins who betrayed her and left her for dead",
+            "DirectorName": "Quentin Tarantino",
+            "DirectorBirthyear": "1963",
+            "GenreType": "Thriller",
+            "GenreDescription": "Gives you the chills.",
+            "Title": "Kill Bill",
+            "Actors": [
+                "Uma Thurman",
+                "David Carradine"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/71n3PxDFetL.__AC_SX300_SY300_QL70_ML2_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c6",
+            "Description": "A teenager is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend",
+            "DirectorName": "Robert Zemeckis",
+            "DirectorBirthyear": "1952",
+            "GenreType": "Sci-Fi",
+            "GenreDescription": "Science Fiction - stuff that cannot be real.",
+            "Title": "Back to the Future",
+            "Actors": [
+                "Michael J. Fox",
+                "Christopher Lloyd"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/81cO3Mr0X9L._AC_UY436_FMwebp_QL65_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5c3",
+            "Description": "A man learns to cope with his recent divorce with the help of a bachelor, but complications arise when he starts to fall for someone else",
+            "DirectorName": "Glenn Ficarra",
+            "DirectorBirthyear": "1969",
+            "GenreType": "RomCom",
+            "GenreDescription": "Romantic and Comedic.",
+            "Title": "Crazy, Stupid, Love",
+            "Actors": [
+                "Steve Carell",
+                "Ryan Gosling"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/81R+um2hn+L._AC_UY436_FMwebp_QL65_.jpg",
+            "Featured": true
+        },
+        {
+            "id": "66a374b384a37c5b1b60c5bf",
+            "Description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival",
+            "DirectorName": "Christopher Nolan",
+            "DirectorBirthyear": "1970",
+            "GenreType": "Sci-Fi",
+            "GenreDescription": "Science Fiction - stuff that cannot be real.",
+            "Title": "Interstellar",
+            "Actors": [
+                "Matthew McConaughey",
+                "Anne Hathaway"
+            ],
+            "ImageURL": "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_SL1500_.jpg",
+            "Featured": true
+        }
+    ]);
+    const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
+        movie: selectedMovie,
+        onBackClick: ()=>setSelectedMovie(null)
+    }, void 0, false, {
+        fileName: "src/components/main-view.jsx",
+        lineNumber: 244,
+        columnNumber: 7
+    }, undefined);
+    if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "The list is empty!"
+    }, void 0, false, {
+        fileName: "src/components/main-view.jsx",
+        lineNumber: 249,
+        columnNumber: 12
+    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                movie: movie,
+                onMovieClick: (newSelectedMovie)=>{
+                    setSelectedMovie(newSelectedMovie);
+                }
+            }, movie._id, false, {
+                fileName: "src/components/main-view.jsx",
+                lineNumber: 255,
+                columnNumber: 9
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/components/main-view.jsx",
+        lineNumber: 253,
+        columnNumber: 5
+    }, undefined);
+};
+_s(MainView, "eQ7UeUtne4eZrfjx8jwMvpziW+k=");
+_c = MainView;
+var _c;
+$RefreshReg$(_c, "MainView");
+
+  $parcel$ReactRefreshHelpers$4f22.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB","./movie-card/movie-card":"bwuIu","./movie-view/movie-view":"ggaUx"}],"kkiFl":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"bwuIu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$67b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const MovieCard = ({ movie, onMovieClick })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        onClick: ()=>{
+            onMovieClick(movie);
+        },
+        children: movie.Title
+    }, void 0, false, {
+        fileName: "src/components/movie-card/movie-card.jsx",
+        lineNumber: 3,
+        columnNumber: 7
+    }, undefined);
+};
+_c = MovieCard;
+var _c;
+$RefreshReg$(_c, "MovieCard");
+
+  $parcel$ReactRefreshHelpers$67b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB"}],"ggaUx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e9f6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieView", ()=>MovieView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const MovieView = ({ movie, onBackClick })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: movie.ImageURL
+                }, void 0, false, {
+                    fileName: "src/components/movie-view/movie-view.jsx",
+                    lineNumber: 5,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 4,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Title: "
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 8,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: movie.Title
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 9,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 7,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Description: "
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 12,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: movie.Description
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 13,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 11,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Director: "
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 16,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: movie.DirectorName
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 17,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 15,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Main Actors: "
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 20,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: movie.Actors.join(", ")
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 21,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 19,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: onBackClick,
+                children: "Back to Movie List"
+            }, void 0, false, {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 23,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/movie-view/movie-view.jsx",
+        lineNumber: 3,
+        columnNumber: 7
+    }, undefined);
+};
+_c = MovieView;
+var _c;
+$RefreshReg$(_c, "MovieView");
+
+  $parcel$ReactRefreshHelpers$e9f6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB"}]},["3D6o9","dDB8h","d8Dch"], "d8Dch", "parcelRequire0ac5")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

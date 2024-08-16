@@ -4,19 +4,7 @@ import { MovieView } from "./movie-view/movie-view";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([
-    // {
-    //   id: 1,
-    //   title: "Interstellar",
-    //   description: "",
-    //   director: "Christopher Nolan",
-    //   image:
-    //     "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_SL1500_.jpg",
-    //   genre: "Sci-Fi",
-    //   actors: "Matthew McConaughey",
-    // },
-
-    
-      
+     
         {
           "id": "66a374b384a37c5b1b60c5c8",
           "Description": "A ballerina's role in a New York City ballet creates a consuming obsession that leads to her psychological unraveling",
@@ -251,6 +239,8 @@ export const MainView = () => {
 
   return (
     <div>
+      <h1>Welcome to Claudia's Movie Database (cMDB)</h1>
+      <div>
       {movies.map((movie) => (
         <MovieCard
           key={movie._id}
@@ -261,6 +251,6 @@ export const MainView = () => {
           }}
         />
       ))}
-    </div>
+    </div></div>
   );
 };

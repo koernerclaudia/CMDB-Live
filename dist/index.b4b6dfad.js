@@ -27381,16 +27381,6 @@ var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
     const [movies, setMovies] = (0, _react.useState)([
-        // {
-        //   id: 1,
-        //   title: "Interstellar",
-        //   description: "",
-        //   director: "Christopher Nolan",
-        //   image:
-        //     "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_SL1500_.jpg",
-        //   genre: "Sci-Fi",
-        //   actors: "Matthew McConaughey",
-        // },
         {
             "id": "66a374b384a37c5b1b60c5c8",
             "Description": "A ballerina's role in a New York City ballet creates a consuming obsession that leads to her psychological unraveling",
@@ -27615,34 +27605,49 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view.jsx",
-        lineNumber: 244,
+        lineNumber: 232,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view.jsx",
-        lineNumber: 249,
+        lineNumber: 237,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                movie: movie,
-                onMovieClick: (newSelectedMovie)=>{
-                    setSelectedMovie(newSelectedMovie);
-                }
-            }, movie._id, false, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Welcome to Claudia's Movie Database (cMDB)"
+            }, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-                lineNumber: 255,
-                columnNumber: 9
-            }, undefined))
-    }, void 0, false, {
+                lineNumber: 242,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                        movie: movie,
+                        onMovieClick: (newSelectedMovie)=>{
+                            setSelectedMovie(newSelectedMovie);
+                        }
+                    }, movie._id, false, {
+                        fileName: "src/components/main-view.jsx",
+                        lineNumber: 245,
+                        columnNumber: 9
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/components/main-view.jsx",
+                lineNumber: 243,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/main-view.jsx",
-        lineNumber: 253,
+        lineNumber: 241,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "eQ7UeUtne4eZrfjx8jwMvpziW+k=");
+_s(MainView, "8b9NG1H0DiTiHYpvFkHRDADOPR8=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");

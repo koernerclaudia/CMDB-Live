@@ -16,8 +16,10 @@ frameworks, databases, business logic, authentication, data security, and more.
 ## Built & Technologies
 
 A frontend was created using
-- React
+- ReactJS
 - Using Parcel as a build tool
+- Database is hosted on Mongo Atlas
+- API is hosted on Heroku
 
 ## Content & Functionalities
 

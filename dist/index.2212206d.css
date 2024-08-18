@@ -1,12 +1,46 @@
 body {
-  line-height: 1.6em;
+  color: #fff;
+  background-color: #292929;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
-.my-flix {
-  color: red;
+.main {
+  text-align: center;
+  margin: 50px auto;
+}
+
+button {
+  color: #fff;
+  background-color: #33b2b9;
+  border: none;
+  border-radius: 20px;
+  margin-top: 25px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+button:hover, .hover {
+  cursor: pointer;
+}
+
+h1 {
+  color: #8ceaef;
+}
+
+hr {
+  border-color: #33b2b9;
 }
 
 img {
   max-width: 300px;
+}
+
+.similar {
+  color: #8ceaef;
+  font-size: smaller;
+  line-height: 1.4em;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

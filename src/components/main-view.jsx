@@ -2,55 +2,72 @@ import { useState, useEffect } from "react";
 import { MovieCard } from "./movie-card/movie-card";
 import { MovieView } from "./movie-view/movie-view";
 import logo from "../cmdb-logo.png";
+import { LoginView } from "./login-view/login-view";
+import { SignupView } from "./signup-view/signup-view";
+
+
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
-    fetch("https://cmdb-b8f3cd58963f.herokuapp.com/movies")
+    if (!token) {
+      return;
+    }
+
+    fetch("https://cmdb-b8f3cd58963f.herokuapp.com/movies", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then((response) => response.json())
       .then((movies) => {
-        
-          const moviesfromAPI = movies.map((movie) => {
-          
-            return {
-            _id: movie._id,               
-          Title: movie.Title,           
-          Description: movie.Description, 
-          Genre: movie.Genre,      
-          Director: movie.Director, 
-          Actors: movie.Actors,
-          ImageURL: movie.ImageURL
-          };
-        });
-          setMovies(moviesfromAPI);
-
-        
+        console.log(movies);
       });
-    }, []);
+  }, [token]);
 
-  // if (selectedMovie) {
-  //   return (
-  //     <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
-  //   );
-  // }
+  // useEffect(() => {
+  //   fetch("https://cmdb-b8f3cd58963f.herokuapp.com/movies")
+  //     .then((response) => response.json())
+  //     .then((movies) => {
+        
+  //         const moviesfromAPI = movies.map((movie) => {
+          
+  //           return {
+  //           _id: movie._id,               
+  //         Title: movie.Title,           
+  //         Description: movie.Description, 
+  //         Genre: movie.Genre,      
+  //         Director: movie.Director, 
+  //         Actors: movie.Actors,
+  //         ImageURL: movie.ImageURL
+  //         };
+  //       });
+  //         setMovies(moviesfromAPI);
 
-  // if (selectedMovie) {
-  //   let similarMovies = movies.filter (
-  //     (movie) => movie.Genre === selectedMovie.Genre
-  //   );
-  //   return (
-  //     <>
-  //     <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
-  //     <hr />
-  //     <h3>Similar Movies</h3>
-  //     <div className="similar-movies">
-  //       {similarMovies.map((movie) => (
-  //         <MovieCard key={movie.Title} movie={movie} />
-  //       ))}
-  //     </div>
-  //   </>)}
+        
+  //     });
+  //   }, []);
+
+
+    if (!user) {
+      return (
+        <div className="main">
+        <h1>Welcome to </h1>
+        <img src={logo} alt="CMDB"/>
+        <h3>Login here:</h3>
+        <LoginView
+          onLoggedIn={(user, token) => {
+            setUser(user);
+            setToken(token);
+          }}
+        />
+      <h3>Signup here:</h3>
+        <SignupView />
+        </div>
+      );
+    }
 
   if (selectedMovie) {
     const similarMovies = movies.filter(
@@ -110,6 +127,8 @@ export const MainView = () => {
   if (movies.length === 0) {
     return <div>The list is empty!</div>;
   }
+
+  <button onClick={() => { setUser(null); setToken(null); }}>Logout</button>
 
   return (
     <div className="main">

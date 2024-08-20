@@ -2960,7 +2960,7 @@ var _indexScss = require("./index.scss");
 const CMDB = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 11,
+        lineNumber: 10,
         columnNumber: 10
     }, undefined);
 };
@@ -2971,7 +2971,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(CMDB, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 19,
+    lineNumber: 18,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -27400,13 +27400,8 @@ const MainView = ()=>{
             }
         }).then((response)=>response.json()).then((movies)=>{
             setMovies(movies);
-<<<<<<< Updated upstream
             setLoading(false); // End loading
         }).catch(()=>setLoading(false)); // End loading on error
-=======
-            console.log(movies);
-        });
->>>>>>> Stashed changes
     }, [
         token
     ]);
@@ -27417,11 +27412,7 @@ const MainView = ()=>{
                 children: "Welcome to "
             }, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                 lineNumber: 37,
-=======
-                lineNumber: 58,
->>>>>>> Stashed changes
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -27429,22 +27420,14 @@ const MainView = ()=>{
                 alt: "CMDB"
             }, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                 lineNumber: 38,
-=======
-                lineNumber: 59,
->>>>>>> Stashed changes
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: "Login here:"
             }, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                 lineNumber: 39,
-=======
-                lineNumber: 60,
->>>>>>> Stashed changes
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
@@ -27454,41 +27437,25 @@ const MainView = ()=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                 lineNumber: 40,
-=======
-                lineNumber: 61,
->>>>>>> Stashed changes
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: "Signup here:"
             }, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                 lineNumber: 46,
-=======
-                lineNumber: 67,
->>>>>>> Stashed changes
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                 lineNumber: 47,
-=======
-                lineNumber: 68,
->>>>>>> Stashed changes
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
         lineNumber: 36,
-=======
-        lineNumber: 57,
->>>>>>> Stashed changes
         columnNumber: 9
     }, undefined);
     if (selectedMovie) {
@@ -27501,20 +27468,12 @@ const MainView = ()=>{
                     onBackClick: ()=>setSelectedMovie(null)
                 }, void 0, false, {
                     fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                     lineNumber: 67,
-=======
-                    lineNumber: 87,
->>>>>>> Stashed changes
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                     fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                     lineNumber: 68,
-=======
-                    lineNumber: 88,
->>>>>>> Stashed changes
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27528,11 +27487,7 @@ const MainView = ()=>{
                             ]
                         }, void 0, true, {
                             fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                             lineNumber: 70,
-=======
-                            lineNumber: 90,
->>>>>>> Stashed changes
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27542,30 +27497,18 @@ const MainView = ()=>{
                                     onMovieClick: (newSelectedMovie)=>setSelectedMovie(newSelectedMovie)
                                 }, movie._id, false, {
                                     fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                                     lineNumber: 74,
-=======
-                                    lineNumber: 94,
->>>>>>> Stashed changes
                                     columnNumber: 13
                                 }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: "Sorry, currently there are no more movies listed by this director."
                             }, void 0, false, {
                                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                                 lineNumber: 81,
-=======
-                                lineNumber: 101,
->>>>>>> Stashed changes
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                             lineNumber: 71,
-=======
-                            lineNumber: 91,
->>>>>>> Stashed changes
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
@@ -27576,11 +27519,7 @@ const MainView = ()=>{
                             ]
                         }, void 0, true, {
                             fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                             lineNumber: 84,
-=======
-                            lineNumber: 104,
->>>>>>> Stashed changes
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27590,40 +27529,24 @@ const MainView = ()=>{
                                     onMovieClick: (newSelectedMovie)=>setSelectedMovie(newSelectedMovie)
                                 }, movie._id, false, {
                                     fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                                     lineNumber: 88,
-=======
-                                    lineNumber: 108,
->>>>>>> Stashed changes
                                     columnNumber: 13
                                 }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: "Sorry, currenctly there are no more movies listed for this genre."
                             }, void 0, false, {
                                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                                 lineNumber: 95,
-=======
-                                lineNumber: 115,
->>>>>>> Stashed changes
                                 columnNumber: 11
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                             lineNumber: 85,
-=======
-                            lineNumber: 105,
->>>>>>> Stashed changes
                             columnNumber: 9
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                     lineNumber: 69,
-=======
-                    lineNumber: 89,
->>>>>>> Stashed changes
                     columnNumber: 9
                 }, undefined)
             ]
@@ -27641,49 +27564,18 @@ const MainView = ()=>{
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
         lineNumber: 111,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "main",
         children: [
-=======
-        lineNumber: 129,
-        columnNumber: 12
-    }, undefined);
-    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-        onClick: ()=>{
-            setUser(null);
-            setToken(null);
-        },
-        children: "Logout"
-    }, void 0, false, {
-        fileName: "src/components/main-view.jsx",
-        lineNumber: 132,
-        columnNumber: 3
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "main",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Welcome to "
-            }, void 0, false, {
-                fileName: "src/components/main-view.jsx",
-                lineNumber: 136,
-                columnNumber: 7
-            }, undefined),
->>>>>>> Stashed changes
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 src: (0, _cmdbLogoPngDefault.default),
                 alt: "CMDB"
             }, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                 lineNumber: 119,
-=======
-                lineNumber: 137,
->>>>>>> Stashed changes
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27694,20 +27586,12 @@ const MainView = ()=>{
                         }
                     }, movie._id, false, {
                         fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                         lineNumber: 122,
-=======
-                        lineNumber: 140,
->>>>>>> Stashed changes
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
                 lineNumber: 120,
-=======
-                lineNumber: 138,
->>>>>>> Stashed changes
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27726,11 +27610,7 @@ const MainView = ()=>{
         ]
     }, void 0, true, {
         fileName: "src/components/main-view.jsx",
-<<<<<<< Updated upstream
         lineNumber: 117,
-=======
-        lineNumber: 135,
->>>>>>> Stashed changes
         columnNumber: 5
     }, undefined);
 };

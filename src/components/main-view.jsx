@@ -8,49 +8,28 @@ import { SignupView } from "./signup-view/signup-view";
 
 
 export const MainView = () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedToken = localStorage.getItem("token");
+  const [user, setUser] = useState(storedUser? storedUser : null);
+  const [token, setToken] = useState(storedToken? storedToken : null);
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!token) {
-      return;
-    }
-
+    if (!token) return;
+ 
+    setLoading(true); // Start loading
     fetch("https://cmdb-b8f3cd58963f.herokuapp.com/movies", {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())
       .then((movies) => {
-        setMovies (movies);
-        console.log(movies);
-      });
-  }, [token]);
-
-  // useEffect(() => {
-  //   fetch("https://cmdb-b8f3cd58963f.herokuapp.com/movies")
-  //     .then((response) => response.json())
-  //     .then((movies) => {
-        
-  //         const moviesfromAPI = movies.map((movie) => {
-          
-  //           return {
-  //           _id: movie._id,               
-  //         Title: movie.Title,           
-  //         Description: movie.Description, 
-  //         Genre: movie.Genre,      
-  //         Director: movie.Director, 
-  //         Actors: movie.Actors,
-  //         ImageURL: movie.ImageURL
-  //         };
-  //       });
-  //         setMovies(moviesfromAPI);
-
-        
-  //     });
-  //   }, []);
-
+        setMovies(movies);
+        setLoading(false); // End loading
+ 
+      }) .catch(() => setLoading(false)); // End loading on error
+    }, [token]);
 
     if (!user) {
       return (
@@ -81,6 +60,7 @@ export const MainView = () => {
         movie.Director.Name === selectedMovie.Director.Name &&
       movie._id !== selectedMovie._id
     );
+    
     
     return (
       <>
@@ -123,17 +103,19 @@ export const MainView = () => {
     );
   }
 
-  
+  if (loading) {
+    return <div className="centered-loading">Loading movies...</div>;
+  }
 
   if (movies.length === 0) {
     return <div>The list is empty!</div>;
   }
 
-  <button onClick={() => { setUser(null); setToken(null); }}>Logout</button>
+  
 
   return (
     <div className="main">
-      <h1>Welcome to </h1>
+     
       <img src={logo} alt="CMDB"/>
       <div>
         {movies.map((movie) => (
@@ -144,7 +126,8 @@ export const MainView = () => {
               setSelectedMovie(newSelectedMovie);
             }}
           />
+         
         ))}
       </div>
-    </div>
+      <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>    </div>
   );}

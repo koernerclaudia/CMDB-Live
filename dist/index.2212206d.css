@@ -9,6 +9,7 @@ body {
 
 .main {
   text-align: center;
+  max-width: 800px;
   margin: 50px auto;
 }
 
@@ -17,6 +18,7 @@ button {
   background-color: #33b2b9;
   border: none;
   border-radius: 20px;
+  min-width: 150px;
   margin-top: 25px;
   padding: 10px;
   font-weight: bold;
@@ -42,5 +44,14 @@ img {
   color: #8ceaef;
   font-size: smaller;
   line-height: 1.4em;
+}
+
+.centered-loading {
+  text-align: center;
+  color: #8ceaef;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

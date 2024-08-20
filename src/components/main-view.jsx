@@ -23,6 +23,7 @@ export const MainView = () => {
     })
       .then((response) => response.json())
       .then((movies) => {
+        setMovies (movies);
         console.log(movies);
       });
   }, [token]);

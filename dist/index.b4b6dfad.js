@@ -28730,8 +28730,8 @@ const LoginView = ({ onLoggedIn })=>{
         // this prevents the default behavior of the form which is to reload the entire page
         event.preventDefault();
         const data = {
-            Username: username,
-            Password: password
+            username: username,
+            password: password
         };
         fetch("https://cmdb-b8f3cd58963f.herokuapp.com/login", {
             method: "POST",
@@ -28844,9 +28844,9 @@ const SignupView = ()=>{
     const handleSubmit = (event)=>{
         event.preventDefault();
         const data = {
-            Username: username,
-            Password: password,
-            Email: email
+            username: username,
+            password: password,
+            email: email
         };
         fetch("https://cmdb-b8f3cd58963f.herokuapp.com/users", {
             method: "POST",

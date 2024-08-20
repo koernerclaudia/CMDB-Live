@@ -8,8 +8,8 @@ export const LoginView = ({ onLoggedIn }) => {
     event.preventDefault();
 
       const data = {
-        Username: username,
-        Password: password
+        username: username,
+        password: password
       };
   
       fetch("https://cmdb-b8f3cd58963f.herokuapp.com/login", {

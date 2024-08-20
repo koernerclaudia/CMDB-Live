@@ -9,9 +9,9 @@ export const SignupView = () => {
     event.preventDefault();
 
     const data = {
-      Username: username,
-      Password: password,
-      Email: email,
+      username: username,
+      password: password,
+      email: email,
     };
 
     fetch("https://cmdb-b8f3cd58963f.herokuapp.com/users", {

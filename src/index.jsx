@@ -2,15 +2,23 @@
 import { createRoot } from 'react-dom/client';
 import { MainView } from "./components/main-view";
 import Container from 'react-bootstrap/Container';
+import logo from "./cmdb-logo.png";
+import Col from "react-bootstrap/Col";
+
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import "./index.scss";
+import { Row } from 'react-bootstrap';
 
 // Main component (will eventually use all the others)
 const CMDB = () => {
   return (
     <Container>
-      <MainView />
+       <Row>
+        <Col md={2} className="d-flex flex-column align-items-center">
+       <img src={logo} alt="CMDB" className="logo" /></Col>
+       </Row>
+      <Row><MainView /></Row>
     </Container>
   );
 };

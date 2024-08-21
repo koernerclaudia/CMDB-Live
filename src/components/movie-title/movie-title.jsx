@@ -1,22 +1,18 @@
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 // import Card from 'react-bootstrap/Card';
 // import ListGroup from 'react-bootstrap/ListGroup';
 
 export const MovieTitle = ({ movie, onMovieClick }) => (
-  <div className="hover" onClick={() => onMovieClick(movie)}>
-     <h4>{movie.Title}</h4>
-    {/* <Card style={{ width: '18rem' }}>
-      <ListGroup variant="flush">
-        <ListGroup.Item>{movie.Title}</ListGroup.Item>
-       
-      </ListGroup>
-    </Card> */}
+  <div onClick={() => onMovieClick(movie)}>
+      <h5>{movie}</h5>
   </div>
 );
 
-  MovieTitle.propTypes = {
-    movie: PropTypes.shape({
-      Title: PropTypes.string,
-    }).isRequired,
-    onMovieClick: PropTypes.func.isRequired
-  };
+MovieTitle.propTypes = {
+  movie: PropTypes.shape({
+    Title: PropTypes.string,
+    Description: PropTypes.string,
+  }).isRequired,
+  onMovieClick: PropTypes.func.isRequired
+};

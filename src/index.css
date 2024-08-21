@@ -17,6 +17,12 @@
      object-position: top;
 }
 
+.logo {
+  padding: 15px;
+  width: 75%;
+  text-align: center;
+}
+
 .margin-top {
   margin-top: 15px;
 }

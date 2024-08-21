@@ -37,32 +37,29 @@ export const MainView = () => {
     return <div className="centered-loading">Loading movies...</div>;
   }
 
-  if (selectedMovie) {
-      const similarMovies = movies.filter(
-        (movie) =>
-          movie.Genre.Type === selectedMovie.Genre.Type &&
-          movie._id !== selectedMovie._id
-      );
-      const samedirector = movies.filter(
-        (movie) =>
-          movie.Director.Name === selectedMovie.Director.Name &&
-        movie._id !== selectedMovie._id
-      );
+  // if (selectedMovie) {
+  //     const similarMovies = movies.filter(
+  //       (movie) =>
+  //         movie.Genre.Type === selectedMovie.Genre.Type &&
+  //         movie._id !== selectedMovie._id
+  //     );
+  //     const samedirector = movies.filter(
+  //       (movie) =>
+  //         movie.Director.Name === selectedMovie.Director.Name &&
+  //       movie._id !== selectedMovie._id
+  //     );
 
   return (
     <Row className="justify-content-md-center">
       {!user ? (
-        <Col md={3}>
-          <h1>Welcome to </h1>
-          <img src={logo} alt="CMDB" />
-          <h4>Login:</h4>
+        <Col md={4} className="d-flex flex-column align-items-center">
+          <img src={logo} alt="CMDB" className="logo" />
           <LoginView
             onLoggedIn={(user, token) => {
               setUser(user);
               setToken(token);
             }}
           />
-          <h4>Signup here:</h4>
           <SignupView />
         </Col>
       ) : selectedMovie ? (
@@ -73,8 +70,8 @@ export const MainView = () => {
           />
 <hr />
           <h4>More movies by {selectedMovie.Director.Name}:</h4>
-          <div className="similar">
-//       {samedirector.length > 0 ? (
+          
+{/* {samedirector.length > 0 ? (
         samedirector.map((movie) => (
           <MovieTitle
             key={movie._id}
@@ -84,12 +81,12 @@ export const MainView = () => {
           ))
         ) : (
           <p>Sorry, currently there are no more movies listed by this director.</p>
-        )}
-      </div>
+        )} */}
+ 
           <hr />
-           <h4>More movies by {selectedMovie.Genre.Type}:</h4>
-           <div className="similar">
-//       {similarMovies.length > 0 ? (
+           <h4>More {selectedMovie.Genre.Type} movies:</h4>
+           
+{/* {similarMovies.length > 0 ? (
         similarMovies.map((movie) => (
           <MovieTitle
             key={movie._id}
@@ -99,8 +96,8 @@ export const MainView = () => {
         ))
       ) : (
         <p>Sorry, currenctly there are no more movies listed for this genre.</p>
-      )}
-    </div>
+      )} */}
+
           <div>
             <Button
               className="margin-top"
@@ -147,96 +144,5 @@ export const MainView = () => {
       )}
     </Row>
   );
-};}
+};
 
-// if (!user) {
-//   return (
-//     <Col md={3}>
-//     <h1>Welcome to </h1>
-//     <img src={logo} alt="CMDB"/>
-//     <h3>Login here:</h3>
-//     <LoginView
-//       onLoggedIn={(user, token) => {
-//         setUser(user);
-//         setToken(token);
-//       }}
-//     />
-//   <h3>Signup here:</h3>
-//     <SignupView />
-//     </Col>
-//   );
-// }
-
-// if (selectedMovie) {
-//   const similarMovies = movies.filter(
-//     (movie) =>
-//       movie.Genre.Type === selectedMovie.Genre.Type &&
-//       movie._id !== selectedMovie._id
-//   );
-//   const samedirector = movies.filter(
-//     (movie) =>
-//       movie.Director.Name === selectedMovie.Director.Name &&
-//     movie._id !== selectedMovie._id
-//   );
-
-//   return (
-//     <>
-//       <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
-
-//       <div className="main">
-//       <h2>More movies by {selectedMovie.Director.Name}:</h2>
-//       <div className="similar">
-//       {samedirector.length > 0 ? (
-//         samedirector.map((movie) => (
-//           <MovieTitle
-//             key={movie._id}
-//             movie={movie}
-//             onMovieClick={(newSelectedMovie) => setSelectedMovie(newSelectedMovie)}
-//             />
-//           ))
-//         ) : (
-//           <p>Sorry, currently there are no more movies listed by this director.</p>
-//         )}
-//       </div>
-//       <h2>More {selectedMovie.Genre.Type} movies:</h2>
-//       <div className="similar">
-//       {similarMovies.length > 0 ? (
-//         similarMovies.map((movie) => (
-//           <MovieTitle
-//             key={movie._id}
-//             movie={movie}
-//             onMovieClick={(newSelectedMovie) => setSelectedMovie(newSelectedMovie)}
-//           />
-//         ))
-//       ) : (
-//         <p>Sorry, currenctly there are no more movies listed for this genre.</p>
-//       )}
-//     </div>
-
-//       </div>
-//     </>
-//   );
-// }
-
-// if (movies.length === 0) {
-//   return <div>The list is empty!</div>;
-// }
-
-// return (
-//   <div className="main">
-
-//     <img src={logo} alt="CMDB"/>
-//     <div>
-//       {movies.map((movie) => (
-//         <MovieCard
-//           key={movie._id}
-//           movie={movie}
-//           onMovieClick={(newSelectedMovie) => {
-//             setSelectedMovie(newSelectedMovie);
-//           }}
-//         />
-
-//       ))}
-//     </div>
-//     <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>    </div>
-// );};

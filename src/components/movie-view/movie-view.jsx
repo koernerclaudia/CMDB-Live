@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { MovieTitle } from "../movie-title/movie-title";
 
 
 export const MovieView = ({ movie, onBackClick }) => {

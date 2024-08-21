@@ -5,16 +5,14 @@ import Card from 'react-bootstrap/Card';
 
 export const MovieCard = ({ movie, onMovieClick }) => {
   return (
-    <Card className="h-100" style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={movie.ImageURL} />
+    <Card className="h-100" border="info" bg-white>
+      <Card.Img variant="top" src={movie.ImageURL} className="cover-img"/>
       <Card.Body>
-        <Card.Title>{movie.ImageURL}</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title>{movie.Title}</Card.Title>
+        <Card.Text>With: {movie.Actors.join(', ')}
         </Card.Text>
-        <Button onClick={() => onMovieClick(movie)} variant="primary">Go to movie
-        </Button>
+        <Card.Text>Directed by: {movie.Director.Name}</Card.Text>
+        <Button variant="primary" onClick={() => onMovieClick(movie)}>More info</Button>
       </Card.Body>
     </Card>
   );

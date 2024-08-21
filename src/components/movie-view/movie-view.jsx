@@ -1,40 +1,30 @@
-export const MovieView = ({ movie, onBackClick }) => {
-    return (
-      <div className="main">
-        <div>
-          <img src={movie.ImageURL}/>
-        </div>
-        <div>
-          <span>Title: </span>
-          <span>{movie.Title}</span>
-        </div>
-        <div>
-          <span>Description: </span>
-          <span>{movie.Description}</span>
-        </div>
-        <div>
-          <span>Director: </span>
-          <span>{movie.Director.Name}, born in: </span>
-          <span>{movie.Director.Birthyear}</span>
-          
-        </div>
-        <div>
-          <span>Main Actors: </span>
-          <span>{movie.Actors.join(', ')}</span>
-        </div>
-        <div>
-          <span>Genre: </span>
-          <span>{movie.Genre.Type}</span> -  
-          <span> {movie.Genre.Description}</span>
-          
-        </div>
-        <div>
-          <span>ID: </span>
-          <span>{movie._id}</span>
-        </div>
-        <button onClick={onBackClick}>Back to Movie List</button>&nbsp;
+import { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { MovieTitle } from "../movie-title/movie-title";
 
-      </div>
-    );
-  };
-  
+
+export const MovieView = ({ movie, onBackClick }) => {
+  return (
+    <>
+     
+    <Card style={{ width: '40rem' }}  >
+    <Card.Img variant="top" src={movie.ImageURL} className="img-in-view"/>
+    <Card.Body>
+    <Card.Title>{movie.Title}</Card.Title>
+    <Card.Text>
+    {movie.Description}
+    </Card.Text>
+    </Card.Body>
+    <ListGroup className="list-group-flush">
+    <ListGroup.Item>Actors: {movie.Actors.join(', ')}</ListGroup.Item>  
+    <ListGroup.Item>Director: {movie.Director.Name}</ListGroup.Item>
+    <ListGroup.Item>Genre: {movie.Genre.Type} ( {movie.Genre.Description})</ListGroup.Item>
+    </ListGroup>
+    </Card>
+    <Button className="margin-top" onClick={onBackClick}>Back to List of Movies</Button>
+    </>
+
+);}
+;

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { MovieCard } from "./movie-card/movie-card";
 import { MovieView } from "./movie-view/movie-view";
 import { MovieTitle } from "./movie-title/movie-title";
-import logo from "../cmdb-logo.png";
 import { LoginView } from "./login-view/login-view";
 import { SignupView } from "./signup-view/signup-view";
 import Row from "react-bootstrap/Row";
@@ -17,6 +16,7 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     if (!token) return;
@@ -53,7 +53,6 @@ export const MainView = () => {
     <Row className="justify-content-md-center">
       {!user ? (
         <Col md={4} className="d-flex flex-column align-items-center">
-          <img src={logo} alt="CMDB" className="logo" />
           <LoginView
             onLoggedIn={(user, token) => {
               setUser(user);
@@ -63,40 +62,38 @@ export const MainView = () => {
           <SignupView />
         </Col>
       ) : selectedMovie ? (
-        <Col md={8} center>
+        <Col md={8} className="d-flex flex-column align-items-center">
           <MovieView
             movie={selectedMovie}
             onBackClick={() => setSelectedMovie(null)}
           />
+{/* <hr />
+<h4>More movies by {selectedMovie.Director.Name}:</h4>
+{samedirector.length > 0 ? (
+  samedirector.map((movie) => ( }
+    {<MovieCard 
+      key={movie._id}
+      movie={movie.Title}
+      onMovieClick={() => setSelectedMovie(movie)}
+    /> 
+ ))
+) : (
+  <p>Sorry, currently there are no more movies listed by this director.</p>
+)}
+
 <hr />
-          <h4>More movies by {selectedMovie.Director.Name}:</h4>
-          
-{/* {samedirector.length > 0 ? (
-        samedirector.map((movie) => (
-          <MovieTitle
-            key={movie._id}
-            movie={movie}
-            onMovieClick={(newSelectedMovie) => setSelectedMovie(newSelectedMovie)}
-            />
-          ))
-        ) : (
-          <p>Sorry, currently there are no more movies listed by this director.</p>
-        )} */}
- 
-          <hr />
-           <h4>More {selectedMovie.Genre.Type} movies:</h4>
-           
-{/* {similarMovies.length > 0 ? (
-        similarMovies.map((movie) => (
-          <MovieTitle
-            key={movie._id}
-            movie={movie}
-            onMovieClick={(newSelectedMovie) => setSelectedMovie(newSelectedMovie)}
-          />
-        ))
-      ) : (
-        <p>Sorry, currenctly there are no more movies listed for this genre.</p>
-      )} */}
+<h4>More {selectedMovie.Genre.Type} movies:</h4>
+{similarMovies.length > 0 ? (
+  similarMovies.map((movie) => (
+    <MovieCard
+      key={movie._id}
+      movie={movie.Title}
+      onMovieClick={() => setSelectedMovie(movie)}
+    />
+  ))
+) : (
+  <p>Sorry, currently there are no more movies listed for this genre.</p>
+// )}  */}
 
           <div>
             <Button
@@ -128,7 +125,7 @@ export const MainView = () => {
               </Col>
             ))}
           </>
-          <div>
+          <Col md={2} className="d-flex flex-column align-items-center">
             <Button
               className="margin-top"
               onClick={() => {
@@ -139,7 +136,7 @@ export const MainView = () => {
             >
               Logout
             </Button>
-          </div>
+          </Col>
         </>
       )}
     </Row>

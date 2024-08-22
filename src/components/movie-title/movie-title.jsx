@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 export const MovieTitle = ({ movie, onMovieClick }) => (
   <div onClick={() => onMovieClick(movie)}>
       <h5>{movie}</h5>
+     
   </div>
 );
 

@@ -2969,6 +2969,7 @@ const CMDB = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+                className: "justify-content-md-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                     md: 2,
                     className: "d-flex flex-column align-items-center",
@@ -3027,7 +3028,7 @@ $RefreshReg$(_c, "CMDB");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view":"6mZ9W","react-bootstrap/Container":"hEdsw","./index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB","./cmdb-logo.png":"iAkUB","react-bootstrap/Col":"2L2I6","react-bootstrap":"3AD9A"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view":"6mZ9W","react-bootstrap/Container":"hEdsw","./cmdb-logo.png":"iAkUB","react-bootstrap/Col":"2L2I6","./index.scss":"lJZlQ","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27285,8 +27286,6 @@ var _react = require("react");
 var _movieCard = require("./movie-card/movie-card");
 var _movieView = require("./movie-view/movie-view");
 var _movieTitle = require("./movie-title/movie-title");
-var _cmdbLogoPng = require("../cmdb-logo.png");
-var _cmdbLogoPngDefault = parcelHelpers.interopDefault(_cmdbLogoPng);
 var _loginView = require("./login-view/login-view");
 var _signupView = require("./signup-view/signup-view");
 var _row = require("react-bootstrap/Row");
@@ -27344,15 +27343,6 @@ const MainView = ()=>{
             md: 4,
             className: "d-flex flex-column align-items-center",
             children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: (0, _cmdbLogoPngDefault.default),
-                    alt: "CMDB",
-                    className: "logo"
-                }, void 0, false, {
-                    fileName: "src/components/main-view.jsx",
-                    lineNumber: 56,
-                    columnNumber: 11
-                }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
                     onLoggedIn: (user, token)=>{
                         setUser(user);
@@ -27360,12 +27350,12 @@ const MainView = ()=>{
                     }
                 }, void 0, false, {
                     fileName: "src/components/main-view.jsx",
-                    lineNumber: 57,
+                    lineNumber: 56,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                     fileName: "src/components/main-view.jsx",
-                    lineNumber: 63,
+                    lineNumber: 62,
                     columnNumber: 11
                 }, undefined)
             ]
@@ -27375,47 +27365,15 @@ const MainView = ()=>{
             columnNumber: 9
         }, undefined) : selectedMovie ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
             md: 8,
-            center: true,
+            className: "d-flex flex-column align-items-center",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
                     movie: selectedMovie,
                     onBackClick: ()=>setSelectedMovie(null)
                 }, void 0, false, {
                     fileName: "src/components/main-view.jsx",
-                    lineNumber: 67,
+                    lineNumber: 66,
                     columnNumber: 11
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                    fileName: "src/components/main-view.jsx",
-                    lineNumber: 71,
-                    columnNumber: 1
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                    children: [
-                        "More movies by ",
-                        selectedMovie.Director.Name,
-                        ":"
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/main-view.jsx",
-                    lineNumber: 72,
-                    columnNumber: 11
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                    fileName: "src/components/main-view.jsx",
-                    lineNumber: 86,
-                    columnNumber: 11
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                    children: [
-                        "More ",
-                        selectedMovie.Genre.Type,
-                        " movies:"
-                    ]
-                }, void 0, true, {
-                    fileName: "src/components/main-view.jsx",
-                    lineNumber: 87,
-                    columnNumber: 12
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -27428,24 +27386,24 @@ const MainView = ()=>{
                         children: "Logout"
                     }, void 0, false, {
                         fileName: "src/components/main-view.jsx",
-                        lineNumber: 102,
+                        lineNumber: 99,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/main-view.jsx",
-                    lineNumber: 101,
+                    lineNumber: 98,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view.jsx",
-            lineNumber: 66,
+            lineNumber: 65,
             columnNumber: 9
         }, undefined) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: "The list is empty!"
         }, void 0, false, {
             fileName: "src/components/main-view.jsx",
-            lineNumber: 115,
+            lineNumber: 112,
             columnNumber: 9
         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: [
@@ -27460,16 +27418,18 @@ const MainView = ()=>{
                                 }
                             }, movie._id, false, {
                                 fileName: "src/components/main-view.jsx",
-                                lineNumber: 121,
+                                lineNumber: 118,
                                 columnNumber: 17
                             }, undefined)
                         }, movie.id, false, {
                             fileName: "src/components/main-view.jsx",
-                            lineNumber: 120,
+                            lineNumber: 117,
                             columnNumber: 15
                         }, undefined))
                 }, void 0, false),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                    md: 2,
+                    className: "d-flex flex-column align-items-center",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                         className: "margin-top",
                         onClick: ()=>{
@@ -27480,12 +27440,12 @@ const MainView = ()=>{
                         children: "Logout"
                     }, void 0, false, {
                         fileName: "src/components/main-view.jsx",
-                        lineNumber: 132,
+                        lineNumber: 129,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/main-view.jsx",
-                    lineNumber: 131,
+                    lineNumber: 128,
                     columnNumber: 11
                 }, undefined)
             ]
@@ -27506,7 +27466,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./movie-card/movie-card":"bwuIu","./movie-view/movie-view":"ggaUx","./movie-title/movie-title":"b0rNc","../cmdb-logo.png":"iAkUB","./login-view/login-view":"9YtA0","./signup-view/signup-view":"4OGiN","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./movie-card/movie-card":"bwuIu","./movie-view/movie-view":"ggaUx","./movie-title/movie-title":"b0rNc","./login-view/login-view":"9YtA0","./signup-view/signup-view":"4OGiN","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Button":"aPzUt","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31011,45 +30971,7 @@ $RefreshReg$(_c, "MovieTitle");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB","react":"21dqq"}],"iAkUB":[function(require,module,exports) {
-module.exports = require("d48b706382f674c9").getBundleURL("byUka") + "cmdb-logo.24313d01.png" + "?" + Date.now();
-
-},{"d48b706382f674c9":"7Hmfs"}],"7Hmfs":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"9YtA0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"hBsHB"}],"9YtA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31947,7 +31869,45 @@ as: Component = "div", className, ...props }, ref)=>{
 Container.displayName = "Container";
 exports.default = Container;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl"}],"lJZlQ":[function() {},{}],"3AD9A":[function(require,module,exports) {
+},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kkiFl"}],"iAkUB":[function(require,module,exports) {
+module.exports = require("d48b706382f674c9").getBundleURL("byUka") + "cmdb-logo.24313d01.png" + "?" + Date.now();
+
+},{"d48b706382f674c9":"7Hmfs"}],"7Hmfs":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"lJZlQ":[function() {},{}],"3AD9A":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));

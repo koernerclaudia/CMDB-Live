@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "./movie-card/movie-card";
 import { MovieView } from "./movie-view/movie-view";
+import { MovieTitle } from "./movie-title/movie-title";
 import logo from "../cmdb-logo.png";
 import { LoginView } from "./login-view/login-view";
 import { SignupView } from "./signup-view/signup-view";
@@ -71,7 +72,7 @@ export const MainView = () => {
         <div className="similar">
         {samedirector.length > 0 ? (
           samedirector.map((movie) => (
-            <MovieCard
+            <MovieTitle
               key={movie._id}
               movie={movie}
               onMovieClick={(newSelectedMovie) => setSelectedMovie(newSelectedMovie)}
@@ -85,7 +86,7 @@ export const MainView = () => {
         <div className="similar">
         {similarMovies.length > 0 ? (
           similarMovies.map((movie) => (
-            <MovieCard
+            <MovieTitle
               key={movie._id}
               movie={movie}
               onMovieClick={(newSelectedMovie) => setSelectedMovie(newSelectedMovie)}

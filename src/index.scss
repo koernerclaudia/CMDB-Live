@@ -1,59 +1,90 @@
-body {
-  background-color: #292929;
-  color: #ffffff;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
-  font-size: 16px;
+
+// custom variables
+$primary: #00bcd4; // Custom cyan-700
+$body-bg: #e0f7fa;
+
+.login {
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 1px $primary;
+  margin: 15px;
+  padding: 15px;
+  width: 100%;
+}
+.cover-img {
+  object-fit: cover;
+  width: 100%;   /* Ensures the image takes up the full width of the container */
+  height: 250px; /* Sets a specific height for the image container */
+  object-position: top;
 }
 
-.main {
-  margin: 50px auto;
+.logo {
+  padding: 15px;
+  width: 75%;
   text-align: center;
-  max-width: 800px;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+  .img-in-view {
+    object-fit: contain;
+    height: 250px; /* Sets a specific height for the image container */
+    object-position: top;
   
 }
 
-button {
-  background-color:   #33b2b9;
-  border-radius: 20px;
-  border: none;
-  font-weight: bold;
-  padding: 10px;
-  margin-top: 25px;
-  color: #ffffff;
-  min-width: 150px;
-}
 
-button:hover,
-.hover {
-  cursor: pointer;
-}
+@import "~bootstrap/scss/bootstrap.scss";
 
-h1 {
-  color:  #8ceaef;
 
-}
+// body {
+//   background-color: #292929;
+//   color: #ffffff;
+//   font-family: "Inter", sans-serif;
+//   font-weight: 400;
+//   line-height: 1.6;
+//   font-size: 16px;
+// }
 
-hr {
-  border-color:   #33b2b9;
+// .main {
+//   margin: 50px auto;
+//   text-align: center;
+  
+// }
 
-}
+// button {
+//   background-color:   #33b2b9;
+//   border-radius: 20px;
+//   border: none;
+//   font-weight: bold;
+//   padding: 10px;
+//   margin-top: 25px;
+//   color: #ffffff;
+// }
+
+// button:hover,
+// .hover {
+//   cursor: pointer;
+// }
+
+// h1 {
+//   color:  #8ceaef;
+
+// }
+
+// hr {
+//   border-color:   #33b2b9;
+
+// }
 
 img {
-  max-width: 300px;
+  width: 100%;
 }
 
-.similar {
-  color: #8ceaef;
-  font-size: smaller;
-  line-height: 1.4em;
-}
-
-.centered-loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  text-align: center;
-  color: #8ceaef;}
+// .similar {
+//   color: #8ceaef;
+//   font-size: smaller;
+//   line-height: 1.4em;
+// }

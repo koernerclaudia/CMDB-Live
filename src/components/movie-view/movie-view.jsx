@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 
-export const MovieView = ({ movie, onBackClick }) => {
+
+export const MovieView = ({ movies }) => {
+  const { movieId } = useParams();
+
+  const movie = movies.find((movie) => movie.id === movieId);
+
   return (
     <>
      
@@ -22,7 +28,9 @@ export const MovieView = ({ movie, onBackClick }) => {
     <ListGroup.Item>Genre: {movie.Genre.Type} ( {movie.Genre.Description})</ListGroup.Item>
     </ListGroup>
     </Card>
-    <Button className="margin-top" onClick={onBackClick}>Back to List of Movies</Button>
+    <Link to={`/`}>
+        <Button className="info">Back to Movies</Button>
+      </Link>
     </>
 
 );}

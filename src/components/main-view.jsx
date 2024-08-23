@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "./movie-card/movie-card";
 import { MovieView } from "./movie-view/movie-view";
+import { ProfileView } from "./profile-view/profile-view";
 import { MovieTitle } from "./movie-title/movie-title";
 import { LoginView } from "./login-view/login-view";
 import { SignupView } from "./signup-view/signup-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { NavigationBar } from "./navigation/navigation";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -14,9 +17,12 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const [loading, setLoading] = useState(false);
-  
+  const onLoggedOut = () => {
+    setUser(null); // Remove user information from the state
+    setToken(null); // Remove the authentication token from the state (if applicable)
+    localStorage.clear(); // Clear all data from localStorage, effectively logging the user out
+  };
 
   useEffect(() => {
     if (!token) return;
@@ -37,109 +43,94 @@ export const MainView = () => {
     return <div className="centered-loading">Loading movies...</div>;
   }
 
-  // if (selectedMovie) {
-  //     const similarMovies = movies.filter(
-  //       (movie) =>
-  //         movie.Genre.Type === selectedMovie.Genre.Type &&
-  //         movie._id !== selectedMovie._id
-  //     );
-  //     const samedirector = movies.filter(
-  //       (movie) =>
-  //         movie.Director.Name === selectedMovie.Director.Name &&
-  //       movie._id !== selectedMovie._id
-  //     );
-
   return (
-    <Row className="justify-content-md-center">
-      {!user ? (
-        <Col md={4} className="d-flex flex-column align-items-center">
-          <LoginView
-            onLoggedIn={(user, token) => {
-              setUser(user);
-              setToken(token);
-            }}
+    <BrowserRouter>
+      <NavigationBar
+        user={user}
+        onLoggedOut={() => {
+          setUser(null);
+        }}
+      />
+      <Row className="justify-content-md-center">
+        <Routes>
+          <Route
+            path="/signup"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Col md={5}>
+                    <SignupView />
+                  </Col>
+                )}
+              </>
+            }
           />
-          <SignupView />
-        </Col>
-      ) : selectedMovie ? (
-        <Col md={8} className="d-flex flex-column align-items-center">
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={() => setSelectedMovie(null)}
+          <Route
+            path="/login"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/myprofile" />
+                ) : (
+                  <Col md={5}>
+                    <LoginView onLoggedIn={(user) => setUser(user)} />
+                  </Col>
+                )}
+              </>
+            }
           />
-{/* <hr />
-<h4>More movies by {selectedMovie.Director.Name}:</h4>
-{samedirector.length > 0 ? (
-  samedirector.map((movie) => ( }
-    {<MovieCard 
-      key={movie._id}
-      movie={movie.Title}
-      onMovieClick={() => setSelectedMovie(movie)}
-    /> 
- ))
-) : (
-  <p>Sorry, currently there are no more movies listed by this director.</p>
-)}
-
-<hr />
-<h4>More {selectedMovie.Genre.Type} movies:</h4>
-{similarMovies.length > 0 ? (
-  similarMovies.map((movie) => (
-    <MovieCard
-      key={movie._id}
-      movie={movie.Title}
-      onMovieClick={() => setSelectedMovie(movie)}
-    />
-  ))
-) : (
-  <p>Sorry, currently there are no more movies listed for this genre.</p>
-// )}  */}
-
-          <div>
-            <Button
-              className="margin-top"
-              onClick={() => {
-                setUser(null);
-                setToken(null);
-                localStorage.clear();
-              }}
-            >
-              Logout
-            </Button>
-          </div>
-        </Col>
-      ) : movies.length === 0 ? (
-        <div>The list is empty!</div>
-      ) : (
-        <>
-          <>
-            {movies.map((movie) => (
-              <Col md={3} className="mb-2 mt-2" key={movie.id}>
-                <MovieCard
-                  key={movie._id}
-                  movie={movie}
-                  onMovieClick={(newSelectedMovie) => {
-                    setSelectedMovie(newSelectedMovie);
-                  }}
-                />
-              </Col>
-            ))}
-          </>
-          <Col md={2} className="d-flex flex-column align-items-center">
-            <Button
-              className="margin-top"
-              onClick={() => {
-                setUser(null);
-                setToken(null);
-                localStorage.clear();
-              }}
-            >
-              Logout
-            </Button>
-          </Col>
-        </>
-      )}
-    </Row>
+          <Route
+            path="/"
+            element={
+              !user ? (
+                <Navigate to="/login" replace />
+              ) : loading ? (
+                <div className="centered-loading">Loading movies...</div>
+              ) : movies.length === 0 ? (
+                <Col>The list is empty!</Col>
+              ) : (
+                <>
+                  {movies.map((movie) => (
+                    <Col md={3} className="mb-2 mt-2" key={movie.id}>
+                      <MovieCard movie={movie} />
+                    </Col>
+                  ))}
+                </>
+              )
+            }
+          />
+          <Route
+            path="/movies/:movieID"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : movies.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <Col md={8}>
+                    <MovieView movies={movies} />
+                  </Col>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/myprofile"
+            element={
+              !user ? (
+                <Navigate to="/login" replace />
+              ) : (
+                <Col md={8}>
+                  <ProfileView user={user} token={token} movies={movies} />
+                </Col>
+              )
+            }
+          />
+        </Routes>
+      </Row>
+    </BrowserRouter>
   );
 };
-

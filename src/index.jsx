@@ -14,10 +14,6 @@ import { Row } from 'react-bootstrap';
 const CMDB = () => {
   return (
     <Container>
-       <Row className="justify-content-md-center">
-        <Col md={2} className="d-flex flex-column align-items-center">
-       <img src={logo} alt="CMDB" className="logo" /></Col>
-       </Row>
       <Row><MainView /></Row>
     </Container>
   );

@@ -3,6 +3,8 @@
 $primary: #00bcd4; // Custom cyan-700
 $body-bg: #e0f7fa;
 
+
+
 .login {
   border-radius: 20px;
   background-color: #ffffff;
@@ -20,8 +22,9 @@ $body-bg: #e0f7fa;
 
 .logo {
   padding: 15px;
-  width: 75%;
-  text-align: center;
+  width: 25%;
+  position: relative;
+
 }
 
 .margin-top {
@@ -34,6 +37,18 @@ $body-bg: #e0f7fa;
     object-position: top;
   
 }
+
+// .navbar2 {
+//   color: #e0f7fa;
+//   margin: 25px 0;
+//   padding: 15px;
+ 
+// }
+
+.round20 {
+  border-radius: 40px
+}
+
 
 
 @import "~bootstrap/scss/bootstrap.scss";

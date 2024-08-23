@@ -15,9 +15,9 @@
 }
 
 .logo {
-  text-align: center;
-  width: 75%;
+  width: 25%;
   padding: 15px;
+  position: relative;
 }
 
 .margin-top {
@@ -28,6 +28,10 @@
   object-fit: contain;
   object-position: top;
   height: 250px;
+}
+
+.round20 {
+  border-radius: 40px;
 }
 
 :root, [data-bs-theme="light"] {

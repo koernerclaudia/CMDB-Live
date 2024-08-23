@@ -1,12 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import logo from "../../cmdb-logo.png";
 
-export const NavigationBar = ({ user, onLoggedOut }) => {
+export const NavigationBar = ({ user }) => {
 
     const handleLogout = () => {
         localStorage.clear();
@@ -35,7 +33,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
             {user && (
               <>
                 <Nav.Link as={Link} to="/">
-                  Browse Movies
+                  Browse Movie Database
                 </Nav.Link>
                 <Nav.Link as={Link} to="/myprofile">
                   My Profile

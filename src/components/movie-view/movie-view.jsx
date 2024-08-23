@@ -29,7 +29,7 @@ export const MovieView = ({ movies }) => {
     </ListGroup>
     </Card>
     <Link to={`/`}>
-        <Button className="info">Back to Movies</Button>
+        <Button className="margin-top" variant="info">Back to Movies</Button>
       </Link>
     </>
 

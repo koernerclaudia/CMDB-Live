@@ -11,14 +11,14 @@ export const Navigation = ({ user, onLoggedOut }) => {
 
   
   return (
-    <Navbar className="navbar2" expand="lg">
+    <Navbar className="navbar navbar-dark navbar-expand-lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand>
         <img src={logo} alt="CMDB" className="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-toggler-right" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto ">
             {!user && (
               <>
                 <Nav.Link as={Link} to="/login">

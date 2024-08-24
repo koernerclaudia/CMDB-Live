@@ -6,6 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import UserInfo from "./user-info";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'; 
 
 export const ProfileView = ({ user, token, movies }) => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
@@ -204,11 +207,10 @@ export const ProfileView = ({ user, token, movies }) => {
                     />
                     <Card.Title>&nbsp;&nbsp;{movie.Title}</Card.Title>
                     <Button
-                      variant="warning"
-                      className="ms-auto"
-                      onClick={() => handleRemoveFavorite(movie._id)}
-                    >
-                      Remove from favourites
+                      variant="dark"
+                      className="ms-auto btn-sm"
+                      onClick={() => handleRemoveFavorite(movie._id)} alt ="Remove from favourites."
+                    ><FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }} />&nbsp;Remove from list   
                     </Button>
                   </Card.Body>
                 </Card>

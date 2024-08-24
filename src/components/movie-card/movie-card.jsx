@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'; 
 
 
 export const MovieCard = ({ movie, updateAction }) => {
@@ -87,35 +91,36 @@ export const MovieCard = ({ movie, updateAction }) => {
 
   
   return (
-    <Card className="h-100 bg-white" border="info" >
+    <Card className="h-100" border="warning" >
       <div><img src={movie.ImageURL} className="cover-img" style={{ zIndex: '-2' }}/></div>
       <Card.Body>
-        <Card.Title>{movie.Title}</Card.Title>
-        <Card.Text>With: {movie.Actors.join(', ')}
+        <Card.Title style={{ color: "#f9de73" }}>{movie.Title}</Card.Title>
+        <Card.Text><b>With:</b> {movie.Actors.join(', ')}
         </Card.Text>
-        <Card.Text>Directed by: {movie.Director.Name}</Card.Text>
-        <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-          <Button className="btn-sm margin-top" variant="info">More info</Button>
-        </Link>
-        <div className="mt-auto">
+        <Card.Text><b>Directed by:</b> {movie.Director.Name}</Card.Text>
+        <Row>
+          <Col sm={8}>
+          <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
+      
+          <Button className="btn-sm margin-top" variant="warning">More info</Button>
+        </Link></Col>
+        <Col sm={4} className="justify-content-end">
           {isFavorite ? (
-            <Button
-              style={{ marginTop: '10px' }}
-              className="btn-warning btn-sm"
+            <Button variant="dark"
+              className="btn-sm margin-top"
               onClick={() => handleRemoveFromFav(movie._id)}
-            >
-              Remove from favorites
+              alt ="Remove from favourites.">
+            <FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }} />
             </Button>
           ) : (
-            <Button
-              style={{ marginTop: '10px' }}
-              className="btn-success btn-sm" FontAwesomeIcon icon="fa-solid fa-heart"
+            <Button variant="dark"
+              className="btn-sm margin-top"
               onClick={() => handleAddToFav(movie._id)}
-            alt ="Add to favourties">
-              Add to favorites
-            </Button>
+            alt ="Add to favourties.">
+                 <FontAwesomeIcon icon={regularHeart} />
+            </Button>  
           )}
-        </div>
+       </Col></Row>
       </Card.Body>
     </Card>
   );

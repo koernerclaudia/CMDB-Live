@@ -1,20 +1,18 @@
 
-import { useParams } from "react-router";
-import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 
 export const MovieView = ({ movies }) => {
-  const { movieId } = useParams();
-  const movie = movies.find((movie) => movie.id === movieId);
+  const { MovieID } = useParams();
+  const movie = movies.find((movie) => movie._id === MovieID);
 
   return (
     <>
-     
-    <Card style={{ width: '40rem' }}  >
+    <Card style={{ width: '40rem' }} border="info" >
     <Card.Img variant="top" src={movie.ImageURL} className="img-in-view"/>
     <Card.Body>
     <Card.Title>{movie.Title}</Card.Title>
@@ -27,9 +25,9 @@ export const MovieView = ({ movies }) => {
     <ListGroup.Item>Director: {movie.Director.Name}</ListGroup.Item>
     <ListGroup.Item>Genre: {movie.Genre.Type} ( {movie.Genre.Description})</ListGroup.Item>
     </ListGroup>
-    </Card>
+    </Card><br />
     <Link to={`/`}>
-        <Button className="margin-top" variant="info">Back to Movies</Button>
+        <Button variant="info">Back to list of Movies</Button>
       </Link>
     </>
 

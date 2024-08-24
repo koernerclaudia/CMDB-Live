@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import "./index.scss";
-import { Row } from 'react-bootstrap';
 
 // Main component (will eventually use all the others)
 const CMDB = () => {

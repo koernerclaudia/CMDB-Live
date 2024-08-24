@@ -23,9 +23,11 @@ export const ProfileView = ({ user, token, movies }) => {
     setFavoriteMovies(favMovies);
   }, [user, movies]);
 
-  const handleRemoveFavorite = (movieId) => {
+
+
+  const handleRemoveFavorite = (MovieID) => {
     fetch(
-      `https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${movieId}`,
+      `https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${MovieID}`,
       {
         method: "DELETE",
         headers: {
@@ -38,7 +40,7 @@ export const ProfileView = ({ user, token, movies }) => {
         if (response.ok) {
           // Update the favoriteMovies state to remove the movie
           setFavoriteMovies(
-            favoriteMovies.filter((movie) => movie._id !== movieId)
+            favoriteMovies.filter((movie) => movie._id !== MovieID)
           );
         } else {
           alert("Failed to remove the movie from favorites.");
@@ -206,7 +208,7 @@ export const ProfileView = ({ user, token, movies }) => {
                       className="ms-auto"
                       onClick={() => handleRemoveFavorite(movie._id)}
                     >
-                      Remove from list
+                      Remove from favourites
                     </Button>
                   </Card.Body>
                 </Card>

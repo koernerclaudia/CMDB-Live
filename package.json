@@ -9,6 +9,10 @@
   "license": "ISC",
   "description": "This project is still WIP.",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "axios": "^1.7.5",
     "bootstrap": "^5.3.3",
     "prop-types": "^15.8.1",

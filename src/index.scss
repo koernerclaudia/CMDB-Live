@@ -1,7 +1,8 @@
 
 // custom variables
 $primary: #00bcd4; // Custom cyan-700
-$body-bg: #e0f7fa;
+$body-bg: #222222;
+$btn-border-radius: 20%;
 
 .login {
   border-radius: 20px;
@@ -36,6 +37,7 @@ $body-bg: #e0f7fa;
 .margin-top {
   margin-top: 15px;
 }
+
 
   .img-in-view {
     object-fit: contain;

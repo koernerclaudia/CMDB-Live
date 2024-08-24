@@ -10,13 +10,22 @@
 .cover-img {
   object-fit: cover;
   object-position: top;
+  border-radius: 5px 5px 0 0;
   width: 100%;
   height: 250px;
 }
 
+.navbar2 {
+  background-color: #e0f7fa;
+}
+
+.nav-link {
+  min-width: 150px;
+}
+
 .logo {
   text-align: center;
-  width: 75%;
+  width: 20%;
   padding: 15px;
 }
 

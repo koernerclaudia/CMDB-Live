@@ -1,14 +1,22 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import logo from "./cmdb-logo.png";
 
 export const Navigation = ({ user, onLoggedOut }) => {
+
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload(); // Refresh the page to trigger logout
+  };
+
+  
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className="navbar2" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          CMDB
+        <img src={logo} alt="CMDB" className="logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="navbar-toggler-right" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {!user && (
@@ -23,13 +31,13 @@ export const Navigation = ({ user, onLoggedOut }) => {
             )}
             {user && (
               <>
-                <Nav.Link as={Link} to="/">
+                <Nav.Link className="nav-link" as={Link} to="/">
                   Browse Movies
                 </Nav.Link>
-                <Nav.Link as={Link} to="/myprofile">
+                <Nav.Link className="nav-link" as={Link} to="/myprofile">
                  My Profile
                 </Nav.Link>
-                <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
+                <Nav.Link className="nav-link" onClick={handleLogout}>Logout</Nav.Link>
               </>
             )}
           </Nav>

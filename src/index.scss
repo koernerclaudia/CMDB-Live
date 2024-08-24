@@ -16,11 +16,20 @@ $body-bg: #e0f7fa;
   width: 100%;   /* Ensures the image takes up the full width of the container */
   height: 250px; /* Sets a specific height for the image container */
   object-position: top;
+  border-radius: 5px 5px 0 0 ;
+}
+
+.navbar2 {
+  background-color: #e0f7fa;
+}
+
+.nav-link {
+  min-width: 150px;
 }
 
 .logo {
   padding: 15px;
-  width: 75%;
+  width: 20%;
   text-align: center;
 }
 

@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
@@ -8,7 +9,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
-
   const movie = movies.find((movie) => movie.id === movieId);
 
   return (

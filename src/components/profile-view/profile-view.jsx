@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import { Card } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import UserInfo from "./user-info";
 
@@ -56,9 +59,9 @@ export const ProfileView = ({ user, token, movies }) => {
     event.preventDefault();
 
     const updatedUser = {
-      Username: username,
-      Password: password,
-      Email: email,
+      username: username,
+      password: password,
+      email: email,
     };
 
     fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
@@ -72,6 +75,12 @@ export const ProfileView = ({ user, token, movies }) => {
       .then((response) => {
         if (response.ok) {
           alert("Profile updated successfully.");
+
+          // Update the local user state with the new values
+          const updatedUserResponse = { ...user, username, email };
+          // Password is not typically returned by the API, so we should avoid storing it in the state
+          setUsername(username);
+          setEmail(email);
         } else {
           alert("Failed to update profile.");
         }
@@ -83,7 +92,11 @@ export const ProfileView = ({ user, token, movies }) => {
   };
 
   const handleDeregister = () => {
-    if (window.confirm("Are you sure you want to deregister? This action cannot be undone.")) {
+    if (
+      window.confirm(
+        "Are you sure you want to deregister? This action cannot be undone."
+      )
+    ) {
       fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
         method: "DELETE",
         headers: {
@@ -111,74 +124,99 @@ export const ProfileView = ({ user, token, movies }) => {
   }
 
   return (
-    <Card className="profile-view">
-      <Card.Body>
-        <Card.Title>Profile Information</Card.Title>
-        <UserInfo name={user.username} email={user.email} />
-
-        <Form onSubmit={handleSubmit} className="mb-4">
-          <Form.Group controlId="formUsername" className="mb-3">
-            <Form.Label>Change Username</Form.Label>
-            <Form.Control
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter new username"
-            />
-          </Form.Group>
-
-          <Form.Group controlId="formPassword" className="mb-3">
-            <Form.Label>Change Password</Form.Label>
-            <Form.Control
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter new password"
-            />
-          </Form.Group>
-
-          <Form.Group controlId="formEmail" className="mb-3">
-            <Form.Label>Change Email</Form.Label>
-            <Form.Control
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter new email"
-            />
-          </Form.Group>
-
-          <Button variant="info" type="submit" className="me-2">
-            Update Profile
-          </Button>
-          <Button variant="info" onClick={handleDeregister}>
-            Delete my account
-          </Button>
-        </Form>
-
-        <Card.Title>Favorite Movies</Card.Title>
-        {favoriteMovies.length > 0 ? (
-          favoriteMovies.map((movie) => (
-            <Card key={movie._id} className="mb-2">
-              <Card.Body className="d-flex align-items-center">
-                <Card.Title>{movie.Title}</Card.Title>
-                <Button
-                  variant="warning"
-                  className="ms-auto"
-                  onClick={() => handleRemoveFavorite(movie._id)}
-                >
-                  Remove from list
-                </Button>
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <Card className="profile-view margin-top bg-info">
+              <Card.Body>
+                <Card.Title>Profile Information</Card.Title>
+                <UserInfo name={user.username} email={user.email} />
               </Card.Body>
             </Card>
-          ))
-        ) : (
-          <Card.Text>No favorite movies found.</Card.Text>
-        )}
+          </Col>
+          <Col>
+            <Card className="profile-view margin-top">
+              <Card.Body>
+                <Card.Title>Change your info</Card.Title>
+                <Form onSubmit={handleSubmit} className="mb-4">
+                  <Form.Group controlId="formUsername" className="mb-3">
+                    <Form.Label>Change Username</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      placeholder="Enter new username"
+                    />
+                  </Form.Group>
 
-        <Button variant="dark" onClick={handleLogout}>
-          Logout
-        </Button>
-      </Card.Body>
-    </Card>
+                  <Form.Group controlId="formPassword" className="mb-3">
+                    <Form.Label>Change Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter new password"
+                    />
+                  </Form.Group>
+
+                  <Form.Group controlId="formEmail" className="mb-3">
+                    <Form.Label>Change Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter new email"
+                    />
+                  </Form.Group>
+
+                  <Button
+                    variant="info margin-top"
+                    type="submit"
+                    className="me-2"
+                  >
+                    Update Profile
+                  </Button>
+                  <Button
+                    variant="danger margin-top"
+                    onClick={handleDeregister}
+                  >
+                    Delete my account
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        <Card className="profile-view margin-top bg-info">
+          <Card.Body>
+            <Card.Title>Favorite Movies</Card.Title>
+            {favoriteMovies.length > 0 ? (
+              favoriteMovies.map((movie) => (
+                <Card key={movie._id} className="mb-3">
+                  <Card.Body className="d-flex align-items-center">
+                    <img
+                      src={movie.ImageURL}
+                      style={{ width: "45px", height: "65px" }}
+                    />
+                    <Card.Title>&nbsp;&nbsp;{movie.Title}</Card.Title>
+                    <Button
+                      variant="warning"
+                      className="ms-auto"
+                      onClick={() => handleRemoveFavorite(movie._id)}
+                    >
+                      Remove from list
+                    </Button>
+                  </Card.Body>
+                </Card>
+              ))
+            ) : (
+              <Card.Text>No favorite movies found.</Card.Text>
+            )}
+          </Card.Body>
+        </Card>
+      </Container>
+    </>
   );
 };

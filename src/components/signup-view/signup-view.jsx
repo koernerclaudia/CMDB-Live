@@ -33,40 +33,43 @@ export const SignupView = () => {
   };
 
   return (
-    <Form className="login" onSubmit={handleSubmit}>
+    <Form className="signup" onSubmit={handleSubmit}>
       <h4>Sign Up:</h4>
     <Form.Group controlId="formUsername">
       <Form.Label>Username:</Form.Label>
-      <Form.Control
+      <Form.Control className="margin-bottom"  style={{ color: "white"}}
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         required
         minLength="3" 
+        // placeholder="Choose a Username" - will reapply once I can fix CSS
       />
     </Form.Group>
 
     <Form.Group controlId="formPassword">
       <Form.Label>Password:</Form.Label>
-      <Form.Control
+      <Form.Control className="margin-bottom"  style={{ color: "white"}}
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
+        // placeholder="Choose a Password" - will reapply once I can fix CSS
       />
     </Form.Group>
     <Form.Group controlId="formEmail">
       <Form.Label>Email:</Form.Label>
-      <Form.Control
+      <Form.Control className="margin-bottom"  style={{ color: "white"}}
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
+        // placeholder="Your Email" - will reapply once I can fix CSS
       />
     </Form.Group>
-    <Button variant="primary margin-top" type="submit">
-      Submit
-    </Button>
+    <Button variant="warning" className="margin-top btn-sm" type="submit">
+        Submit
+      </Button>
   </Form>
   );
 };

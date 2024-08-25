@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "./movie-card/movie-card";
 import { MovieView } from "./movie-view/movie-view";
-import { MovieTitle } from "./movie-title/movie-title";
 import { LoginView } from "./login-view/login-view";
 import { SignupView } from "./signup-view/signup-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Navigation} from "./navigation/navigation";
+import {ProfileView} from "./profile-view/profile-view";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -14,7 +15,6 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const [loading, setLoading] = useState(false);
   
 
@@ -37,109 +37,113 @@ export const MainView = () => {
     return <div className="centered-loading">Loading movies...</div>;
   }
 
-  // if (selectedMovie) {
-  //     const similarMovies = movies.filter(
-  //       (movie) =>
-  //         movie.Genre.Type === selectedMovie.Genre.Type &&
-  //         movie._id !== selectedMovie._id
-  //     );
-  //     const samedirector = movies.filter(
-  //       (movie) =>
-  //         movie.Director.Name === selectedMovie.Director.Name &&
-  //       movie._id !== selectedMovie._id
-  //     );
+  const getSimilarMovies = (movie) => {
+    return movies.filter(m => 
+      m.Genre.Type === movie.Genre.Type && m._id !== movie._id
+    ).slice(0, 10); // Get up to 10 similar movies
+  };
+
+  const getMoviesByDirector = (movie) => {
+    return movies.filter(m => 
+      m.Director.Name === movie.Director.Name && m._id !== movie._id
+    ).slice(0, 10); // Get up to 10 movies by the same director
+  };
+  
 
   return (
-    <Row className="justify-content-md-center">
-      {!user ? (
-        <Col md={4} className="d-flex flex-column align-items-center">
-          <LoginView
-            onLoggedIn={(user, token) => {
-              setUser(user);
-              setToken(token);
-            }}
-          />
-          <SignupView />
-        </Col>
-      ) : selectedMovie ? (
-        <Col md={8} className="d-flex flex-column align-items-center">
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={() => setSelectedMovie(null)}
-          />
-{/* <hr />
-<h4>More movies by {selectedMovie.Director.Name}:</h4>
-{samedirector.length > 0 ? (
-  samedirector.map((movie) => ( }
-    {<MovieCard 
-      key={movie._id}
-      movie={movie.Title}
-      onMovieClick={() => setSelectedMovie(movie)}
-    /> 
- ))
-) : (
-  <p>Sorry, currently there are no more movies listed by this director.</p>
-)}
+    <BrowserRouter><Navigation
+    user={user}
+    onLoggedOut={() => {
+      setUser(null);
+    }}
+  />
+      <Row className="justify-content-md-center">
+        <Routes>
+          <Route
+            path="/signup"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Col md={4} className="d-flex flex-column align-items-center">
+                    <SignupView />
+                  </Col>
+                )}
+              </>
 
-<hr />
-<h4>More {selectedMovie.Genre.Type} movies:</h4>
-{similarMovies.length > 0 ? (
-  similarMovies.map((movie) => (
-    <MovieCard
-      key={movie._id}
-      movie={movie.Title}
-      onMovieClick={() => setSelectedMovie(movie)}
-    />
-  ))
-) : (
-  <p>Sorry, currently there are no more movies listed for this genre.</p>
-// )}  */}
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Col md={4} className="d-flex flex-column align-items-center">
+                  <LoginView onLoggedIn={(user, token) => {
+            setUser(user);
+            setToken(token);
+          }} />
+                  </Col>
+                )}
+              </>
 
-          <div>
-            <Button
-              className="margin-top"
-              onClick={() => {
-                setUser(null);
-                setToken(null);
-                localStorage.clear();
-              }}
-            >
-              Logout
-            </Button>
-          </div>
-        </Col>
-      ) : movies.length === 0 ? (
-        <div>The list is empty!</div>
-      ) : (
-        <>
-          <>
-            {movies.map((movie) => (
-              <Col md={3} className="mb-2 mt-2" key={movie.id}>
-                <MovieCard
-                  key={movie._id}
-                  movie={movie}
-                  onMovieClick={(newSelectedMovie) => {
-                    setSelectedMovie(newSelectedMovie);
-                  }}
-                />
-              </Col>
-            ))}
-          </>
-          <Col md={2} className="d-flex flex-column align-items-center">
-            <Button
-              className="margin-top"
-              onClick={() => {
-                setUser(null);
-                setToken(null);
-                localStorage.clear();
-              }}
-            >
-              Logout
-            </Button>
-          </Col>
-        </>
-      )}
-    </Row>
+            }
+          />
+          <Route
+            path="/movies/:MovieID"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : movies.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <Col md={8} className="d-flex flex-column align-items-center">
+                    <MovieView movies={movies}
+                    getSimilarMovies={getSimilarMovies} 
+                    getMoviesByDirector={getMoviesByDirector}/>
+                  </Col>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : movies.length === 0 ? (
+                  <Col>The list is empty!</Col>
+                ) : (
+                  <>
+                    {movies.map((movie) => (
+                      <Col className="mb-4" key={movie._id} md={4}>
+                        <MovieCard movie={movie} />
+                      </Col>
+                    ))}
+                  </>
+                )}
+              </>
+            }
+          />
+              <Route
+            path="/myprofile"
+            element={
+              !user ? (
+                <Navigate to="/login" replace />
+              ) : (
+                <Col md={12}>
+                  <ProfileView user={user} token={token} movies={movies} />
+                </Col>
+              )
+            }
+          />
+        </Routes>
+      </Row>
+    </BrowserRouter>
   );
 };
-

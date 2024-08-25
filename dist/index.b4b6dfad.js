@@ -27323,6 +27323,7 @@ const MainView = ()=>{
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 4,
+                                    xs: 1,
                                     className: "d-flex flex-column align-items-center",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                                         fileName: "src/components/main-view.jsx",
@@ -27351,6 +27352,7 @@ const MainView = ()=>{
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 4,
+                                    xs: 1,
                                     className: "d-flex flex-column align-items-center",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
                                         onLoggedIn: (user, token)=>{
@@ -27432,6 +27434,7 @@ const MainView = ()=>{
                                     children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                             className: "mb-4",
                                             md: 4,
+                                            xs: 12,
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
                                                 movie: movie
                                             }, void 0, false, {
@@ -64920,16 +64923,10 @@ const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByDirector
                                     " ",
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
                                         border: "light",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Img, {
-                                                variant: "top",
-                                                src: movie.ImageURL,
-                                                className: "cover-img"
-                                            }, void 0, false, {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 110,
-                                                columnNumber: 9
-                                            }, undefined)
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Img, {
+                                            variant: "top",
+                                            src: movie.ImageURL,
+                                            className: "main-view-img"
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
                                             lineNumber: 109,
@@ -64947,96 +64944,192 @@ const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByDirector
                                 columnNumber: 1
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
-                                    border: "light",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
-                                                    style: {
-                                                        color: "#f9de73"
-                                                    },
-                                                    children: movie.Title
-                                                }, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 115,
-                                                    columnNumber: 9
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
-                                                    children: movie.Description
-                                                }, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 116,
-                                                    columnNumber: 5
-                                                }, undefined),
-                                                " "
-                                            ]
-                                        }, void 0, true, {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
+                                        border: "light",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
+                                                        style: {
+                                                            color: "#f6c344"
+                                                        },
+                                                        children: movie.Title
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 113,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
+                                                        children: movie.Description
+                                                    }, void 0, false, {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 114,
+                                                        columnNumber: 5
+                                                    }, undefined),
+                                                    " "
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 112,
+                                                columnNumber: 9
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
+                                                className: "list-group-flush",
+                                                variant: "light",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
+                                                        style: {
+                                                            color: "#ffffff"
+                                                        },
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                                                children: "Actors:"
+                                                            }, void 0, false, {
+                                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                                lineNumber: 118,
+                                                                columnNumber: 50
+                                                            }, undefined),
+                                                            " ",
+                                                            movie.Actors.join(", ")
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 118,
+                                                        columnNumber: 5
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
+                                                        style: {
+                                                            color: "#ffffff"
+                                                        },
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                                                children: "Director:"
+                                                            }, void 0, false, {
+                                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                                lineNumber: 119,
+                                                                columnNumber: 50
+                                                            }, undefined),
+                                                            " ",
+                                                            movie.Director.Name
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 119,
+                                                        columnNumber: 5
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
+                                                        style: {
+                                                            color: "#ffffff"
+                                                        },
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                                                children: "Genre:"
+                                                            }, void 0, false, {
+                                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                                lineNumber: 120,
+                                                                columnNumber: 50
+                                                            }, undefined),
+                                                            " ",
+                                                            movie.Genre.Type,
+                                                            " ( ",
+                                                            movie.Genre.Description,
+                                                            ")"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 120,
+                                                        columnNumber: 5
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 117,
+                                                columnNumber: 5
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 111,
+                                        columnNumber: 6
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 124,
+                                        columnNumber: 7
+                                    }, undefined),
+                                    isFavorite ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                        className: "btn-sm",
+                                        variant: "outline-warning",
+                                        onClick: ()=>handleRemoveFromFav(movie._id),
+                                        alt: "Remove from favourites.",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
+                                                icon: (0, _freeSolidSvgIcons.faHeart),
+                                                style: {
+                                                    color: "red"
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 130,
+                                                columnNumber: 13
+                                            }, undefined),
+                                            "\xa0Remove from list"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 126,
+                                        columnNumber: 13
+                                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                        className: "btn-sm",
+                                        variant: "outline-warning",
+                                        onClick: ()=>handleAddToFav(movie._id),
+                                        alt: "Add to favourties.",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
+                                                icon: (0, _freeRegularSvgIcons.faHeart)
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 137,
+                                                columnNumber: 18
+                                            }, undefined),
+                                            "\xa0Add to List"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 133,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 141,
+                                        columnNumber: 6
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 141,
+                                        columnNumber: 12
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                        to: `/`,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                            variant: "warning",
+                                            className: "btn-sm",
+                                            children: "Back to list of Movies"
+                                        }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 114,
+                                            lineNumber: 143,
                                             columnNumber: 9
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
-                                            className: "list-group-flush",
-                                            variant: "light",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
-                                                    style: {
-                                                        color: "#ffffff"
-                                                    },
-                                                    children: [
-                                                        "Actors: ",
-                                                        movie.Actors.join(", ")
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 120,
-                                                    columnNumber: 5
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
-                                                    style: {
-                                                        color: "#ffffff"
-                                                    },
-                                                    children: [
-                                                        "Director: ",
-                                                        movie.Director.Name
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 121,
-                                                    columnNumber: 5
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
-                                                    style: {
-                                                        color: "#ffffff"
-                                                    },
-                                                    children: [
-                                                        "Genre: ",
-                                                        movie.Genre.Type,
-                                                        " ( ",
-                                                        movie.Genre.Description,
-                                                        ")"
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 122,
-                                                    columnNumber: 5
-                                                }, undefined)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 119,
-                                            columnNumber: 5
                                         }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 113,
-                                    columnNumber: 6
-                                }, undefined)
-                            }, void 0, false, {
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 142,
+                                        columnNumber: 7
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 113,
+                                lineNumber: 111,
                                 columnNumber: 1
                             }, undefined)
                         ]
@@ -65053,269 +65146,183 @@ const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByDirector
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
                     className: "list-group-flush",
                     variant: "light",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
-                            style: {
-                                color: "#ffffff"
-                            },
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                                    className: "col-12 d-flex justify-content-center align-items-right",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
+                        className: "margin-top",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     children: [
-                                        isFavorite ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                                            className: "btn-sm",
-                                            variant: "outline-warning",
-                                            onClick: ()=>handleRemoveFromFav(movie._id),
-                                            alt: "Remove from favourites.",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
-                                                    icon: (0, _freeSolidSvgIcons.faHeart),
-                                                    style: {
-                                                        color: "red"
-                                                    }
-                                                }, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 140,
-                                                    columnNumber: 13
-                                                }, undefined),
-                                                "\xa0Remove from list"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 136,
-                                            columnNumber: 13
-                                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                                            className: "btn-sm",
-                                            variant: "outline-warning",
-                                            onClick: ()=>handleAddToFav(movie._id),
-                                            alt: "Add to favourties.",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFontawesome.FontAwesomeIcon), {
-                                                    icon: (0, _freeRegularSvgIcons.faHeart)
-                                                }, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 147,
-                                                    columnNumber: 18
-                                                }, undefined),
-                                                "\xa0Add to List"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 143,
-                                            columnNumber: 13
-                                        }, undefined),
-                                        "\xa0\xa0",
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                            to: `/`,
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                                                variant: "warning",
-                                                className: "btn-sm",
-                                                children: "Back to list of Movies"
-                                            }, void 0, false, {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 152,
-                                                columnNumber: 9
-                                            }, undefined)
-                                        }, void 0, false, {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 151,
-                                            columnNumber: 1
-                                        }, undefined),
-                                        " "
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 134,
-                                    columnNumber: 12
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 134,
-                                columnNumber: 7
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 133,
-                            columnNumber: 5
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
-                            className: "margin-top",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                                        children: [
-                                            " ",
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
-                                                border: "light",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
-                                                            style: {
-                                                                color: "#f9de73"
-                                                            },
-                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
-                                                                children: [
-                                                                    "More ",
-                                                                    movie.Genre.Type,
-                                                                    " movies:"
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 160,
-                                                                columnNumber: 52
-                                                            }, undefined)
-                                                        }, void 0, false, {
-                                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 160,
-                                                            columnNumber: 11
-                                                        }, undefined),
-                                                        similarMovies.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
-                                                            variant: "flush",
-                                                            children: similarMovies.map((similarMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
-                                                                    style: {
-                                                                        color: "#ffffff"
-                                                                    },
-                                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                                        to: `/movies/${similarMovie._id}`,
-                                                                        children: similarMovie.Title
-                                                                    }, void 0, false, {
-                                                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                                                        lineNumber: 165,
-                                                                        columnNumber: 17
-                                                                    }, undefined)
-                                                                }, similarMovie._id, false, {
-                                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                                    lineNumber: 164,
-                                                                    columnNumber: 15
-                                                                }, undefined))
-                                                        }, void 0, false, {
-                                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 162,
-                                                            columnNumber: 11
-                                                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
-                                                            style: {
-                                                                color: "#ffffff"
-                                                            },
-                                                            children: [
-                                                                "There are no other movies of the ",
-                                                                movie.Director.Name,
-                                                                " Genre listed in this database."
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 170,
-                                                            columnNumber: 12
-                                                        }, undefined)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 159,
-                                                    columnNumber: 9
-                                                }, undefined)
-                                            }, void 0, false, {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 158,
-                                                columnNumber: 7
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 158,
-                                        columnNumber: 1
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
+                                        " ",
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
                                             border: "light",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
                                                 children: [
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
                                                         style: {
-                                                            color: "#f9de73"
+                                                            color: "#f6c344"
                                                         },
                                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
                                                             children: [
-                                                                "More movies by ",
-                                                                movie.Director.Name,
-                                                                ":"
+                                                                "More ",
+                                                                movie.Genre.Type,
+                                                                " movies:"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 178,
+                                                            lineNumber: 158,
                                                             columnNumber: 52
                                                         }, undefined)
                                                     }, void 0, false, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 178,
+                                                        lineNumber: 158,
                                                         columnNumber: 11
                                                     }, undefined),
-                                                    directorMovies.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
+                                                    similarMovies.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
                                                         variant: "flush",
-                                                        children: directorMovies.map((directorMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
+                                                        children: similarMovies.map((similarMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
                                                                 style: {
                                                                     color: "#ffffff"
                                                                 },
                                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                                                    to: `/movies/${directorMovie._id}`,
-                                                                    children: directorMovie.Title
+                                                                    to: `/movies/${similarMovie._id}`,
+                                                                    children: similarMovie.Title
                                                                 }, void 0, false, {
                                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                                    lineNumber: 183,
-                                                                    columnNumber: 19
+                                                                    lineNumber: 163,
+                                                                    columnNumber: 17
                                                                 }, undefined)
-                                                            }, directorMovie._id, false, {
+                                                            }, similarMovie._id, false, {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 182,
-                                                                columnNumber: 17
+                                                                lineNumber: 162,
+                                                                columnNumber: 15
                                                             }, undefined))
                                                     }, void 0, false, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 180,
-                                                        columnNumber: 13
+                                                        lineNumber: 160,
+                                                        columnNumber: 11
                                                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
                                                         style: {
                                                             color: "#ffffff"
                                                         },
                                                         children: [
-                                                            "There are no other movies by ",
+                                                            "There are no other movies of the ",
                                                             movie.Director.Name,
-                                                            " listed in this database."
+                                                            " Genre listed in this database."
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 188,
-                                                        columnNumber: 13
+                                                        lineNumber: 168,
+                                                        columnNumber: 12
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 177,
+                                                lineNumber: 157,
                                                 columnNumber: 9
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 176,
-                                            columnNumber: 6
+                                            lineNumber: 156,
+                                            columnNumber: 7
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 156,
+                                    columnNumber: 1
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default), {
+                                        border: "light",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Title, {
+                                                    style: {
+                                                        color: "#f6c344"
+                                                    },
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h6", {
+                                                        children: [
+                                                            "More movies by ",
+                                                            movie.Director.Name,
+                                                            ":"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 176,
+                                                        columnNumber: 52
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 176,
+                                                    columnNumber: 11
+                                                }, undefined),
+                                                directorMovies.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
+                                                    variant: "flush",
+                                                    children: directorMovies.map((directorMovie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
+                                                            style: {
+                                                                color: "#ffffff"
+                                                            },
+                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                                                to: `/movies/${directorMovie._id}`,
+                                                                children: directorMovie.Title
+                                                            }, void 0, false, {
+                                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                                lineNumber: 181,
+                                                                columnNumber: 19
+                                                            }, undefined)
+                                                        }, directorMovie._id, false, {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 180,
+                                                            columnNumber: 17
+                                                        }, undefined))
+                                                }, void 0, false, {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 178,
+                                                    columnNumber: 13
+                                                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
+                                                    style: {
+                                                        color: "#ffffff"
+                                                    },
+                                                    children: [
+                                                        "There are no other movies by ",
+                                                        movie.Director.Name,
+                                                        " listed in this database."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 186,
+                                                    columnNumber: 13
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 175,
+                                            columnNumber: 9
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 176,
-                                        columnNumber: 1
+                                        lineNumber: 174,
+                                        columnNumber: 6
                                     }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 157,
-                                columnNumber: 5
-                            }, undefined)
-                        }, void 0, false, {
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 174,
+                                    columnNumber: 1
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 155,
                             columnNumber: 5
                         }, undefined)
-                    ]
-                }, void 0, true, {
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 154,
+                        columnNumber: 5
+                    }, undefined)
+                }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 132,
+                    lineNumber: 153,
                     columnNumber: 5
                 }, undefined)
             ]

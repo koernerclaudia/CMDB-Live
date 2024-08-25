@@ -133,7 +133,7 @@ export const ProfileView = ({ user, token, movies }) => {
     <>
    
       <Row>
-        <Col>
+        <Col xs={12} md="auto">
         
             <Card className="profile-view margin-top bg-altdark" border="warning">
               <Card.Body>
@@ -144,7 +144,7 @@ export const ProfileView = ({ user, token, movies }) => {
 
             </Col>
 
-            <Col>
+            <Col xs={12} md="auto">
             <Card className="profile-view margin-top" border="warning">
               <Card.Body>
                 <Card.Title style={{ color: "#f6c344" }} >Change your info</Card.Title>
@@ -207,17 +207,17 @@ export const ProfileView = ({ user, token, movies }) => {
                 <Card key={movie._id} className="mb-3">
                   <Card.Body className="d-flex">
                   <Row className="w-100">
-                  <Col className="col-1 d-flex justify-content-left align-items-center">
+                  <Col md="auto" className="col-1 d-flex justify-content-left align-items-center">
                     <img src={movie.ImageURL} style={{ width: "45px", height: "65px" }}/>
                     </Col>
-                    <Col className="col-5 d-flex justify-content-left align-items-center">
+                    <Col md="auto" className="col-5 d-flex justify-content-left align-items-center">
                     <Card.Title style={{ color: "#f6c344" }}>{movie.Title}</Card.Title>
                     </Col>
-                    <Col className="col-3 d-flex justify-content-center align-items-center">
+                    <Col md="auto" className="col-3 d-flex justify-content-center align-items-center">
                     <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
       <Button className="btn-sm" variant="warning">More info</Button>
     </Link></Col>
-                    <Col className="col-3 d-flex justify-content-right align-items-center"><Button
+                    <Col md="auto" className="col-3 d-flex justify-content-right align-items-center"><Button
                       variant="outline-light"
                       className="ms-auto btn-sm"
                       onClick={() => handleRemoveFavorite(movie._id)} alt ="Remove from favourites."

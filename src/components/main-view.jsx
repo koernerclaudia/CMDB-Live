@@ -66,7 +66,7 @@ export const MainView = () => {
                 {user ? (
                   <Navigate to="/" />
                 ) : (
-                  <Col md={4} className="d-flex flex-column align-items-center">
+                  <Col md={4} xs={1} className="d-flex flex-column align-items-center">
                     <SignupView />
                   </Col>
                 )}
@@ -81,7 +81,7 @@ export const MainView = () => {
                 {user ? (
                   <Navigate to="/" />
                 ) : (
-                  <Col md={4} className="d-flex flex-column align-items-center">
+                  <Col md={4} xs={1} className="d-flex flex-column align-items-center">
                   <LoginView onLoggedIn={(user, token) => {
             setUser(user);
             setToken(token);
@@ -121,7 +121,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     {movies.map((movie) => (
-                      <Col className="mb-4" key={movie._id} md={4}>
+                      <Col className="mb-4" key={movie._id} md={4} xs={12}>
                         <MovieCard movie={movie} />
                       </Col>
                     ))}

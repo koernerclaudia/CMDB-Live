@@ -106,33 +106,23 @@ export const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByD
 
     <Row>
 <Col> <Card border="light">
-        <Card.Body>
-        <Card.Img variant="top" src={movie.ImageURL} className="cover-img"/>
-        </Card.Body>
+        <Card.Img variant="top" src={movie.ImageURL} className="main-view-img"/>
       </Card></Col>
 <Col><Card border="light">
         <Card.Body>
-        <Card.Title style={{ color: "#f9de73" }}>{movie.Title}</Card.Title>
+        <Card.Title style={{ color: "#f6c344" }}>{movie.Title}</Card.Title>
     <Card.Text>
     {movie.Description}
     </Card.Text> </Card.Body>
     <ListGroup className="list-group-flush" variant="light">
-    <ListGroup.Item style={{ color: "#ffffff" }}>Actors: {movie.Actors.join(', ')}</ListGroup.Item>  
-    <ListGroup.Item style={{ color: "#ffffff" }}>Director: {movie.Director.Name}</ListGroup.Item>
-    <ListGroup.Item style={{ color: "#ffffff" }}>Genre: {movie.Genre.Type} ( {movie.Genre.Description})</ListGroup.Item>
+    <ListGroup.Item style={{ color: "#ffffff" }}><b>Actors:</b> {movie.Actors.join(', ')}</ListGroup.Item>  
+    <ListGroup.Item style={{ color: "#ffffff" }}><b>Director:</b> {movie.Director.Name}</ListGroup.Item>
+    <ListGroup.Item style={{ color: "#ffffff" }}><b>Genre:</b> {movie.Genre.Type} ( {movie.Genre.Description})</ListGroup.Item>
     </ListGroup>
        
-      </Card></Col>
-</Row>
-
-
-
-   
-    </Card.Body>
-    <ListGroup className="list-group-flush" variant="light">
-    <ListGroup.Item style={{ color: "#ffffff" }}>
-      <Row><Col className="col-12 d-flex justify-content-center align-items-right">
-    {isFavorite ? (
+      </Card>
+      <br />
+      {isFavorite ? (
             <Button  
               className="btn-sm" variant="outline-warning"
               onClick={() => handleRemoveFromFav(movie._id)}
@@ -146,18 +136,26 @@ export const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByD
             alt ="Add to favourties.">
                  <FontAwesomeIcon icon={regularHeart} />&nbsp;Add to List
             </Button>  
-          )}&nbsp;&nbsp; 
+          )}
 
-<Link to={`/`}>
+     <br /><br />
+      <Link to={`/`}>
         <Button variant="warning" className="btn-sm">Back to list of Movies</Button>
-      </Link> </Col></Row>
-    </ListGroup.Item>
-    <ListGroup.Item className="margin-top">
+      </Link>
       
+      </Col>
+</Row>
+
+
+
+   
+    </Card.Body>
+    <ListGroup className="list-group-flush" variant="light">
+    <ListGroup.Item className="margin-top">
     <Row>
 <Col> <Card border="light">
         <Card.Body>
-          <Card.Title style={{ color: "#f9de73" }}><h6>More {movie.Genre.Type} movies:</h6></Card.Title>
+          <Card.Title style={{ color: "#f6c344" }}><h6>More {movie.Genre.Type} movies:</h6></Card.Title>
           {similarMovies.length > 0 ? (
           <ListGroup variant="flush">
             {similarMovies.map(similarMovie => (
@@ -175,7 +173,7 @@ export const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByD
       </Card></Col>
 <Col><Card border="light">
         <Card.Body>
-          <Card.Title style={{ color: "#f9de73" }}><h6>More movies by {movie.Director.Name}:</h6></Card.Title>
+          <Card.Title style={{ color: "#f6c344" }}><h6>More movies by {movie.Director.Name}:</h6></Card.Title>
           {directorMovies.length > 0 ? (
             <ListGroup variant="flush">
               {directorMovies.map(directorMovie => (

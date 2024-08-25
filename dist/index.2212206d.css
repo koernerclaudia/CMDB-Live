@@ -13,14 +13,14 @@ body {
   line-height: 1.6;
 }
 
-.card-text, .form-text, .card-body {
+.card-text, .form-text, .card-body, .list-group-item {
   color: #fff;
 }
 
 .login, .signup {
   color: #fff;
   background-color: #292929;
-  border: 1px #f9de73;
+  border: 1px solid #f9de73;
   border-radius: 20px;
   width: 100%;
   margin: 15px;
@@ -46,7 +46,10 @@ body {
 }
 
 .nav-link, .navbar-text, .navbar-brand, .nav-link.active {
-  padding-right: 30px;
+  align-items: right;
+  min-width: 150px;
+  padding-left: 5px;
+  padding-right: 5px;
   color: #f9de73 !important;
 }
 

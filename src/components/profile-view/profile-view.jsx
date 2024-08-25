@@ -130,23 +130,26 @@ export const ProfileView = ({ user, token, movies }) => {
 
   return (
     <>
-      <Container>
-        <Row>
-          <Col>
-            <Card className="profile-view margin-top bg-info">
+   
+      <Row>
+        <Col>
+        
+            <Card className="profile-view margin-top bg-altdark" border="warning">
               <Card.Body>
-                <Card.Title>Profile Information</Card.Title>
-                <UserInfo name={user.username} email={user.email} />
+                <Card.Title style={{ color: "#f9de73" }}>Profile Information</Card.Title><br /><div className="display-8" style={{ color: "#ffffff" }}>
+                <UserInfo name={user.username} email={user.email} /></div>
               </Card.Body>
             </Card>
-          </Col>
-          <Col>
-            <Card className="profile-view margin-top">
+
+            </Col>
+
+            <Col>
+            <Card className="profile-view margin-top" border="warning">
               <Card.Body>
-                <Card.Title>Change your info</Card.Title>
+                <Card.Title style={{ color: "#f9de73" }} >Change your info</Card.Title>
                 <Form onSubmit={handleSubmit} className="mb-4">
                   <Form.Group controlId="formUsername" className="mb-3">
-                    <Form.Label>Change Username</Form.Label>
+                    <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Username</Form.Label>
                     <Form.Control
                       type="text"
                       value={username}
@@ -156,7 +159,7 @@ export const ProfileView = ({ user, token, movies }) => {
                   </Form.Group>
 
                   <Form.Group controlId="formPassword" className="mb-3">
-                    <Form.Label>Change Password</Form.Label>
+                    <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Password</Form.Label>
                     <Form.Control
                       type="password"
                       value={password}
@@ -166,7 +169,7 @@ export const ProfileView = ({ user, token, movies }) => {
                   </Form.Group>
 
                   <Form.Group controlId="formEmail" className="mb-3">
-                    <Form.Label>Change Email</Form.Label>
+                    <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Email</Form.Label>
                     <Form.Control
                       type="email"
                       value={email}
@@ -176,14 +179,16 @@ export const ProfileView = ({ user, token, movies }) => {
                   </Form.Group>
 
                   <Button
-                    variant="info margin-top"
+                    variant="warning" 
                     type="submit"
-                    className="me-2"
+                    className="me-2 margin-top btn-sm margin-top"
                   >
                     Update Profile
                   </Button>
                   <Button
-                    variant="danger margin-top"
+                   variant="light" 
+                   type="submit"
+                   className="me-2 margin-top btn-sm margin-top"
                     onClick={handleDeregister}
                   >
                     Delete my account
@@ -191,10 +196,9 @@ export const ProfileView = ({ user, token, movies }) => {
                 </Form>
               </Card.Body>
             </Card>
-          </Col>
-        </Row>
+            </Col></Row>
 
-        <Card className="profile-view margin-top bg-info">
+        <Card className="profile-view margin-top bg-warning">
           <Card.Body>
             <Card.Title>Favorite Movies</Card.Title>
             {favoriteMovies.length > 0 ? (
@@ -220,7 +224,7 @@ export const ProfileView = ({ user, token, movies }) => {
             )}
           </Card.Body>
         </Card>
-      </Container>
+        
     </>
   );
 };

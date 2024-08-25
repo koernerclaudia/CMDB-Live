@@ -1,8 +1,7 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "./cmdb-logo.png";
-
-export const Navigation = ({ user, onLoggedOut }) => {
+export const Navigation = ({ user }) => {
 
   const handleLogout = () => {
     localStorage.clear();

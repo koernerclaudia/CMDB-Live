@@ -69,7 +69,10 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col md={4} className="d-flex flex-column align-items-center">
-                    <LoginView onLoggedIn={(user) => setUser(user)} />
+                  <LoginView onLoggedIn={(user, token) => {
+            setUser(user);
+            setToken(token);
+          }} />
                   </Col>
                 )}
               </>

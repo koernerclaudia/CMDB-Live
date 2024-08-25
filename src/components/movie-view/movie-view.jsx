@@ -12,22 +12,22 @@ export const MovieView = ({ movies }) => {
 
   return (
     <>
-    <Card style={{ width: '40rem' }} border="info" >
+    <Card style={{ width: '40rem' }} border="warning" >
     <Card.Img variant="top" src={movie.ImageURL} className="img-in-view"/>
     <Card.Body>
-    <Card.Title>{movie.Title}</Card.Title>
+    <Card.Title style={{ color: "#f9de73" }}>{movie.Title}</Card.Title>
     <Card.Text>
     {movie.Description}
     </Card.Text>
     </Card.Body>
-    <ListGroup className="list-group-flush">
-    <ListGroup.Item>Actors: {movie.Actors.join(', ')}</ListGroup.Item>  
-    <ListGroup.Item>Director: {movie.Director.Name}</ListGroup.Item>
-    <ListGroup.Item>Genre: {movie.Genre.Type} ( {movie.Genre.Description})</ListGroup.Item>
+    <ListGroup className="list-group-flush" variant="light">
+    <ListGroup.Item style={{ color: "#ffffff" }}>Actors: {movie.Actors.join(', ')}</ListGroup.Item>  
+    <ListGroup.Item style={{ color: "#ffffff" }}>Director: {movie.Director.Name}</ListGroup.Item>
+    <ListGroup.Item style={{ color: "#ffffff" }}>Genre: {movie.Genre.Type} ( {movie.Genre.Description})</ListGroup.Item>
     </ListGroup>
     </Card><br />
     <Link to={`/`}>
-        <Button variant="info">Back to list of Movies</Button>
+        <Button variant="warning" className="btn-sm">Back to list of Movies</Button>
       </Link>
     </>
 

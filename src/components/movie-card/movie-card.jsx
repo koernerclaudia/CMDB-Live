@@ -92,32 +92,32 @@ export const MovieCard = ({ movie, updateAction }) => {
   
   return (
     <Card className="h-100" border="warning" >
-      <div><img src={movie.ImageURL} className="cover-img" style={{ zIndex: '-2' }}/></div>
+      <div><img src={movie.ImageURL} className="cover-img"/></div>
       <Card.Body>
-        <Card.Title style={{ color: "#f9de73" }}>{movie.Title}</Card.Title>
+        <Card.Title style={{ color: "#f6c344" }}>{movie.Title}</Card.Title>
         <Card.Text><b>With:</b> {movie.Actors.join(', ')}
         </Card.Text>
         <Card.Text><b>Directed by:</b> {movie.Director.Name}</Card.Text>
-        <Row>
-          <Col sm={8}>
+        <Row >
+          <Col className="col-6 d-flex justify-content-right align-items-center">
           <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
       
           <Button className="btn-sm margin-top" variant="warning">More info</Button>
         </Link></Col>
-        <Col sm={4} className="justify-content-end">
+        <Col className="col-6 d-flex justify-content-left align-items-center">
           {isFavorite ? (
-            <Button variant="dark"
-              className="btn-sm margin-top"
+            <Button  
+              className="btn-sm margin-top" variant="outline-warning"
               onClick={() => handleRemoveFromFav(movie._id)}
               alt ="Remove from favourites.">
-            <FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }} />
+            <FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }} />&nbsp;Remove from list
             </Button>
           ) : (
-            <Button variant="dark"
-              className="btn-sm margin-top"
+            <Button 
+              className="btn-sm margin-top" variant="outline-warning"
               onClick={() => handleAddToFav(movie._id)}
             alt ="Add to favourties.">
-                 <FontAwesomeIcon icon={regularHeart} />
+                 <FontAwesomeIcon icon={regularHeart} />&nbsp;Add to list
             </Button>  
           )}
        </Col></Row>

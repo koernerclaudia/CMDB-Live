@@ -37,6 +37,19 @@ export const MainView = () => {
     return <div className="centered-loading">Loading movies...</div>;
   }
 
+  const getSimilarMovies = (movie) => {
+    return movies.filter(m => 
+      m.Genre.Type === movie.Genre.Type && m._id !== movie._id
+    ).slice(0, 10); // Get up to 10 similar movies
+  };
+
+  const getMoviesByDirector = (movie) => {
+    return movies.filter(m => 
+      m.Director.Name === movie.Director.Name && m._id !== movie._id
+    ).slice(0, 10); // Get up to 10 movies by the same director
+  };
+  
+
   return (
     <BrowserRouter><Navigation
     user={user}
@@ -89,7 +102,9 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <Col md={8} className="d-flex flex-column align-items-center">
-                    <MovieView movies={movies} />
+                    <MovieView movies={movies}
+                    getSimilarMovies={getSimilarMovies} 
+                    getMoviesByDirector={getMoviesByDirector}/>
                   </Col>
                 )}
               </>
@@ -106,7 +121,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     {movies.map((movie) => (
-                      <Col className="mb-4" key={movie._id} md={3}>
+                      <Col className="mb-4" key={movie._id} md={4}>
                         <MovieCard movie={movie} />
                       </Col>
                     ))}

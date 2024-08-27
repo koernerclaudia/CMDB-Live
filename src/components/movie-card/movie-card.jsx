@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
-import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'; 
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 
 export const MovieCard = ({ movie, updateAction }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const MovieID = movie._id;
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem("user"));
     if (user && user.FavoriteMovies && user.FavoriteMovies.includes(MovieID)) {
       setIsFavorite(true);
     }
@@ -23,28 +22,28 @@ export const MovieCard = ({ movie, updateAction }) => {
 
   const handleAddToFav = async (MovieID) => {
     try {
-      const user = JSON.parse(localStorage.getItem('user'));
-      const token = localStorage.getItem('token');
-      if (!token) throw new Error('No token found');
+      const user = JSON.parse(localStorage.getItem("user"));
+      const token = localStorage.getItem("token");
+      if (!token) throw new Error("No token found");
 
       const response = await fetch(
         `https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${MovieID}`,
         {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
         }
       );
 
       if (!response.ok) {
-        if (response.status === 401) throw new Error('Unauthorized');
-        throw new Error('Failed to add movie to favorites');
+        if (response.status === 401) throw new Error("Unauthorized");
+        throw new Error("Failed to add movie to favorites");
       }
 
       const updatedUser = await response.json();
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(true);
       updateAction(MovieID);
     } catch (error) {
@@ -56,31 +55,31 @@ export const MovieCard = ({ movie, updateAction }) => {
 
   const handleRemoveFromFav = async (MovieID) => {
     try {
-      const user = JSON.parse(localStorage.getItem('user'));
-      const token = localStorage.getItem('token');
-      if (!token) throw new Error('No token found');
+      const user = JSON.parse(localStorage.getItem("user"));
+      const token = localStorage.getItem("token");
+      if (!token) throw new Error("No token found");
 
       const response = await fetch(
         `https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${MovieID}`,
         {
-          method: 'DELETE',
+          method: "DELETE",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
         }
       );
 
       if (!response.ok) {
-        if (response.status === 401) throw new Error('Unauthorized');
-        throw new Error('Failed to remove movie from favorites');
+        if (response.status === 401) throw new Error("Unauthorized");
+        throw new Error("Failed to remove movie from favorites");
       }
 
       const updatedUser = await response.json();
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(false);
       updateAction(MovieID);
-      alert('Movie removed from your favorite list successfully!');
+      alert("Movie removed from your favorite list successfully!");
     } catch (error) {
       console.log(
         `An error occurred while removing the movie from favorites: ${error.message}`
@@ -88,38 +87,51 @@ export const MovieCard = ({ movie, updateAction }) => {
     }
   };
 
-  
   return (
-    <Card className="h-100" border="warning" >
-      <div><img src={movie.ImageURL} className="cover-img"/></div>
+    <Card className="h-100" border="info">
+      <div>
+        <img src={movie.ImageURL} className="cover-img" />
+      </div>
       <Card.Body>
-        <Card.Title style={{ color: "#f6c344" }}>{movie.Title}</Card.Title>
-        <Card.Text><b>With:</b> {movie.Actors.join(', ')}
+        <Card.Title style={{ color: "#54B4D3" }}>{movie.Title}</Card.Title>
+        <Card.Text>
+          <b>With:</b> {movie.Actors.join(", ")}
         </Card.Text>
-        <Card.Text><b>Directed by:</b> {movie.Director.Name}</Card.Text>
-        <Row >
+        <Card.Text>
+          <b>Directed by:</b> {movie.Director.Name}
+        </Card.Text>
+        <Row>
           <Col className="col-6 d-flex justify-content-left align-items-left">
-          <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-      
-          <Button className="btn-sm margin-top" variant="warning">More info</Button>
-        </Link></Col>
-        <Col className="col-6 d-flex justify-content-right align-items-right">
-          {isFavorite ? (
-            <Button  
-              className="btn-sm margin-top" variant="outline-warning"
-              onClick={() => handleRemoveFromFav(movie._id)}
-              alt ="Remove from favourites.">
-            <FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }} />&nbsp;Remove from list
-            </Button>
-          ) : (
-            <Button 
-              className="btn-sm margin-top" variant="outline-warning"
-              onClick={() => handleAddToFav(movie._id)}
-            alt ="Add to favourties.">
-                 <FontAwesomeIcon icon={regularHeart} />&nbsp;Add to list
-            </Button>  
-          )}
-       </Col></Row>
+            <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
+              <Button className="btn-sm margin-top" variant="warning">
+                More info
+              </Button>
+            </Link>
+          </Col>
+          <Col className="col-6 d-flex justify-content-right align-items-right">
+            {isFavorite ? (
+              <Button
+                className="btn-sm margin-top"
+                variant="outline-light"
+                onClick={() => handleRemoveFromFav(movie._id)}
+                alt="Remove from favourites."
+              >
+                <FontAwesomeIcon icon={solidHeart} style={{ color: "red" }} />
+                &nbsp;Remove
+              </Button>
+            ) : (
+              <Button
+                className="btn-sm margin-top"
+                variant="outline-info"
+                onClick={() => handleAddToFav(movie._id)}
+                alt="Add to favourties."
+              >
+                <FontAwesomeIcon icon={regularHeart} />
+                &nbsp;Add to list
+              </Button>
+            )}
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   );
@@ -131,18 +143,16 @@ MovieCard.propTypes = {
     Description: PropTypes.string,
     Director: PropTypes.shape({
       Name: PropTypes.string,
-      Birthyear: PropTypes.string
+      Birthyear: PropTypes.string,
     }),
     Genre: PropTypes.shape({
       Name: PropTypes.string,
-      Description: PropTypes.string
+      Description: PropTypes.string,
     }),
     Actors: PropTypes.array.isrequired,
     ImageURL: PropTypes.string.isrequired,
     _id: PropTypes.string,
-    
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired,
-  onAddToFavorites: PropTypes.func.isRequired // New prop type
+  onAddToFavorites: PropTypes.func.isRequired, // New prop type
 };
-

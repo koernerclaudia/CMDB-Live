@@ -43,7 +43,7 @@ export const SignupView = () => {
         onChange={(e) => setUsername(e.target.value)}
         required
         minLength="3" 
-        // placeholder="Choose a Username" - will reapply once I can fix CSS
+       
       />
     </Form.Group>
 
@@ -54,8 +54,7 @@ export const SignupView = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
-        // placeholder="Choose a Password" - will reapply once I can fix CSS
-      />
+     
     </Form.Group>
     <Form.Group controlId="formEmail">
       <Form.Label>Email:</Form.Label>
@@ -64,10 +63,10 @@ export const SignupView = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        // placeholder="Your Email" - will reapply once I can fix CSS
+       
       />
     </Form.Group>
-    <Button variant="warning" className="margin-top btn-sm" type="submit">
+    <Button variant="info" className="margin-top btn-sm" type="submit">
         Submit
       </Button>
   </Form>

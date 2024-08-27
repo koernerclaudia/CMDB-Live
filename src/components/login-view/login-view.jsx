@@ -5,9 +5,8 @@ import Form from "react-bootstrap/Form";
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const handleSubmit = (event) => {
-    // this prevents the default behavior of the form which is to reload the entire page
     event.preventDefault();
 
     const data = {
@@ -44,29 +43,30 @@ export const LoginView = ({ onLoggedIn }) => {
     <Form className="login" onSubmit={handleSubmit}>
       <h4>Login here:</h4>
       <Form.Group controlId="formUsername">
-        <Form.Label className="display-8" >Username:</Form.Label>
-        <Form.Control className="margin-bottom"
-          style={{ color: "white"}}
+        <Form.Label className="display-8">Username:</Form.Label>
+        <Form.Control
+          className="margin-bottom"
+          style={{ color: "white" }}
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
-          placeholder="Enter your username" // Placeholder text - will reapply once I can fix CSS
+          placeholder="Enter your username"
         />
       </Form.Group>
 
       <Form.Group controlId="formPassword">
         <Form.Label className="display-8">Password:</Form.Label>
-        <Form.Control className="margin-bottom "
-        style={{ color: "white"}}
+        <Form.Control
+          className="margin-bottom "
+          style={{ color: "white" }}
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          // placeholder="Enter your password" - will reapply once I can fix CSS
         />
       </Form.Group>
-      <Button variant="warning" className="margin-top btn-sm" type="submit">
+      <Button variant="info" className="margin-top btn-sm" type="submit">
         Submit
       </Button>
     </Form>

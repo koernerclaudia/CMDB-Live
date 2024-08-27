@@ -8,8 +8,8 @@ import Form from "react-bootstrap/Form";
 import UserInfo from "./user-info";
 import { Link } from "react-router-dom";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
 export const ProfileView = ({ user, token, movies, updateAction }) => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
@@ -26,8 +26,6 @@ export const ProfileView = ({ user, token, movies, updateAction }) => {
     );
     setFavoriteMovies(favMovies);
   }, [user, movies]);
-
-
 
   const handleRemoveFavorite = (MovieID) => {
     fetch(
@@ -58,8 +56,7 @@ export const ProfileView = ({ user, token, movies, updateAction }) => {
 
   const handleLogout = () => {
     localStorage.clear();
-    window.location.href = '/login';
-
+    window.location.href = "/login";
   };
 
   const handleSubmit = (event) => {
@@ -83,9 +80,8 @@ export const ProfileView = ({ user, token, movies, updateAction }) => {
         if (response.ok) {
           alert("Profile updated successfully.");
 
-          // Update the local user state with the new values
           const updatedUserResponse = { ...user, username, email };
-          // Password is not typically returned by the API, so we should avoid storing it in the state
+
           setUsername(username);
           setEmail(email);
         } else {
@@ -115,6 +111,7 @@ export const ProfileView = ({ user, token, movies, updateAction }) => {
           if (response.ok) {
             alert("Account deleted successfully.");
             handleLogout();
+            window.location.href = "/signup";
           } else {
             alert("Failed to delete account.");
           }
@@ -132,111 +129,159 @@ export const ProfileView = ({ user, token, movies, updateAction }) => {
 
   return (
     <>
-   
       <Row>
-        <Col>
-        
-            <Card className="profile-view margin-top bg-altdark" border="warning">
-              <Card.Body>
-                <Card.Title style={{ color: "#f6c344" }}>Profile Information</Card.Title><br /><div className="display-8" style={{ color: "#ffffff" }}>
-                <UserInfo name={user.username} email={user.email} /></div>
-              </Card.Body>
-            </Card>
+        <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
+          <Card className="profile-view margin-top bg-altdark" border="info">
+            <Card.Body>
+              <Card.Title style={{ color: "#54B4D3" }}>
+                Profile Information
+              </Card.Title>
+              <br />
+              <div className="display-8" style={{ color: "#ffffff" }}>
+                <UserInfo name={user.username} email={user.email} />
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
 
-            </Col>
-
-            <Col>
-            <Card className="profile-view margin-top" border="warning">
-              <Card.Body>
-                <Card.Title style={{ color: "#f6c344" }} >Change your info</Card.Title>
-                <Form onSubmit={handleSubmit} className="mb-4">
-                  <Form.Group controlId="formUsername" className="mb-3">
-                    <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Username</Form.Label>
-                    <Form.Control
-                      style={{ color: "white"}}
-                      type="text"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      placeholder="Enter new username"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formPassword" className="mb-3">
-                    <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Password</Form.Label>
-                    <Form.Control
-                      style={{ color: "white"}}
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Enter new password"
-                    />
-
-                  </Form.Group>
-
-                  <Form.Group controlId="formEmail" className="mb-3">
-                    <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Email</Form.Label>
-                    <Form.Control
-                      style={{ color: "white"}}
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter new email"
-                    />
-                  </Form.Group>
-
-                  <Button
-                    variant="warning" 
-                    type="submit"
-                    className="me-2 margin-top btn-sm margin-top"
+        <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
+          <Card className="profile-view margin-top" border="info">
+            <Card.Body>
+              <Card.Title style={{ color: "#54B4D3" }}>
+                Change your info
+              </Card.Title>
+              <Form onSubmit={handleSubmit} className="mb-4">
+                <Form.Group controlId="formUsername" className="mb-3">
+                  <Form.Label
+                    className="display-8"
+                    style={{ color: "#ffffff" }}
                   >
-                    Update Profile
-                  </Button>
-                  <Button
-                   variant="light" 
-                   type="submit"
-                   className="me-2 margin-top btn-sm margin-top"
-                    onClick={handleDeregister}
-                  >
-                    Delete my account
-                  </Button>
-                </Form>
-              </Card.Body>
-            </Card>
-            </Col></Row>
+                    Change Username
+                  </Form.Label>
+                  <Form.Control
+                    style={{ color: "white" }}
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Enter new username"
+                  />
+                </Form.Group>
 
-        <Card className="profile-view margin-top bg-warning">
-          <Card.Body>
-            <Card.Title>Favorite Movies</Card.Title>
-            {favoriteMovies.length > 0 ? (
-              favoriteMovies.map((movie) => (
-                <Card key={movie._id} className="mb-3">
-                  <Card.Body className="d-flex">
+                <Form.Group controlId="formPassword" className="mb-3">
+                  <Form.Label
+                    className="display-8"
+                    style={{ color: "#ffffff" }}
+                  >
+                    Change Password
+                  </Form.Label>
+                  <Form.Control
+                    style={{ color: "white" }}
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter new password"
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="formEmail" className="mb-3">
+                  <Form.Label
+                    className="display-8"
+                    style={{ color: "#ffffff" }}
+                  >
+                    Change Email
+                  </Form.Label>
+                  <Form.Control
+                    style={{ color: "white" }}
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter new email"
+                  />
+                </Form.Group>
+
+                <Button
+                  variant="info"
+                  type="submit"
+                  className="me-2 margin-top btn-sm margin-top"
+                >
+                  Update Profile
+                </Button>
+                <Button
+                  variant="light"
+                  type="submit"
+                  className="me-2 margin-top btn-sm margin-top"
+                  onClick={handleDeregister}
+                >
+                  Delete my account
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Card className="profile-view margin-top bg-info">
+        <Card.Body>
+          <Card.Title>Favorite Movies</Card.Title>
+          {favoriteMovies.length > 0 ? (
+            favoriteMovies.map((movie) => (
+              <Card key={movie._id} className="mb-3">
+                <Card.Body className="d-flex">
                   <Row className="w-100">
-                  <Col md="auto" className="col-1 d-flex justify-content-left align-items-center">
-                    <img src={movie.ImageURL} style={{ width: "45px", height: "65px" }} className="main-view-img"/>
+                    <Col
+                      md="auto"
+                      className="col-1 d-flex justify-content-left align-items-center"
+                    >
+                      <img
+                        src={movie.ImageURL}
+                        style={{ width: "45px", height: "65px" }}
+                        className="main-view-img"
+                      />
                     </Col>
-                    <Col md="auto" className="col-5 d-flex justify-content-left align-items-center">
-                    <Card.Title style={{ color: "#f6c344" }}>{movie.Title}</Card.Title>
+                    <Col
+                      md="auto"
+                      className="col-5 d-flex justify-content-left align-items-center"
+                    >
+                      <Card.Title style={{ color: "#54B4D3" }}>
+                        {movie.Title}
+                      </Card.Title>
                     </Col>
-                    <Col md="auto" className="col-3 d-flex justify-content-center align-items-center">
-                    <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-      <Button className="btn-sm" variant="warning">More info</Button>
-    </Link></Col>
-                    <Col md="auto" className="col-3 d-flex justify-content-right align-items-center"><Button
-                      variant="outline-light"
-                      className="ms-auto btn-sm"
-                      onClick={() => handleRemoveFavorite(movie._id)} alt ="Remove from favourites."
-                    ><FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }} />&nbsp;Remove from list   
-                    </Button></Col></Row>
-                  </Card.Body>
-                </Card>
-              ))
-            ) : (
-              <Card.Text>No favorite movies found.</Card.Text>
-            )}
-          </Card.Body>
-        </Card>
-        
+                    <Col
+                      md="auto"
+                      className="col-3 d-flex justify-content-center align-items-center"
+                    >
+                      <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
+                        <Button className="btn-sm" variant="warning">
+                          More info
+                        </Button>
+                      </Link>
+                    </Col>
+                    <Col
+                      md="auto"
+                      className="col-3 d-flex justify-content-right align-items-center"
+                    >
+                      <Button
+                        variant="outline-light"
+                        className="ms-auto btn-sm"
+                        onClick={() => handleRemoveFavorite(movie._id)}
+                        alt="Remove from favourites."
+                      >
+                        <FontAwesomeIcon
+                          icon={solidHeart}
+                          style={{ color: "red" }}
+                        />
+                        &nbsp;Remove
+                      </Button>
+                    </Col>
+                  </Row>
+                </Card.Body>
+              </Card>
+            ))
+          ) : (
+            <Card.Text>No favorite movies found.</Card.Text>
+          )}
+        </Card.Body>
+      </Card>
     </>
   );
 };

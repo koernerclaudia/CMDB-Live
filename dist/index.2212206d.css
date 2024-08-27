@@ -36,7 +36,7 @@
 }
 
 .nav-link:hover, .nav-link:focus, .navbar-text:hover, .navbar-text:focus, .navbar-brand:hover, .navbar-brand:focus, .nav-link.active:hover, .nav-link.active:focus {
-  color: #fff !important;
+  color: #fff;
 }
 
 .logo {
@@ -7218,7 +7218,7 @@ textarea.form-control-lg {
   vertical-align: middle;
   cursor: wait;
   opacity: .5;
-  background-color: #fff;
+  background-color: currentColor;
   min-height: 1em;
   display: inline-block;
 }

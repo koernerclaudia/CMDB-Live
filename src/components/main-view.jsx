@@ -48,6 +48,17 @@ export const MainView = () => {
       m.Director.Name === movie.Director.Name && m._id !== movie._id
     ).slice(0, 10); // Get up to 10 movies by the same director
   };
+
+  const updateAction = (movieId) => {
+    const updatedUser = JSON.parse(localStorage.getItem('user'));
+    if (updatedUser.FavoriteMovies.includes(movieId)) {
+      updatedUser.FavoriteMovies = updatedUser.FavoriteMovies.filter(id => id !== movieId);
+    } else {
+      updatedUser.FavoriteMovies.push(movieId);
+    }
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+    setUser(updatedUser);
+  };
   
 
   return (
@@ -104,7 +115,8 @@ export const MainView = () => {
                   <Col md={8} className="d-flex flex-column align-items-center">
                     <MovieView movies={movies}
                     getSimilarMovies={getSimilarMovies} 
-                    getMoviesByDirector={getMoviesByDirector}/>
+                    getMoviesByDirector={getMoviesByDirector}
+                    updateAction={updateAction}/>
                   </Col>
                 )}
               </>
@@ -137,8 +149,8 @@ export const MainView = () => {
                 <Navigate to="/login" replace />
               ) : (
                 <Col md={12}>
-                  <ProfileView user={user} token={token} movies={movies} />
-                </Col>
+                <ProfileView user={user} token={token} movies={movies} updateAction={updateAction} />
+              </Col>
               )
             }
           />

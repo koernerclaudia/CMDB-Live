@@ -20,18 +20,29 @@ export const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByD
   const directorMovies = getMoviesByDirector(movie);
 
   useEffect(() => {
+    if (movie) {
+      setIsFavorite(checkIfFavorite(movie._id));
+    }
+  }, [MovieID, movie]);
+
+  useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user && user.FavoriteMovies && user.FavoriteMovies.includes(MovieID)) {
       setIsFavorite(true);
     }
   }, [MovieID]);
 
+  const checkIfFavorite = (movieId) => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user && user.FavoriteMovies && user.FavoriteMovies.includes(movieId);
+  };
+
   const handleAddToFav = async (MovieID) => {
     try {
       const user = JSON.parse(localStorage.getItem('user'));
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
-
+  
       const response = await fetch(
         `https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${MovieID}`,
         {
@@ -42,30 +53,29 @@ export const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByD
           },
         }
       );
-
+  
       if (!response.ok) {
         if (response.status === 401) throw new Error('Unauthorized');
         throw new Error('Failed to add movie to favorites');
       }
-
+  
       const updatedUser = await response.json();
       localStorage.setItem('user', JSON.stringify(updatedUser));
       setIsFavorite(true);
       updateAction(MovieID);
-      alert('Movie added to your favorite list successfully!');
     } catch (error) {
       console.log(
         `An error occurred while adding the movie to favorites: ${error.message}`
       );
     }
   };
-
+  
   const handleRemoveFromFav = async (MovieID) => {
     try {
       const user = JSON.parse(localStorage.getItem('user'));
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
-
+  
       const response = await fetch(
         `https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${MovieID}`,
         {
@@ -76,17 +86,16 @@ export const MovieView = ({ movies, getSimilarMovies, updateAction, getMoviesByD
           },
         }
       );
-
+  
       if (!response.ok) {
         if (response.status === 401) throw new Error('Unauthorized');
         throw new Error('Failed to remove movie from favorites');
       }
-
+  
       const updatedUser = await response.json();
       localStorage.setItem('user', JSON.stringify(updatedUser));
       setIsFavorite(false);
       updateAction(MovieID);
-      alert('Movie removed from your favorite list successfully!');
     } catch (error) {
       console.log(
         `An error occurred while removing the movie from favorites: ${error.message}`

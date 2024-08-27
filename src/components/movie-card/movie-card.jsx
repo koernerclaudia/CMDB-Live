@@ -47,7 +47,6 @@ export const MovieCard = ({ movie, updateAction }) => {
       localStorage.setItem('user', JSON.stringify(updatedUser));
       setIsFavorite(true);
       updateAction(MovieID);
-      alert('Movie added to your favorite list successfully!');
     } catch (error) {
       console.log(
         `An error occurred while adding the movie to favorites: ${error.message}`
@@ -99,12 +98,12 @@ export const MovieCard = ({ movie, updateAction }) => {
         </Card.Text>
         <Card.Text><b>Directed by:</b> {movie.Director.Name}</Card.Text>
         <Row >
-          <Col className="col-6 d-flex justify-content-right align-items-center">
+          <Col className="col-6 d-flex justify-content-left align-items-left">
           <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
       
           <Button className="btn-sm margin-top" variant="warning">More info</Button>
         </Link></Col>
-        <Col className="col-6 d-flex justify-content-left align-items-center">
+        <Col className="col-6 d-flex justify-content-right align-items-right">
           {isFavorite ? (
             <Button  
               className="btn-sm margin-top" variant="outline-warning"

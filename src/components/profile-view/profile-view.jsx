@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 
-export const ProfileView = ({ user, token, movies }) => {
+export const ProfileView = ({ user, token, movies, updateAction }) => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
   const [username, setUsername] = useState(user.username);
   const [password, setPassword] = useState("");
@@ -58,7 +58,8 @@ export const ProfileView = ({ user, token, movies }) => {
 
   const handleLogout = () => {
     localStorage.clear();
-    window.location.reload(); // Refresh the page to trigger logout
+    window.location.href = '/login';
+
   };
 
   const handleSubmit = (event) => {
@@ -133,7 +134,7 @@ export const ProfileView = ({ user, token, movies }) => {
     <>
    
       <Row>
-        <Col xs={12} md="auto">
+        <Col>
         
             <Card className="profile-view margin-top bg-altdark" border="warning">
               <Card.Body>
@@ -144,7 +145,7 @@ export const ProfileView = ({ user, token, movies }) => {
 
             </Col>
 
-            <Col xs={12} md="auto">
+            <Col>
             <Card className="profile-view margin-top" border="warning">
               <Card.Body>
                 <Card.Title style={{ color: "#f6c344" }} >Change your info</Card.Title>
@@ -152,6 +153,7 @@ export const ProfileView = ({ user, token, movies }) => {
                   <Form.Group controlId="formUsername" className="mb-3">
                     <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Username</Form.Label>
                     <Form.Control
+                      style={{ color: "white"}}
                       type="text"
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
@@ -162,16 +164,19 @@ export const ProfileView = ({ user, token, movies }) => {
                   <Form.Group controlId="formPassword" className="mb-3">
                     <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Password</Form.Label>
                     <Form.Control
+                      style={{ color: "white"}}
                       type="password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Enter new password"
                     />
+
                   </Form.Group>
 
                   <Form.Group controlId="formEmail" className="mb-3">
                     <Form.Label className="display-8" style={{ color: "#ffffff" }}>Change Email</Form.Label>
                     <Form.Control
+                      style={{ color: "white"}}
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -208,7 +213,7 @@ export const ProfileView = ({ user, token, movies }) => {
                   <Card.Body className="d-flex">
                   <Row className="w-100">
                   <Col md="auto" className="col-1 d-flex justify-content-left align-items-center">
-                    <img src={movie.ImageURL} style={{ width: "45px", height: "65px" }}/>
+                    <img src={movie.ImageURL} style={{ width: "45px", height: "65px" }} className="main-view-img"/>
                     </Col>
                     <Col md="auto" className="col-5 d-flex justify-content-left align-items-center">
                     <Card.Title style={{ color: "#f6c344" }}>{movie.Title}</Card.Title>

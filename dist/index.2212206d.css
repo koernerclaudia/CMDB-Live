@@ -53,6 +53,10 @@
   margin-bottom: 15px;
 }
 
+input::placeholder {
+  color: #fff;
+}
+
 :root, [data-bs-theme="light"] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -7217,8 +7221,8 @@ textarea.form-control-lg {
 .placeholder {
   vertical-align: middle;
   cursor: wait;
-  opacity: .5;
-  background-color: currentColor;
+  opacity: none;
+  background-color: #fff;
   min-height: 1em;
   display: inline-block;
 }

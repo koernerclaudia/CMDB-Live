@@ -80,4 +80,34 @@ $grid-breakpoints: (
   margin-bottom: 15px;
 }
 
+input::placeholder {
+  color: white;
+}
+
+// .custom-search-input {
+//   background-color: #333; /* Dark background */
+//   border: 1px solid #555; /* Dark border */
+// }
+
+// .custom-search-input:focus {
+//   background-color: #444; /* Slightly lighter background when focused */
+//   border-color: #666; /* Lighter border when focused */
+//   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25); /* White glow when focused */
+// }
+
+// .custom-search-input::placeholder {
+//   color: #c7c5c5; /* Change this to whatever color you want */
+//   opacity: 1; /* Firefox */
+// }
+
+// /* For Internet Explorer */
+// .custom-search-input:-ms-input-placeholder {
+//   color: #c7c5c5;
+// }
+
+// /* For Microsoft Edge */
+// .custom-search-input::-ms-input-placeholder {
+//   color: #c7c5c5;
+// }
+
 @import "~bootstrap/scss/bootstrap.scss";

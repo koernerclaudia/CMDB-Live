@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Navigation } from "./navigation/navigation";
 import { ProfileView } from "./profile-view/profile-view";
+import Form from "react-bootstrap/Form";
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -16,11 +17,12 @@ export const MainView = () => {
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     if (!token) return;
 
-    setLoading(true); // Start loading
+    setLoading(true);
     fetch("https://cmdb-b8f3cd58963f.herokuapp.com/movies", {
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -32,9 +34,46 @@ export const MainView = () => {
       .catch(() => setLoading(false));
   }, [token]);
 
-  if (loading) {
-    return <div className="centered-loading">Loading movies...</div>;
-  }
+  const updateAction = (movieId) => {
+    const updatedUser = JSON.parse(localStorage.getItem("user"));
+    if (updatedUser.FavoriteMovies.includes(movieId)) {
+      updatedUser.FavoriteMovies = updatedUser.FavoriteMovies.filter(
+        (id) => id !== movieId
+      );
+    } else {
+      updatedUser.FavoriteMovies.push(movieId);
+    }
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+    setUser(updatedUser);
+  };
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredMovies = movies.filter((movie) => {
+    if (!movie) return false;
+    const searchTermLower = searchTerm.toLowerCase();
+
+    // Check if any actor's name includes the search term
+    const actorMatch =
+      movie.Actors &&
+      Array.isArray(movie.Actors) &&
+      movie.Actors.some((actor) =>
+        actor.toLowerCase().includes(searchTermLower)
+      );
+
+    return (
+      (movie.Title && movie.Title.toLowerCase().includes(searchTermLower)) ||
+      (movie.Genre &&
+        movie.Genre.Type &&
+        movie.Genre.Type.toLowerCase().includes(searchTermLower)) ||
+      (movie.Director &&
+        movie.Director.Name &&
+        movie.Director.Name.toLowerCase().includes(searchTermLower)) ||
+      actorMatch
+    );
+  });
 
   const getSimilarMovies = (movie) => {
     return movies
@@ -50,18 +89,9 @@ export const MainView = () => {
       .slice(0, 10);
   };
 
-  const updateAction = (movieId) => {
-    const updatedUser = JSON.parse(localStorage.getItem("user"));
-    if (updatedUser.FavoriteMovies.includes(movieId)) {
-      updatedUser.FavoriteMovies = updatedUser.FavoriteMovies.filter(
-        (id) => id !== movieId
-      );
-    } else {
-      updatedUser.FavoriteMovies.push(movieId);
-    }
-    localStorage.setItem("user", JSON.stringify(updatedUser));
-    setUser(updatedUser);
-  };
+  if (loading) {
+    return <div className="centered-loading">Loading movies...</div>;
+  }
 
   return (
     <BrowserRouter>
@@ -99,8 +129,8 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col
-                    xs={1}
                     md={4}
+                    xs={1}
                     className="d-flex flex-column align-items-center"
                   >
                     <LoginView
@@ -145,20 +175,36 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => (
-                      <Col
-                        className="mb-4"
-                        key={movie._id}
-                        xxl={4}
-                        xl={4}
-                        lg={4}
-                        md={6}
-                        sm={12}
-                        xs={12}
-                      >
-                        <MovieCard movie={movie} />
+                    <Row className="mb-3">
+                      <Col md={6} sm={6} xs={6} className="mx-auto">
+                        <Form.Control className="placeholder"
+                          noValidate
+                          style={{ color: "white" }}
+                          type="text"
+                          placeholder="Search by movie title, genre, actor or director"
+                          value={searchTerm}
+                          aria-describedby="inputGroupPrepend"
+                          onChange={handleSearch}
+                        />
                       </Col>
-                    ))}
+                    </Row>
+                    {filteredMovies.length === 0 ? (
+                      <Col md={6} className="mx-auto">
+                        <p
+                          style={{
+                            color: "white",
+                          }}
+                        >
+                          Sorry, no movies found matching your search.
+                        </p>
+                      </Col>
+                    ) : (
+                      filteredMovies.map((movie) => (
+                        <Col className="mb-4" key={movie._id} md={4} xs={12}>
+                          <MovieCard movie={movie} />
+                        </Col>
+                      ))
+                    )}
                   </>
                 )}
               </>

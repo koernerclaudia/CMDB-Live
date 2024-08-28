@@ -56,7 +56,7 @@ $grid-breakpoints: (
 .navbar-text,
 .navbar-brand,
 .nav-link.active {
-  color: $info !important;
+  color: $info;
   padding-left: 15px;
   padding-right: 15px;
 
@@ -110,4 +110,4 @@ input::placeholder {
 //   color: #c7c5c5;
 // }
 
-@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/bootstrap.scss"

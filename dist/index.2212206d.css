@@ -30,9 +30,9 @@
 }
 
 .nav-link, .navbar-text, .navbar-brand, .nav-link.active {
+  color: #0dcaf0;
   padding-left: 15px;
   padding-right: 15px;
-  color: #0dcaf0 !important;
 }
 
 .nav-link:hover, .nav-link:focus, .navbar-text:hover, .navbar-text:focus, .navbar-brand:hover, .navbar-brand:focus, .nav-link.active:hover, .nav-link.active:focus {

@@ -7,6 +7,8 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import UserInfo from "./user-info";
 import { Link } from "react-router-dom";
+import "../../index.scss";
+
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";

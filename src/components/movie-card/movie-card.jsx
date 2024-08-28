@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../../index.scss";
 import PropTypes from "prop-types";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";

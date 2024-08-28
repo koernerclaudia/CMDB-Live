@@ -36,35 +36,6 @@ $grid-breakpoints: (
   
 }
 
-.cover-img {
-  object-fit: cover;
-  width: 100%;   /* Ensures the image takes up the full width of the container */
-  height: 250px; /* Sets a specific height for the image container */
-  object-position: top;
-  border-radius: 5px 5px 0 0 ;
-}
-
-.main-view-img {
-  object-fit: cover;
-  width: 100%;   /* Ensures the image takes up the full width of the container */
-  height: 400px;
-  object-position: top;
-  border-radius: 5px;
-}
-
-.nav-link,
-.navbar-text,
-.navbar-brand,
-.nav-link.active {
-  color: $info;
-  padding-left: 15px;
-  padding-right: 15px;
-
-  &:hover,
-  &:focus {
-    color: #ffffff;
-  }
-}
 
 .logo {
   padding: 15px;
@@ -84,31 +55,35 @@ input::placeholder {
   color: white;
 }
 
-// .custom-search-input {
-//   background-color: #333; /* Dark background */
-//   border: 1px solid #555; /* Dark border */
-// }
 
-// .custom-search-input:focus {
-//   background-color: #444; /* Slightly lighter background when focused */
-//   border-color: #666; /* Lighter border when focused */
-//   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25); /* White glow when focused */
-// }
+.cover-img {
+  object-fit: cover;
+  width: 100%;   /* Ensures the image takes up the full width of the container */
+  height: 250px; /* Sets a specific height for the image container */
+  object-position: top;
+  border-radius: 5px 5px 0 0 ;
+}
 
-// .custom-search-input::placeholder {
-//   color: #c7c5c5; /* Change this to whatever color you want */
-//   opacity: 1; /* Firefox */
-// }
-
-// /* For Internet Explorer */
-// .custom-search-input:-ms-input-placeholder {
-//   color: #c7c5c5;
-// }
-
-// /* For Microsoft Edge */
-// .custom-search-input::-ms-input-placeholder {
-//   color: #c7c5c5;
-// }
+.main-view-img {
+  object-fit: cover;
+  width: 100%;   /* Ensures the image takes up the full width of the container */
+  height: 400px;
+  object-position: top;
+  border-radius: 5px;
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+.nav-link,
+.navbar-text,
+.navbar-brand,
+.nav-link.active {
+  color: $info;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+  }
+}

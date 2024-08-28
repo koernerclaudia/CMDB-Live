@@ -114,7 +114,7 @@ export const MainView = () => {
                 ) : (
                   <Col
                     md={4}
-                    xs={1}
+                    xs={12}
                     className="d-flex flex-column align-items-center"
                   >
                     <SignupView />
@@ -132,7 +132,7 @@ export const MainView = () => {
                 ) : (
                   <Col
                     md={4}
-                    xs={1}
+                    xs={12}
                     className="d-flex flex-column align-items-center"
                   >
                     <LoginView

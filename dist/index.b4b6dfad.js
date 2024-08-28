@@ -27338,7 +27338,7 @@ const MainView = ()=>{
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 4,
-                                    xs: 1,
+                                    xs: 12,
                                     className: "d-flex flex-column align-items-center",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                                         fileName: "src/components/main-view.jsx",
@@ -27367,7 +27367,7 @@ const MainView = ()=>{
                                     columnNumber: 19
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 4,
-                                    xs: 1,
+                                    xs: 12,
                                     className: "d-flex flex-column align-items-center",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginView.LoginView), {
                                         onLoggedIn: (user, token)=>{

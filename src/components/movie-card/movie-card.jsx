@@ -91,7 +91,7 @@ export const MovieCard = ({ movie, updateAction }) => {
   return (
     <Card className="h-100" border="info">
       <div>
-        <img src={movie.ImageURL} className="cover-img" />
+        <img src={movie.ImageURL} className="cover-img" alt="Movie Image"/>
       </div>
       <Card.Body>
         <Card.Title style={{ color: "#54B4D3" }}>{movie.Title}</Card.Title>

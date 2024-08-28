@@ -117,7 +117,7 @@ export const MovieView = ({
                 <Card.Img
                   variant="top"
                   src={movie.ImageURL}
-                  className="main-view-img"
+                  className="main-view-img" alt="Movie Image"
                 />
               </Card>
             </Col>

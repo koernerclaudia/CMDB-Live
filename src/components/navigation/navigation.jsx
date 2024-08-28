@@ -1,4 +1,6 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 import { Link } from "react-router-dom";
 import logo from "./cmdb-logo.png";
 import "../../index.scss";
@@ -18,7 +20,7 @@ export const Navigation = ({ user }) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-toggler-right" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto ">
+          <Nav className="ms-auto ">
             {!user && (
               <>
                 <Nav.Link as={Link} to="/login">

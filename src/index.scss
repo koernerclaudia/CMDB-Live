@@ -88,4 +88,19 @@ input::placeholder {
   &:focus {
     color: #ffffff;
   }
+
+  /* Align the links to the right when the navbar is collapsed */
+.navbar-collapse {
+  text-align: right; /* Right-align text in the collapse */
+}
+
+/* Override the display behavior in collapsed mode */
+.navbar-collapse .navbar-nav {
+  margin-left: auto; /* Push the nav items to the right */
+}
+
+/* Ensure alignment for smaller screens */
+.navbar-collapse.collapse.show .navbar-nav {
+  margin-left: auto;
+}
 }

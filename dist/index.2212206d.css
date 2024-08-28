@@ -16969,6 +16969,12 @@ textarea.form-control-lg {
   padding: 15px;
 }
 
+.logo-large {
+  text-align: center;
+  max-width: 15rem;
+  padding: 15px;
+}
+
 .margin-top {
   margin-top: 15px;
 }

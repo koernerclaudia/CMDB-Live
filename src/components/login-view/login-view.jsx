@@ -2,6 +2,8 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../../index.scss";
+import logo from "../../cmdb-logo.png";
+
 
 
 export const LoginView = ({ onLoggedIn }) => {
@@ -42,6 +44,7 @@ export const LoginView = ({ onLoggedIn }) => {
   };
 
   return (
+    <><img src={logo} alt="CMDB" className="logo-large" />
     <Form className="login" onSubmit={handleSubmit}>
       <h4>Login here:</h4>
       <Form.Group controlId="formUsername">
@@ -71,6 +74,6 @@ export const LoginView = ({ onLoggedIn }) => {
       <Button variant="info" className="margin-top btn-sm" type="submit">
         Submit
       </Button>
-    </Form>
+    </Form></>
   );
 };

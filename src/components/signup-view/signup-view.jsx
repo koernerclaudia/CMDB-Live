@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import logo from "../../cmdb-logo.png";
 
 export const SignupView = () => {
   const [username, setUsername] = useState("");
@@ -33,6 +34,7 @@ export const SignupView = () => {
   };
 
   return (
+    <><img src={logo} alt="CMDB" className="logo-large" />
     <Form className="signup" onSubmit={handleSubmit}>
       <h4>Sign Up:</h4>
     <Form.Group controlId="formUsername">
@@ -69,6 +71,6 @@ export const SignupView = () => {
     <Button variant="info" className="margin-top btn-sm" type="submit">
         Submit
       </Button>
-  </Form>
+  </Form></>
   );
 };

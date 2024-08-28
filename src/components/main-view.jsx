@@ -178,7 +178,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     <Row className="mb-3">
-                      <Col md={6} sm={6} xs={6} className="mx-auto">
+                      <Col md={6} sm={6} xs={12} className="mx-auto">
                         <Form.Control className="placeholder"
                           noValidate
                           style={{ color: "white" }}

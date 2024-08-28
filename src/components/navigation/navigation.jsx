@@ -10,7 +10,8 @@ export const Navigation = ({ user }) => {
   };
 
   return (
-    <Navbar className="navbar navbar-dark navbar-expand-lg">
+    <>
+    <Navbar className="navbar navbar-dark" expand="lg" >
       <Container>
         <Navbar.Brand>
           <img src={logo} alt="CMDB" className="logo" />
@@ -45,5 +46,6 @@ export const Navigation = ({ user }) => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+</>
   );
 };

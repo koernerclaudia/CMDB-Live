@@ -2,21 +2,22 @@
 $light: #ffffff;
 $body-bg: #222222;
 $btn-border-radius: 20%;
-$grid-breakpoints: (
-  xs: 0,
-  sm: 350px,
-  md: 500px,
-  lg: 780px,
-  xl: 1000px,
-  xxl: 1200px
-);
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 350px,
+//   md: 500px,
+//   lg: 780px,
+//   xl: 1000px,
+//   xxl: 1200px
+// );
 
 
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+@import "../node_modules/bootstrap/scss/_variables-dark";
 
 
 .card-text, .form-text, .card-body {

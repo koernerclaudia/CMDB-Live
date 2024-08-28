@@ -12,7 +12,8 @@ $grid-breakpoints: (
 );
 
 
-// import the fuctions & variables files
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
@@ -72,7 +73,7 @@ input::placeholder {
   border-radius: 5px;
 }
 
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 
 .nav-link,
 .navbar-text,

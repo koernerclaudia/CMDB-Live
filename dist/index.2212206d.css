@@ -1,52 +1,3 @@
-.card-text, .form-text, .card-body {
-  color: #fff;
-}
-
-.login, .signup {
-  color: #fff;
-  background-color: #292929;
-  border: 1px solid #0dcaf0;
-  border-radius: 20px;
-  width: 100%;
-  margin: 15px;
-  padding: 15px;
-  font-size: 8px;
-}
-
-.logo {
-  text-align: center;
-  max-width: 100px;
-  padding: 15px;
-}
-
-.margin-top {
-  margin-top: 15px;
-}
-
-.margin-bottom {
-  margin-bottom: 15px;
-}
-
-input::placeholder {
-  color: #fff;
-}
-
-.cover-img {
-  object-fit: cover;
-  object-position: top;
-  border-radius: 5px 5px 0 0;
-  width: 100%;
-  height: 250px;
-}
-
-.main-view-img {
-  object-fit: cover;
-  object-position: top;
-  border-radius: 5px;
-  width: 100%;
-  height: 400px;
-}
-
 :root, [data-bs-theme="light"] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -13233,6 +13184,55 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+.card-text, .form-text, .card-body {
+  color: #fff;
+}
+
+.login, .signup {
+  color: #fff;
+  background-color: #292929;
+  border: 1px solid #0dcaf0;
+  border-radius: 20px;
+  width: 100%;
+  margin: 15px;
+  padding: 15px;
+  font-size: 8px;
+}
+
+.logo {
+  text-align: center;
+  max-width: 100px;
+  padding: 15px;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.margin-bottom {
+  margin-bottom: 15px;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+.cover-img {
+  object-fit: cover;
+  object-position: top;
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 250px;
+}
+
+.main-view-img {
+  object-fit: cover;
+  object-position: top;
+  border-radius: 5px;
+  width: 100%;
+  height: 400px;
 }
 
 .nav-link, .navbar-text, .navbar-brand, .nav-link.active {

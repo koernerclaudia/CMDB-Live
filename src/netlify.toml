@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/login"
+  to = "/"
+  status = 301
+  force = true
+
+from = "/signup"
+  to = "/"
+  status = 301
+  force = true

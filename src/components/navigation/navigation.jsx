@@ -15,6 +15,9 @@ export const Navigation = ({ user }) => {
     <>
       <Navbar className="navbar navbar-dark" expand="lg">
         <Container>
+        <Navbar.Brand>
+                    <img src={logo} alt="CMDB" className="logo" />
+                  </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-toggler-right" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto ">
@@ -30,9 +33,7 @@ export const Navigation = ({ user }) => {
               )}
               {user && (
                 <>
-                  <Navbar.Brand>
-                    <img src={logo} alt="CMDB" className="logo" />
-                  </Navbar.Brand>
+                 
                   <Nav.Link className="nav-link" as={Link} to="/">
                     Browse Movies
                   </Nav.Link>

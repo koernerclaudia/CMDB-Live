@@ -111,8 +111,8 @@ export const MovieView = ({
     <>
       <Card border="info">
         <Card.Body>
-          <Row xs={1} md={2}>
-            <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
+          <Row>
+            <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
               <Card border="light" className="margin-bottom">
                 <Card.Img
                   variant="top"
@@ -121,7 +121,7 @@ export const MovieView = ({
                 />
               </Card>
             </Col>
-            <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
+            <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
               <Card border="light">
                 <Card.Body>
                   <Card.Title style={{ color: "#54B4D3" }}>

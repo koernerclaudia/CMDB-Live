@@ -113,7 +113,8 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col
-                    md={4}
+                  xxl={6} lg={6}
+                  md={6} sm={8}
                     xs={12}
                     className="d-flex flex-column align-items-center"
                   >
@@ -131,7 +132,8 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col
-                    md={4}
+                  xxl={6} lg={6}
+                  md={6} sm={8}
                     xs={12}
                     className="d-flex flex-column align-items-center"
                   >
@@ -155,7 +157,7 @@ export const MainView = () => {
                 ) : movies.length === 0 ? (
                   <Col>The list is empty!</Col>
                 ) : (
-                  <Col md={8} className="d-flex flex-column align-items-center">
+                  <Col md={12} className="d-flex flex-column align-items-center">
                     <MovieView
                       movies={movies}
                       getSimilarMovies={getSimilarMovies}
@@ -191,7 +193,7 @@ export const MainView = () => {
                       </Col>
                     </Row>
                     {filteredMovies.length === 0 ? (
-                      <Col md={6} className="mx-auto">
+                      <Col lg={6} md={6} sm={12} xs={12} className="mx-auto">
                         <p
                           style={{
                             color: "white",

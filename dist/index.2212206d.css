@@ -16948,7 +16948,7 @@ textarea.form-control-lg {
   }
 }
 
-.card-text, .form-text, .card-body {
+x .card-text, .form-text, .card-body {
   color: #fff;
 }
 
@@ -16960,7 +16960,7 @@ textarea.form-control-lg {
   width: 100%;
   margin: 15px;
   padding: 15px;
-  font-size: 8px;
+  font-size: .7rem;
 }
 
 .logo {
@@ -17011,13 +17011,5 @@ input::placeholder {
 
 .nav-link:hover, .nav-link:focus, .navbar-text:hover, .navbar-text:focus, .navbar-brand:hover, .navbar-brand:focus, .nav-link.active:hover, .nav-link.active:focus {
   color: #fff;
-}
-
-.nav-link .navbar-collapse, .navbar-text .navbar-collapse, .navbar-brand .navbar-collapse, .nav-link.active .navbar-collapse {
-  text-align: right;
-}
-
-.nav-link .navbar-collapse .navbar-nav, .navbar-text .navbar-collapse .navbar-nav, .navbar-brand .navbar-collapse .navbar-nav, .nav-link.active .navbar-collapse .navbar-nav, .nav-link .navbar-collapse.collapse.show .navbar-nav, .navbar-text .navbar-collapse.collapse.show .navbar-nav, .navbar-brand .navbar-collapse.collapse.show .navbar-nav, .nav-link.active .navbar-collapse.collapse.show .navbar-nav {
-  margin-left: auto;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

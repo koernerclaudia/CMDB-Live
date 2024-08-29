@@ -2,22 +2,14 @@
 $light: #ffffff;
 $body-bg: #222222;
 $btn-border-radius: 20%;
-// $grid-breakpoints: (
-//   xs: 0,
-//   sm: 350px,
-//   md: 500px,
-//   lg: 780px,
-//   xl: 1000px,
-//   xxl: 1200px
-// );
-
 
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
 @import "../node_modules/bootstrap/scss/_functions";
 @import "../node_modules/bootstrap/scss/_variables";
-@import "../node_modules/bootstrap/scss/_variables-dark";
+@import "../node_modules/bootstrap/scss/_variables-dark";x
+
 
 
 .card-text, .form-text, .card-body {
@@ -34,9 +26,17 @@ $btn-border-radius: 20%;
   margin: 15px;
   padding: 15px;
   width: 100%;
-  font-size: 8px;
+  font-size: 0.7rem;
   
 }
+
+// .welcome-bg {
+//   background-image: url("/src/bg-movies.jpg");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   background-position: center;
+  
+// }
 
 
 .logo {
@@ -95,18 +95,6 @@ input::placeholder {
     color: #ffffff;
   }
 
-  /* Align the links to the right when the navbar is collapsed */
-.navbar-collapse {
-  text-align: right; /* Right-align text in the collapse */
-}
 
-/* Override the display behavior in collapsed mode */
-.navbar-collapse .navbar-nav {
-  margin-left: auto; /* Push the nav items to the right */
-}
 
-/* Ensure alignment for smaller screens */
-.navbar-collapse.collapse.show .navbar-nav {
-  margin-left: auto;
-}
 }

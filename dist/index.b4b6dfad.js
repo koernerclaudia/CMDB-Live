@@ -27649,6 +27649,7 @@ const MovieCard = ({ movie, updateAction })=>{
             localStorage.setItem("user", JSON.stringify(updatedUser));
             setIsFavorite(true);
             updateAction(MovieID);
+            alert("Movie added to your favorite list successfully!");
         } catch (error) {
             console.log(`An error occurred while adding the movie to favorites: ${error.message}`);
         }
@@ -27683,18 +27684,28 @@ const MovieCard = ({ movie, updateAction })=>{
         border: "info",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movie.ImageURL,
-                    className: "cover-img",
-                    alt: "Movie Image"
-                }, void 0, false, {
-                    fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 94,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
+                children: [
+                    " ",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: `/movies/${encodeURIComponent(movie._id)}`,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: movie.ImageURL,
+                            className: "cover-img",
+                            alt: "Movie Image"
+                        }, void 0, false, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 95,
+                            columnNumber: 9
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 94,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 93,
+                lineNumber: 94,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Body, {
@@ -27706,7 +27717,7 @@ const MovieCard = ({ movie, updateAction })=>{
                         children: movie.Title
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 97,
+                        lineNumber: 99,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
@@ -27715,7 +27726,7 @@ const MovieCard = ({ movie, updateAction })=>{
                                 children: "With:"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 99,
+                                lineNumber: 101,
                                 columnNumber: 11
                             }, undefined),
                             " ",
@@ -27723,7 +27734,7 @@ const MovieCard = ({ movie, updateAction })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 98,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
@@ -27732,7 +27743,7 @@ const MovieCard = ({ movie, updateAction })=>{
                                 children: "Directed by:"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 102,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, undefined),
                             " ",
@@ -27740,7 +27751,7 @@ const MovieCard = ({ movie, updateAction })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 101,
+                        lineNumber: 103,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -27755,17 +27766,17 @@ const MovieCard = ({ movie, updateAction })=>{
                                         children: "More info"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 107,
+                                        lineNumber: 109,
                                         columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 106,
+                                    lineNumber: 108,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 105,
+                                lineNumber: 107,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -27783,14 +27794,14 @@ const MovieCard = ({ movie, updateAction })=>{
                                             }
                                         }, void 0, false, {
                                             fileName: "src/components/movie-card/movie-card.jsx",
-                                            lineNumber: 120,
+                                            lineNumber: 122,
                                             columnNumber: 17
                                         }, undefined),
                                         "\xa0Remove"
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 116,
                                     columnNumber: 15
                                 }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                                     className: "btn-sm margin-top",
@@ -27802,37 +27813,37 @@ const MovieCard = ({ movie, updateAction })=>{
                                             icon: (0, _freeRegularSvgIcons.faHeart)
                                         }, void 0, false, {
                                             fileName: "src/components/movie-card/movie-card.jsx",
-                                            lineNumber: 130,
+                                            lineNumber: 132,
                                             columnNumber: 17
                                         }, undefined),
                                         "\xa0Add to list"
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 124,
+                                    lineNumber: 126,
                                     columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 112,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 104,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 96,
+                lineNumber: 98,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-card/movie-card.jsx",
-        lineNumber: 92,
+        lineNumber: 93,
         columnNumber: 5
     }, undefined);
 };
@@ -70729,7 +70740,7 @@ var _indexScss = require("../../index.scss");
 var _reactFontawesome = require("@fortawesome/react-fontawesome");
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
 var _s = $RefreshSig$();
-const ProfileView = ({ user, token, movies, updateAction })=>{
+const ProfileView = ({ user, token, movies })=>{
     _s();
     const [favoriteMovies, setFavoriteMovies] = (0, _react.useState)([]);
     const [username, setUsername] = (0, _react.useState)(user.username);
@@ -71081,7 +71092,7 @@ const ProfileView = ({ user, token, movies, updateAction })=>{
                                         children: [
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                                 md: "auto",
-                                                className: "col-1 d-flex justify-content-left align-items-center",
+                                                className: "col-2 d-flex justify-content-left align-items-center",
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                                     src: movie.ImageURL,
                                                     style: {
@@ -71101,11 +71112,12 @@ const ProfileView = ({ user, token, movies, updateAction })=>{
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                                 md: "auto",
-                                                className: "col-5 d-flex justify-content-left align-items-center",
+                                                className: "col-4 d-flex justify-content-left align-items-center",
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
                                                     style: {
                                                         color: "#54B4D3"
                                                     },
+                                                    className: "fs-6",
                                                     children: movie.Title
                                                 }, void 0, false, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",

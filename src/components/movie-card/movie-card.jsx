@@ -47,6 +47,7 @@ export const MovieCard = ({ movie, updateAction }) => {
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(true);
       updateAction(MovieID);
+      alert('Movie added to your favorite list successfully!');
     } catch (error) {
       console.log(
         `An error occurred while adding the movie to favorites: ${error.message}`
@@ -90,8 +91,9 @@ export const MovieCard = ({ movie, updateAction }) => {
 
   return (
     <Card className="h-100" border="info">
-      <div>
+      <div> <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
         <img src={movie.ImageURL} className="cover-img" alt="Movie Image"/>
+        </Link>
       </div>
       <Card.Body>
         <Card.Title style={{ color: "#54B4D3" }}>{movie.Title}</Card.Title>

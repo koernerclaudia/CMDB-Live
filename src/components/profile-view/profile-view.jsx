@@ -13,7 +13,7 @@ import "../../index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
-export const ProfileView = ({ user, token, movies, updateAction }) => {
+export const ProfileView = ({ user, token, movies }) => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
   const [username, setUsername] = useState(user.username);
   const [password, setPassword] = useState("");
@@ -232,7 +232,7 @@ export const ProfileView = ({ user, token, movies, updateAction }) => {
                   <Row className="w-100">
                     <Col
                       md="auto"
-                      className="col-1 d-flex justify-content-left align-items-center"
+                      className="col-2 d-flex justify-content-left align-items-center"
                     >
                       <img
                         src={movie.ImageURL}
@@ -242,9 +242,9 @@ export const ProfileView = ({ user, token, movies, updateAction }) => {
                     </Col>
                     <Col
                       md="auto"
-                      className="col-5 d-flex justify-content-left align-items-center"
+                      className="col-4 d-flex justify-content-left align-items-center"
                     >
-                      <Card.Title style={{ color: "#54B4D3" }}>
+                      <Card.Title style={{ color: "#54B4D3" }} className="fs-6">
                         {movie.Title}
                       </Card.Title>
                     </Col>

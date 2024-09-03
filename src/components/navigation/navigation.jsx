@@ -2,7 +2,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
-import logo from "../../cmdb-logo.png";
+import logo from "../../assets/cmdb-logo.png";
 import "../../index.scss";
 
 export const Navigation = ({ user }) => {

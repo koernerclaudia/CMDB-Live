@@ -2,7 +2,8 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../../index.scss";
-import logo from "../../cmdb-logo.png";
+import logo from "../../assets/cmdb-logo.png";
+import { Link } from "react-router-dom";
 
 
 
@@ -17,6 +18,7 @@ export const LoginView = ({ onLoggedIn }) => {
       username: username,
       password: password,
     };
+    console.log("Sending login request with data:", data);
 
     fetch("https://cmdb-b8f3cd58963f.herokuapp.com/login", {
       method: "POST",
@@ -25,20 +27,25 @@ export const LoginView = ({ onLoggedIn }) => {
       },
       body: JSON.stringify(data),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        console.log("Received response with status:", response.status);
+        return response.json();
+      })
       .then((data) => {
-        console.log("Login response: ", data);
+        console.log("Login response data: ", data);
         if (data.user) {
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("token", data.token);
           onLoggedIn(data.user, data.token);
         } else {
+          console.log("Login failed, no user data received");
           alert(
             "Sorry, this user does not exist. Please recheck the username and/or password."
           );
         }
       })
       .catch((e) => {
+        console.error("Login error:", e);
         alert("Oh no, something went wrong");
       });
   };
@@ -74,6 +81,7 @@ export const LoginView = ({ onLoggedIn }) => {
       <Button variant="info" className="margin-top btn-sm" type="submit">
         Submit
       </Button>
-    </Form></>
+    </Form>
+    <div className="fs-6" style={{ color: "white" }}>No account yet? <Link to={`/signup`} className="nav-link">Sign up here</Link></div></>
   );
 };

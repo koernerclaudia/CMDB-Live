@@ -20,6 +20,10 @@ export const MainView = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortOrder, setSortOrder] = useState("default");
+  const [genreFilter, setGenreFilter] = useState("all");
+
+  
 
   useEffect(() => {
     if (!token) return;
@@ -90,6 +94,40 @@ export const MainView = () => {
       )
       .slice(0, 10);
   };
+
+  const handleSortChange = (e) => {
+    setSortOrder(e.target.value);
+  };
+
+  const handleGenreChange = (e) => {
+    setGenreFilter(e.target.value);
+  };
+
+  const getUniqueGenres = () => {
+    const genres = movies.map(movie => movie.Genre.Type);
+    return ["all", ...new Set(genres)];
+  };
+
+  const sortAndFilterMovies = () => {
+    let result = [...filteredMovies];
+
+    // Apply genre filter
+    if (genreFilter !== "all") {
+      result = result.filter(movie => movie.Genre.Type === genreFilter);
+    }
+
+    // Apply sorting
+    if (sortOrder === "aToZ") {
+      result.sort((a, b) => a.Title.localeCompare(b.Title));
+    } else if (sortOrder === "zToA") {
+      result.sort((a, b) => b.Title.localeCompare(a.Title));
+    }
+
+    return result;
+  };
+
+  const sortedAndFilteredMovies = sortAndFilterMovies();
+
 
   if (loading) {
     return <div className="centered-loading">Loading movies...</div>;
@@ -179,31 +217,43 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <Row className="mb-3">
-                      <Col md={6} sm={6} xs={12} className="mx-auto">
-                        <Form.Control className="placeholder"
+                    <Row className="mb-3 justify-content-center algin-content-center">
+                      <Col md={6} sm={6} xs={12} className="mx-auto margin-top">
+                        <Form.Control
+                          className="placeholder w-100"
                           noValidate
-                          style={{ color: "white" }}
+                          style={{ color: "white"}}
                           type="text"
                           placeholder="Search by movie title, genre, actor or director"
                           value={searchTerm}
-                          aria-describedby="inputGroupPrepend"
                           onChange={handleSearch}
                         />
                       </Col>
+                      <Col md={3} sm={3} xs={6} className="mx-auto margin-top">
+                        <Form.Select className="placeholder" onChange={handleSortChange} value={sortOrder} >
+                          <option value="default">Sort by...</option>
+                          <option value="aToZ">A to Z</option>
+                          <option value="zToA">Z to A</option>
+                        </Form.Select>
+                      </Col>
+                      <Col md={3} sm={3} xs={6} className="mx-auto margin-top">
+                        <Form.Select className="placeholder"  onChange={handleGenreChange} value={genreFilter}>
+                          {getUniqueGenres().map(genre => (
+                            <option key={genre} value={genre}>
+                              {genre === "all" ? "All Genres" : genre}
+                            </option>
+                          ))}
+                        </Form.Select>
+                      </Col>
                     </Row>
-                    {filteredMovies.length === 0 ? (
+                    {sortedAndFilteredMovies.length === 0 ? (
                       <Col lg={6} md={6} sm={12} xs={12} className="mx-auto">
-                        <p
-                          style={{
-                            color: "white",
-                          }}
-                        >
-                          Sorry, no movies found matching your search.
+                        <p style={{ color: "white" }}>
+                          Sorry, no movies found matching your criteria.
                         </p>
                       </Col>
                     ) : (
-                      filteredMovies.map((movie) => (
+                      sortedAndFilteredMovies.map((movie) => (
                         <Col className="mb-4" key={movie._id} md={4} xs={12}>
                           <MovieCard movie={movie} />
                         </Col>

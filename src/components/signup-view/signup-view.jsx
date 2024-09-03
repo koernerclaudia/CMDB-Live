@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import logo from "../../cmdb-logo.png";
+import logo from "../../assets/cmdb-logo.png";
 
 export const SignupView = () => {
   const [username, setUsername] = useState("");

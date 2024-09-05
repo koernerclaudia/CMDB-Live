@@ -65,11 +65,30 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 const handleSubmit = (event) => {
   event.preventDefault();
 
-  const updateUser = {
-    username: username,
-    password: password,
-    email: email,
-  };
+  // const updateUser = {
+  //   username: username,
+  //   password: password,
+  //   email: email,
+  // };
+
+  const updateUser = {};
+
+  // Conditionally add fields if they are provided (not empty or unchanged)
+  if (username.trim() !== "") {
+    updateUser.username = username;
+  }
+  if (password.trim() !== "") {
+    updateUser.password = password;
+  }
+  if (email.trim() !== "") {
+    updateUser.email = email;
+  }
+
+  // Check if at least one field is updated
+  if (Object.keys(updateUser).length === 0) {
+    alert("Please update at least one field.");
+    return;
+  }
 
   fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
     method: "PUT",
@@ -79,17 +98,44 @@ const handleSubmit = (event) => {
     },
     body: JSON.stringify(updateUser),
   })
-    .then((response) => {
-      if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(updateUser));
-        alert("Profile updated successfully.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("An error occurred. Please try again.");
-    });
+
+  .then((response) => {
+    if (response.ok) {
+      return response.json(); // Get the updated user data from the response
+    } else {
+      throw new Error('Failed to update profile.');
+    }
+  })
+
+  .then((updatedUser) => {
+    // Update the user state with the new values
+    setUsername(updatedUser.username);
+    setEmail(updatedUser.email);
+
+    // Update localStorage with the new user details
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+
+    alert("Profile updated successfully.\n (Changes to the password will not be displayed.)");
+    window.location.reload();
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+    alert("An error occurred. Please try again.");
+  });
 };
+
+
+//     .then((response) => {
+//       if (response.ok) {
+//         localStorage.setItem('user', JSON.stringify(updateUser));
+//         alert("Profile updated successfully.");
+//       };
+//     })
+//     .catch((error) => {
+//       console.error("Error:", error);
+//       alert("An error occurred. Please try again.");
+//     });
+// };
 
 
 
@@ -165,12 +211,11 @@ const handleSubmit = (event) => {
                   >
                     Change Username
                   </Form.Label>
-                  <Form.Control
+                  <Form.Control 
                     style={{ color: "white" }}
                     type="text"
-                    value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Enter new username"
+                    placeholder="Enter new username (min. 5 characters)"
                   />
                 </Form.Group>
 
@@ -181,12 +226,12 @@ const handleSubmit = (event) => {
                   >
                     Change Password
                   </Form.Label>
-                  <Form.Control
+                  <Form.Control 
                     style={{ color: "white" }}
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter new password"
+                    placeholder="Enter new password (min. 8 characters)"
                   />
                 </Form.Group>
 
@@ -197,26 +242,24 @@ const handleSubmit = (event) => {
                   >
                     Change Email
                   </Form.Label>
-                  <Form.Control
+                  <Form.Control placeholder="Enter email"
                     style={{ color: "white" }}
                     type="email"
-                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter new email"
                   />
                 </Form.Group>
 
                 <Button
                   variant="info"
                   type="submit"
-                  className="me-2 margin-top btn-sm margin-top"
+                  className="me-2 btn-sm margin-top"
                 >
                   Update Profile
                 </Button>
                 <Button
                   variant="light"
                   type="submit"
-                  className="me-2 margin-top btn-sm margin-top"
+                  className="me-2 btn-sm margin-top"
                   onClick={handleDeregister}
                 >
                   Delete my account

@@ -183,7 +183,7 @@ export const MovieView = ({
                   <Card.Body>
                     <Card.Title style={{ color: "white" }}>
                       <h6>
-                        More of this genre:{" "}
+                        More of this genre: {" "}
                         <span style={{ color: "#f6c344" }}>
                           {" "}
                           {movie.Genre.Type}
@@ -205,10 +205,9 @@ export const MovieView = ({
                       </ListGroup>
                     ) : (
                       <Card.Text style={{ color: "#ffffff" }}>
-                        There are no other movies of the{" "}
+                        There are no other movies of the
                         <span style={{ color: "#f6c344" }}>
-                          {" "}
-                          {movie.Genre.Type}
+                          &nbsp;{movie.Genre.Type}&nbsp;
                         </span>
                         genre listed in this database.
                       </Card.Text>
@@ -221,12 +220,11 @@ export const MovieView = ({
                   <Card.Body>
                     <Card.Title style={{ color: "white" }}>
                       <h6>
-                        More movies by director{" "}
+                        More movies by director: 
                         <span style={{ color: "#f6c344" }}>
-                          {" "}
-                          {movie.Director.Name}
+                          &nbsp;{movie.Director.Name}&nbsp;
                         </span>
-                        :
+                        
                       </h6>
                     </Card.Title>
                     {directorMovies.length > 0 ? (

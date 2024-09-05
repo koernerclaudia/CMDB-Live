@@ -2,6 +2,7 @@
 $light: #ffffff;
 $body-bg: #222222;
 $btn-border-radius: 20%;
+$form-text-color: #ffffff;
 
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
@@ -73,6 +74,10 @@ $btn-border-radius: 20%;
     display: inline-block;
     content: "";
   }
+}
+
+.filled {
+  color: #ffffff;
 }
 
 input:not(.placeholder) {

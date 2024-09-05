@@ -2071,7 +2071,7 @@ progress {
 }
 
 .form-text {
-  color: var(--bs-secondary-color);
+  color: #fff;
   margin-top: .25rem;
   font-size: .875em;
 }
@@ -16982,6 +16982,10 @@ x .card-text, .form-text, .card-body {
 .placeholder.btn:before {
   content: "";
   display: inline-block;
+}
+
+.filled {
+  color: #fff;
 }
 
 input:not(.placeholder) {

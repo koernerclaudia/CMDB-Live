@@ -65,7 +65,7 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 const handleSubmit = (event) => {
   event.preventDefault();
 
-  const updatedUser = {
+  const updateUser = {
     username: username,
     password: password,
     email: email,
@@ -77,18 +77,12 @@ const handleSubmit = (event) => {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(updatedUser),
+    body: JSON.stringify(updateUser),
   })
     .then((response) => {
       if (response.ok) {
+        localStorage.setItem('user', JSON.stringify(updateUser));
         alert("Profile updated successfully.");
-
-        const updatedUserResponse = { ...user, username, email };
-
-        setUsername(username);
-        setEmail(email);
-      } else {
-        alert("Failed to update profile.");
       }
     })
     .catch((error) => {
@@ -97,69 +91,6 @@ const handleSubmit = (event) => {
     });
 };
 
-// const handleUpdate = (e, updatedUser) => {
-// e.preventDefault();
-
-// fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
-//       method: "PUT",
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(updatedUser),
-//     }
-//   )
-//   .then((response) => {
-//  if (response.ok) {
-//   return response.json();
-//  }
-// })
-// .then((data) => {
-//   if (data) {
-//     setUser(data);
-//   }
-// })
-// .catch((e) => {
-//   alert(e);
-// });
-//   };
-
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   const updatedUser = {
-  //     username: username,
-  //     password: password,
-  //     email: email,
-  //   };
-
-  //   fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(updatedUser),
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         alert("Profile updated successfully.");
-
-          // const updatedUserResponse = { ...user, username, password, email };
-          // localStorage.setItem('user', JSON.stringify(updatedUserResponse));
-          // setUsername(username);
-          // setPassword(password);
-          // setEmail(email);
-  //       } else {
-  //         alert("Failed to update profile.");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //       alert("An error occurred. Please try again.");
-  //     });
-  // };
 
 
 

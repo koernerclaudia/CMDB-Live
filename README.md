@@ -10,13 +10,6 @@ frameworks, databases, business logic, authentication, data security, and more.
 
 ### Tech Stack - MERN - MongoDB, Express, ReactJS, NodeJS
 
-### The goals was to:
-
-- provide a database of movies that users can browse through (currently, I have about 150 movies in there)
-- search & filter movies by alphabet and by genre
-- the opportunity to make a list of favourites in the profile section
-- users can set up an account, login, (CURRENTLY NOT WORKING: update and delete their account)
-
 ## Backend:
 
 Part 1 of this project dealt with setting up a **database and Rest API** from scratch to use as a backend - [Go here](https://github.com/koernerclaudia/CMDB) to find out more about...
@@ -35,10 +28,11 @@ The goal was to set up a single page application (SPA) and to build an app using
 - **Signup / Signup Screen:** Users can set up an account and get authenticated (username, password, email info will be necessary)
 - **Login / Login Screen:** Users can log in and out; **Logout:** Available in link bar at all times
 - **Browse & Search Movies View:** Users can browse movies + search movies by title, actor, director or genre
-- **Movie Details View:** See more details of all movies including similar movies by genre and same director of favourite movies, add & delete movies from it
-- **Favourite a Movie:** A user can favourite a movie on the Browse/Movie Card view and the Movie Details View.
-- **Un-Favourite a Movie:** Possible on Browse/Movie Card view, Movie Details View and from the list of favourited movies within the Profile view.
-- **Update Profile/My Profile View:** Users can change their user information (username, password, email address) and also de-register / delete their account completely
+- **Filter Movies:** Movies can be filtered also according to genre and in alphabetical order
+- **Movie Details View:** See more details of all movies including similar movies by genre and same director of favourite movies
+- **Favourite a Movie:** A user can favourite a movie on the Browse/Movie Card view and the Movie(Details)View.
+- **Un-Favourite a Movie:** Possible on Browse/Movie Card view, Movie(Details)View and from the list of favourited movies within the Profile view.
+- **Update Profile/My Profile View:** Users can change their user information (either one: username, password, email address) and also de-register / delete their account completely
 
 *Further features, I hope to implement soon:*
 - Build out the MongoDB around genre, directors and actors
@@ -58,7 +52,12 @@ The Database consists of 2 collections:
 
 ## Live Project
 
-https://cmdb2024.netlify.app/login
+- hosted on Netlify: https://cmdb2024.netlify.app/login
+
+## API Documentation
+
+- WIP - to be moved to Swagger soon: https://cmdb-b8f3cd58963f.herokuapp.com/
+
 
 ## Deployment
 

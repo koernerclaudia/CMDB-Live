@@ -12,10 +12,10 @@ frameworks, databases, business logic, authentication, data security, and more.
 
 ### The goals was to:
 
-- provide a database of movies that users can browse through (currently, I have about 150 movies in there
-- search & filter movies
-- the opportunity to make a list of favourites
-- users can set up an account, login, update and delete their account
+- provide a database of movies that users can browse through (currently, I have about 150 movies in there)
+- search & filter movies by alphabet and by genre
+- the opportunity to make a list of favourites in the profile section
+- users can set up an account, login, (CURRENTLY NOT WORKING: update and delete their account)
 
 ## Backend:
 
@@ -41,13 +41,12 @@ The goal was to set up a single page application (SPA) and to build an app using
 - **Update Profile/My Profile View:** Users can change their user information (username, password, email address) and also de-register / delete their account completely
 
 *Further features, I hope to implement soon:*
-- Our buildout the MongoDB around genre, directors and actors
+- Build out the MongoDB around genre, directors and actors
 - Add more views for genre, directors and actors
 - Add an option to make a watchlist (similar to list of favourites)
 - Let users share movies with others
 - Let users suggest movies to add to the database (provide a form - POST to the API)
 - Username and Password reset when logged out.
-- Filtering movies by alphabet, actor ... etc.
 - or also: Possibly find an adequate open API movie database to connect to (the purpose of our task was to build an API ourselves, so this was not an option.)
 - Moving the API documentation to Swagger
 
@@ -74,6 +73,7 @@ To build this app:
 ## Tools & resources used
 
 Being new to Javascript (Typescript) I have used ChatGPT and Claude.ai to help build out components and get ideas for concepts.
+I have used AI mainly to structure the movie database information and build the JSON files for it.
 
 ## Licenses
 

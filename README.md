@@ -73,7 +73,7 @@ To build this app:
 
 ## Tools & resources used
 
-Being new to Javascript (Typescript) I have used ChatGPT and Claude.ai extensively to help me build the necessary functions and especially to structure the JSON documentation of the movie data. 
+Being new to Javascript (Typescript) I have used ChatGPT and Claude.ai to help build out components and get ideas for concepts.
 
 ## Licenses
 

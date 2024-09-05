@@ -23,11 +23,8 @@ export const MainView = () => {
   const [sortOrder, setSortOrder] = useState("default");
   const [genreFilter, setGenreFilter] = useState("all");
 
-  
-
   useEffect(() => {
     if (!token) return;
-
     setLoading(true);
     fetch("https://cmdb-b8f3cd58963f.herokuapp.com/movies", {
       headers: { Authorization: `Bearer ${token}` },
@@ -40,18 +37,18 @@ export const MainView = () => {
       .catch(() => setLoading(false));
   }, [token]);
 
-  const updateAction = (movieId) => {
-    const updatedUser = JSON.parse(localStorage.getItem("user"));
-    if (updatedUser.FavoriteMovies.includes(movieId)) {
-      updatedUser.FavoriteMovies = updatedUser.FavoriteMovies.filter(
-        (id) => id !== movieId
-      );
-    } else {
-      updatedUser.FavoriteMovies.push(movieId);
-    }
-    localStorage.setItem("user", JSON.stringify(updatedUser));
-    setUser(updatedUser);
-  };
+  // const updateAction = (movieId) => {
+  //   const updatedUser = JSON.parse(localStorage.getItem("user"));
+  //   if (updatedUser.FavoriteMovies.includes(movieId)) {
+  //     updatedUser.FavoriteMovies = updatedUser.FavoriteMovies.filter(
+  //       (id) => id !== movieId
+  //     );
+  //   } else {
+  //     updatedUser.FavoriteMovies.push(movieId);
+  //   }
+  //   localStorage.setItem("user", JSON.stringify(updatedUser));
+  //   setUser(updatedUser);
+  // };
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -83,14 +80,14 @@ export const MainView = () => {
 
   const getSimilarMovies = (movie) => {
     return movies
-      .filter((m) => m.Genre.Type === movie.Genre.Type && m._id !== movie._id)
+      .filter((g) => g.Genre.Type === movie.Genre.Type && g._id !== movie._id)
       .slice(0, 10);
   };
 
   const getMoviesByDirector = (movie) => {
     return movies
       .filter(
-        (m) => m.Director.Name === movie.Director.Name && m._id !== movie._id
+        (d) => d.Director.Name === movie.Director.Name && d._id !== movie._id
       )
       .slice(0, 10);
   };
@@ -200,7 +197,7 @@ export const MainView = () => {
                       movies={movies}
                       getSimilarMovies={getSimilarMovies}
                       getMoviesByDirector={getMoviesByDirector}
-                      updateAction={updateAction}
+                      // updateAction={updateAction}
                     />
                   </Col>
                 )}
@@ -275,7 +272,6 @@ export const MainView = () => {
                     user={user}
                     token={token}
                     movies={movies}
-                    updateAction={updateAction}
                   />
                 </Col>
               )

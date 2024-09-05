@@ -59,8 +59,25 @@ $btn-border-radius: 20%;
   margin-bottom: 15px;
 }
 
-input::placeholder {
-  color: white;
+.placeholder {
+  display: inline-block;
+  min-height: 1em;
+  vertical-align: middle;
+  cursor: wait;
+  background-color: white;
+  color: #292929;
+  opacity: 75%; 
+  // $placeholder-opacity-min;
+
+  &.btn::before {
+    display: inline-block;
+    content: "";
+  }
+}
+
+input:not(.placeholder) {
+  background-color: initial; /* or any other color that fits your design */
+  color: initial; /* default color */
 }
 
 
@@ -79,6 +96,8 @@ input::placeholder {
   object-position: top;
   border-radius: 5px;
 }
+
+
 
 
 

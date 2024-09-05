@@ -37,35 +37,36 @@ export const SignupView = () => {
     <><img src={logo} alt="CMDB" className="logo-large" />
     <Form className="signup" onSubmit={handleSubmit}>
       <h4>Sign Up:</h4>
-    <Form.Group controlId="formUsername">
-      <Form.Label>Username:</Form.Label>
-      <Form.Control className="margin-bottom"  style={{ color: "white"}}
+    <Form.Group controlId="formUsername" >
+      <Form.Label >Username:</Form.Label>
+
+      <Form.Control style={{ color: "white"}} className="placeholder margin-bottom"
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         required
         minLength="3" 
-       
+       placeholder="Choose a username of min 8 characters."
       />
     </Form.Group>
 
     <Form.Group controlId="formPassword">
       <Form.Label>Password:</Form.Label>
-      <Form.Control className="margin-bottom"  style={{ color: "white"}}
+      <Form.Control className="margin-bottom placeholder"  style={{ color: "white"}}
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
+        placeholder="Choose a password of min 8 characters, no symbols."
      />
     </Form.Group>
     <Form.Group controlId="formEmail">
       <Form.Label>Email:</Form.Label>
-      <Form.Control className="margin-bottom"  style={{ color: "white"}}
-        type="email"
+      <Form.Control type="email"  style={{ color: "white"}} className="placeholder"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-       
+       placeholder="Enter your email address."
       />
     </Form.Group>
     <Button variant="info" className="margin-top btn-sm" type="submit">

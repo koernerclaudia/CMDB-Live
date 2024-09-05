@@ -14,7 +14,6 @@ import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 export const MovieView = ({
   movies,
   getSimilarMovies,
-  updateAction,
   getMoviesByDirector,
 }) => {
   const { MovieID } = useParams();
@@ -23,11 +22,11 @@ export const MovieView = ({
   const similarMovies = getSimilarMovies(movie);
   const directorMovies = getMoviesByDirector(movie);
 
-  useEffect(() => {
-    if (movie) {
-      setIsFavorite(checkIfFavorite(movie._id));
-    }
-  }, [MovieID, movie]);
+  // useEffect(() => {
+  //   if (movie) {
+  //     setIsFavorite(checkIfFavorite(movie._id));
+  //   }
+  // }, [MovieID, movie]);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -36,10 +35,10 @@ export const MovieView = ({
     }
   }, [MovieID]);
 
-  const checkIfFavorite = (movieId) => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    return user && user.FavoriteMovies && user.FavoriteMovies.includes(movieId);
-  };
+  // const checkIfFavorite = (MovieID) => {
+  //   const user = JSON.parse(localStorage.getItem("user"));
+  //   return user && user.FavoriteMovies && user.FavoriteMovies.includes(MovieID);
+  // };
 
   const handleAddToFav = async (MovieID) => {
     try {
@@ -66,7 +65,7 @@ export const MovieView = ({
       const updatedUser = await response.json();
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(true);
-      updateAction(MovieID);
+      // updateAction(MovieID);
     } catch (error) {
       console.log(
         `An error occurred while adding the movie to favorites: ${error.message}`
@@ -99,7 +98,7 @@ export const MovieView = ({
       const updatedUser = await response.json();
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(false);
-      updateAction(MovieID);
+      // updateAction(MovieID);
     } catch (error) {
       console.log(
         `An error occurred while removing the movie from favorites: ${error.message}`

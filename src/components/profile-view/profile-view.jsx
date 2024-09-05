@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Card } from "react-bootstrap";
 import Row from "react-bootstrap/Row";
@@ -13,11 +12,12 @@ import "../../index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
-export const ProfileView = ({ user, token, movies }) => {
-  const [favoriteMovies, setFavoriteMovies] = useState([]);
-  const [username, setUsername] = useState(user.username);
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState(user.email);
+  export const ProfileView = ({ user, token, movies }) => {
+    const [favoriteMovies, setFavoriteMovies] = useState([]);
+    const [username, setUsername] = useState(user.username);
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState(user.email);
+  
 
   useEffect(() => {
     if (!user) return;
@@ -28,6 +28,8 @@ export const ProfileView = ({ user, token, movies }) => {
     );
     setFavoriteMovies(favMovies);
   }, [user, movies]);
+
+
 
   const handleRemoveFavorite = (MovieID) => {
     fetch(
@@ -40,60 +42,130 @@ export const ProfileView = ({ user, token, movies }) => {
         },
       }
     )
-      .then((response) => {
-        if (response.ok) {
-          // Update the favoriteMovies state to remove the movie
-          setFavoriteMovies(
-            favoriteMovies.filter((movie) => movie._id !== MovieID)
-          );
-        } else {
-          alert("Failed to remove the movie from favorites.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
-      });
+    .then((response) => {
+      if (response.ok) {
+        // Update the favoriteMovies state to remove the movie
+        setFavoriteMovies(
+          favoriteMovies.filter((movie) => movie._id !== MovieID)
+        );
+        return response.json();
+      } else {
+        alert("Failed to remove the movie from favorites.");
+      }
+    })
+    .then((data) => {
+      localStorage.setItem('user', JSON.stringify(data));
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    });
+};
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const updatedUser = {
+    username: username,
+    password: password,
+    email: email,
   };
+
+  fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedUser),
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert("Profile updated successfully.");
+
+        const updatedUserResponse = { ...user, username, email };
+
+        setUsername(username);
+        setEmail(email);
+      } else {
+        alert("Failed to update profile.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    });
+};
+
+// const handleUpdate = (e, updatedUser) => {
+// e.preventDefault();
+
+// fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
+//       method: "PUT",
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(updatedUser),
+//     }
+//   )
+//   .then((response) => {
+//  if (response.ok) {
+//   return response.json();
+//  }
+// })
+// .then((data) => {
+//   if (data) {
+//     setUser(data);
+//   }
+// })
+// .catch((e) => {
+//   alert(e);
+// });
+//   };
+
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   const updatedUser = {
+  //     username: username,
+  //     password: password,
+  //     email: email,
+  //   };
+
+  //   fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(updatedUser),
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         alert("Profile updated successfully.");
+
+          // const updatedUserResponse = { ...user, username, password, email };
+          // localStorage.setItem('user', JSON.stringify(updatedUserResponse));
+          // setUsername(username);
+          // setPassword(password);
+          // setEmail(email);
+  //       } else {
+  //         alert("Failed to update profile.");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //       alert("An error occurred. Please try again.");
+  //     });
+  // };
+
+
 
   const handleLogout = () => {
     localStorage.clear();
     window.location.href = "/login";
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const updatedUser = {
-      username: username,
-      password: password,
-      email: email,
-    };
-
-    fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedUser),
-    })
-      .then((response) => {
-        if (response.ok) {
-          alert("Profile updated successfully.");
-
-          const updatedUserResponse = { ...user, username, email };
-
-          setUsername(username);
-          setEmail(email);
-        } else {
-          alert("Failed to update profile.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
-      });
   };
 
   const handleDeregister = () => {
@@ -152,7 +224,9 @@ export const ProfileView = ({ user, token, movies }) => {
               <Card.Title style={{ color: "#54B4D3" }}>
                 Change your info
               </Card.Title>
-              <Form onSubmit={handleSubmit} className="mb-4">
+              <Form 
+              onSubmit={handleSubmit} 
+              className="mb-4">
                 <Form.Group controlId="formUsername" className="mb-3">
                   <Form.Label
                     className="display-8"

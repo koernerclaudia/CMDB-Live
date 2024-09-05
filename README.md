@@ -65,6 +65,7 @@ https://cmdb2024.netlify.app/login
 
 To build this app:
 
+1) Make sure to have NPM and React installed.
 1) Download a Zip file form the main branch and extract.
 2) Within your preferred code editor's terminal or terminal itself, navigate to the relevant folder location and build the app by running:
 

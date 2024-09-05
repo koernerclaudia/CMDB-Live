@@ -57,7 +57,7 @@ export const LoginView = ({ onLoggedIn }) => {
       <Form.Group controlId="formUsername">
         <Form.Label className="display-8">Username:</Form.Label>
         <Form.Control
-          className="margin-bottom"
+          className="margin-bottom input"
           style={{ color: "white" }}
           type="text"
           value={username}

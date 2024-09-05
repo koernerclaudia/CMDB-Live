@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 
-export const MovieCard = ({ movie, updateAction }) => {
+export const MovieCard = ({ movie }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const MovieID = movie._id;
 
@@ -46,7 +46,6 @@ export const MovieCard = ({ movie, updateAction }) => {
       const updatedUser = await response.json();
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(true);
-      updateAction(MovieID);
       alert('Movie added to your favorite list successfully!');
     } catch (error) {
       console.log(
@@ -80,7 +79,6 @@ export const MovieCard = ({ movie, updateAction }) => {
       const updatedUser = await response.json();
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(false);
-      updateAction(MovieID);
       alert("Movie removed from your favorite list successfully!");
     } catch (error) {
       console.log(
@@ -149,13 +147,11 @@ MovieCard.propTypes = {
       Birthyear: PropTypes.string,
     }),
     Genre: PropTypes.shape({
-      Name: PropTypes.string,
+      Type: PropTypes.string,
       Description: PropTypes.string,
     }),
-    Actors: PropTypes.array.isrequired,
-    ImageURL: PropTypes.string.isrequired,
+    Actors: PropTypes.array,
+    ImageURL: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired,
-  onAddToFavorites: PropTypes.func.isRequired, // New prop type
 };

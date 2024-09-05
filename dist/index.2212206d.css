@@ -6983,20 +6983,6 @@ textarea.form-control-lg {
   overflow-y: auto;
 }
 
-.placeholder {
-  vertical-align: middle;
-  cursor: wait;
-  opacity: none;
-  background-color: #fff;
-  min-height: 1em;
-  display: inline-block;
-}
-
-.placeholder.btn:before {
-  content: "";
-  display: inline-block;
-}
-
 .placeholder-xs {
   min-height: .6em;
 }
@@ -16983,8 +16969,24 @@ x .card-text, .form-text, .card-body {
   margin-bottom: 15px;
 }
 
-input::placeholder {
-  color: #fff;
+.placeholder {
+  vertical-align: middle;
+  cursor: wait;
+  color: #292929;
+  opacity: .75;
+  background-color: #fff;
+  min-height: 1em;
+  display: inline-block;
+}
+
+.placeholder.btn:before {
+  content: "";
+  display: inline-block;
+}
+
+input:not(.placeholder) {
+  background-color: initial;
+  color: initial;
 }
 
 .cover-img {

@@ -27,8 +27,10 @@ export const MovieView = ({
     const user = JSON.parse(localStorage.getItem("user"));
     if (user && user.FavoriteMovies && user.FavoriteMovies.includes(MovieID)) {
       setIsFavorite(true);
+    } else {
+      setIsFavorite(false); // Reset state when movie is not in favorites
     }
-  }, [MovieID]);
+  }, [MovieID]); 
 
   const handleAddToFav = async (MovieID) => {
     try {

@@ -65038,6 +65038,7 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
     (0, _react.useEffect)(()=>{
         const user = JSON.parse(localStorage.getItem("user"));
         if (user && user.FavoriteMovies && user.FavoriteMovies.includes(MovieID)) setIsFavorite(true);
+        else setIsFavorite(false); // Reset state when movie is not in favorites
     }, [
         MovieID
     ]);
@@ -65112,17 +65113,17 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                         alt: "Movie Image"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 105,
+                                        lineNumber: 107,
                                         columnNumber: 17
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 104,
+                                    lineNumber: 106,
                                     columnNumber: 15
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 103,
+                                lineNumber: 105,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -65145,21 +65146,21 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                         children: movie.Title
                                                     }, void 0, false, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 115,
+                                                        lineNumber: 117,
                                                         columnNumber: 19
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
                                                         children: movie.Description
                                                     }, void 0, false, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 118,
+                                                        lineNumber: 120,
                                                         columnNumber: 19
                                                     }, undefined),
                                                     " "
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 114,
+                                                lineNumber: 116,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
@@ -65175,7 +65176,7 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                                 children: "Actors:"
                                                             }, void 0, false, {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 122,
+                                                                lineNumber: 124,
                                                                 columnNumber: 21
                                                             }, undefined),
                                                             " ",
@@ -65183,7 +65184,7 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 121,
+                                                        lineNumber: 123,
                                                         columnNumber: 19
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
@@ -65195,7 +65196,7 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                                 children: "Director:"
                                                             }, void 0, false, {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 125,
+                                                                lineNumber: 127,
                                                                 columnNumber: 21
                                                             }, undefined),
                                                             " ",
@@ -65203,7 +65204,7 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 124,
+                                                        lineNumber: 126,
                                                         columnNumber: 19
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default).Item, {
@@ -65215,7 +65216,7 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                                 children: "Genre:"
                                                             }, void 0, false, {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 128,
+                                                                lineNumber: 130,
                                                                 columnNumber: 21
                                                             }, undefined),
                                                             " ",
@@ -65226,24 +65227,24 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 129,
                                                         columnNumber: 19
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 120,
+                                                lineNumber: 122,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 113,
+                                        lineNumber: 115,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 133,
+                                        lineNumber: 135,
                                         columnNumber: 15
                                     }, undefined),
                                     isFavorite ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -65259,14 +65260,14 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                 }
                                             }, void 0, false, {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 141,
+                                                lineNumber: 143,
                                                 columnNumber: 19
                                             }, undefined),
                                             "\xa0Remove"
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 135,
+                                        lineNumber: 137,
                                         columnNumber: 17
                                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                                         className: "btn-sm",
@@ -65278,24 +65279,24 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                 icon: (0, _freeRegularSvgIcons.faHeart)
                                             }, void 0, false, {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 151,
+                                                lineNumber: 153,
                                                 columnNumber: 19
                                             }, undefined),
                                             "\xa0Add to List"
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 145,
+                                        lineNumber: 147,
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 156,
+                                        lineNumber: 158,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 157,
+                                        lineNumber: 159,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -65306,29 +65307,29 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                             children: "Back to list of Movies"
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 159,
+                                            lineNumber: 161,
                                             columnNumber: 17
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 158,
+                                        lineNumber: 160,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 112,
+                                lineNumber: 114,
                                 columnNumber: 13
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 102,
+                        lineNumber: 104,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 101,
+                    lineNumber: 103,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
@@ -65372,18 +65373,18 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                                    lineNumber: 176,
+                                                                    lineNumber: 178,
                                                                     columnNumber: 25
                                                                 }, undefined)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 174,
+                                                            lineNumber: 176,
                                                             columnNumber: 23
                                                         }, undefined)
                                                     }, void 0, false, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 173,
+                                                        lineNumber: 175,
                                                         columnNumber: 21
                                                     }, undefined),
                                                     similarMovies.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
@@ -65397,17 +65398,17 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                                     children: similarMovie.Title
                                                                 }, void 0, false, {
                                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                                    lineNumber: 186,
+                                                                    lineNumber: 188,
                                                                     columnNumber: 29
                                                                 }, undefined)
                                                             }, similarMovie._id, false, {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 185,
+                                                                lineNumber: 187,
                                                                 columnNumber: 27
                                                             }, undefined))
                                                     }, void 0, false, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 183,
+                                                        lineNumber: 185,
                                                         columnNumber: 23
                                                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
                                                         style: {
@@ -65426,31 +65427,31 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 198,
+                                                                lineNumber: 200,
                                                                 columnNumber: 25
                                                             }, undefined),
                                                             "genre listed in this database."
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 196,
+                                                        lineNumber: 198,
                                                         columnNumber: 23
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 172,
+                                                lineNumber: 174,
                                                 columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 171,
+                                            lineNumber: 173,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 169,
+                                    lineNumber: 171,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -65482,18 +65483,18 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 214,
+                                                                lineNumber: 216,
                                                                 columnNumber: 25
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 212,
+                                                        lineNumber: 214,
                                                         columnNumber: 23
                                                     }, undefined)
                                                 }, void 0, false, {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 211,
+                                                    lineNumber: 213,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 directorMovies.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listGroupDefault.default), {
@@ -65510,17 +65511,17 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                                 children: directorMovie.Title
                                                             }, void 0, false, {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 228,
+                                                                lineNumber: 230,
                                                                 columnNumber: 29
                                                             }, undefined)
                                                         }, directorMovie._id, false, {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 224,
+                                                            lineNumber: 226,
                                                             columnNumber: 27
                                                         }, undefined))
                                                 }, void 0, false, {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 222,
+                                                    lineNumber: 224,
                                                     columnNumber: 23
                                                 }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
                                                     style: {
@@ -65539,52 +65540,52 @@ const MovieView = ({ movies, getSimilarMovies, getMoviesByDirector })=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 240,
+                                                            lineNumber: 242,
                                                             columnNumber: 25
                                                         }, undefined),
                                                         "listed in this database."
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 238,
+                                                    lineNumber: 240,
                                                     columnNumber: 23
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 210,
+                                            lineNumber: 212,
                                             columnNumber: 19
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 209,
+                                        lineNumber: 211,
                                         columnNumber: 17
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 208,
+                                    lineNumber: 210,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 168,
+                            lineNumber: 170,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 167,
+                        lineNumber: 169,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 166,
+                    lineNumber: 168,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-view/movie-view.jsx",
-            lineNumber: 100,
+            lineNumber: 102,
             columnNumber: 7
         }, undefined)
     }, void 0, false);

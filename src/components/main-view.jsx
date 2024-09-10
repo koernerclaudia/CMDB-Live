@@ -37,18 +37,18 @@ export const MainView = () => {
       .catch(() => setLoading(false));
   }, [token]);
 
-  // const updateAction = (movieId) => {
-  //   const updatedUser = JSON.parse(localStorage.getItem("user"));
-  //   if (updatedUser.FavoriteMovies.includes(movieId)) {
-  //     updatedUser.FavoriteMovies = updatedUser.FavoriteMovies.filter(
-  //       (id) => id !== movieId
-  //     );
-  //   } else {
-  //     updatedUser.FavoriteMovies.push(movieId);
-  //   }
-  //   localStorage.setItem("user", JSON.stringify(updatedUser));
-  //   setUser(updatedUser);
-  // };
+  const updateAction = (MovieID) => {
+    const updatedUser = JSON.parse(localStorage.getItem("user"));
+    if (updatedUser.FavoriteMovies.includes(MovieID)) {
+      updatedUser.FavoriteMovies = updatedUser.FavoriteMovies.filter(
+        (id) => id !== MovieID
+      );
+    } else {
+      updatedUser.FavoriteMovies.push(MovieID);
+    }
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+    setUser(updatedUser);
+  };
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -197,7 +197,7 @@ export const MainView = () => {
                       movies={movies}
                       getSimilarMovies={getSimilarMovies}
                       getMoviesByDirector={getMoviesByDirector}
-                      // updateAction={updateAction}
+                      updateAction={updateAction}
                     />
                   </Col>
                 )}
@@ -252,7 +252,8 @@ export const MainView = () => {
                     ) : (
                       sortedAndFilteredMovies.map((movie) => (
                         <Col className="mb-4" key={movie._id} md={4} xs={12}>
-                          <MovieCard movie={movie} />
+                          <MovieCard 
+                          movie={movie} />
                         </Col>
                       ))
                     )}

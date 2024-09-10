@@ -65,15 +65,8 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 const handleSubmit = (event) => {
   event.preventDefault();
 
-  // const updateUser = {
-  //   username: username,
-  //   password: password,
-  //   email: email,
-  // };
-
   const updateUser = {};
 
-  // Conditionally add fields if they are provided (not empty or unchanged)
   if (username.trim() !== "") {
     updateUser.username = username;
   }
@@ -84,7 +77,6 @@ const handleSubmit = (event) => {
     updateUser.email = email;
   }
 
-  // Check if at least one field is updated
   if (Object.keys(updateUser).length === 0) {
     alert("Please update at least one field.");
     return;
@@ -108,11 +100,9 @@ const handleSubmit = (event) => {
   })
 
   .then((updatedUser) => {
-    // Update the user state with the new values
     setUsername(updatedUser.username);
     setEmail(updatedUser.email);
 
-    // Update localStorage with the new user details
     localStorage.setItem('user', JSON.stringify(updatedUser));
 
     alert("Profile updated successfully.\n (Changes to the password will not be displayed.)");
@@ -124,18 +114,6 @@ const handleSubmit = (event) => {
   });
 };
 
-
-//     .then((response) => {
-//       if (response.ok) {
-//         localStorage.setItem('user', JSON.stringify(updateUser));
-//         alert("Profile updated successfully.");
-//       };
-//     })
-//     .catch((error) => {
-//       console.error("Error:", error);
-//       alert("An error occurred. Please try again.");
-//     });
-// };
 
 
 

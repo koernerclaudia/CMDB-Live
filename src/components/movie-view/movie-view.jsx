@@ -22,11 +22,6 @@ export const MovieView = ({
   const similarMovies = getSimilarMovies(movie);
   const directorMovies = getMoviesByDirector(movie);
 
-  // useEffect(() => {
-  //   if (movie) {
-  //     setIsFavorite(checkIfFavorite(movie._id));
-  //   }
-  // }, [MovieID, movie]);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -34,11 +29,6 @@ export const MovieView = ({
       setIsFavorite(true);
     }
   }, [MovieID]);
-
-  // const checkIfFavorite = (MovieID) => {
-  //   const user = JSON.parse(localStorage.getItem("user"));
-  //   return user && user.FavoriteMovies && user.FavoriteMovies.includes(MovieID);
-  // };
 
   const handleAddToFav = async (MovieID) => {
     try {
@@ -65,7 +55,6 @@ export const MovieView = ({
       const updatedUser = await response.json();
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(true);
-      // updateAction(MovieID);
     } catch (error) {
       console.log(
         `An error occurred while adding the movie to favorites: ${error.message}`
@@ -98,7 +87,7 @@ export const MovieView = ({
       const updatedUser = await response.json();
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setIsFavorite(false);
-      // updateAction(MovieID);
+      // alert("Movie removed from your favorite list successfully!");
     } catch (error) {
       console.log(
         `An error occurred while removing the movie from favorites: ${error.message}`
@@ -205,8 +194,9 @@ export const MovieView = ({
                       </ListGroup>
                     ) : (
                       <Card.Text style={{ color: "#ffffff" }}>
-                        There are no other movies of the
+                        There are no other movies of the  
                         <span style={{ color: "#f6c344" }}>
+                       
                           &nbsp;{movie.Genre.Type}&nbsp;
                         </span>
                         genre listed in this database.
@@ -222,6 +212,7 @@ export const MovieView = ({
                       <h6>
                         More movies by director: 
                         <span style={{ color: "#f6c344" }}>
+                       
                           &nbsp;{movie.Director.Name}&nbsp;
                         </span>
                         
@@ -245,10 +236,9 @@ export const MovieView = ({
                       </ListGroup>
                     ) : (
                       <Card.Text style={{ color: "#ffffff" }}>
-                        There are no other movies by{" "}
+                        There are no other movies by
                         <span style={{ color: "#f6c344" }}>
-                          {" "}
-                          {movie.Director.Name}{" "}
+                        &nbsp;{movie.Director.Name}&nbsp;
                         </span>
                         listed in this database.
                       </Card.Text>

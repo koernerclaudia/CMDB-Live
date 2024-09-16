@@ -8,16 +8,15 @@ import UserInfo from "./user-info";
 import { Link } from "react-router-dom";
 import "../../index.scss";
 
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
-  export const ProfileView = ({ user, token, movies }) => {
-    const [favoriteMovies, setFavoriteMovies] = useState([]);
-    const [username, setUsername] = useState(user.username);
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState(user.email);
-  
+export const ProfileView = ({ token, movies }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [username, setUsername] = useState(user.username);
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(user.email);
 
   useEffect(() => {
     if (!user) return;
@@ -28,7 +27,6 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
     );
     setFavoriteMovies(favMovies);
   }, [user, movies]);
-
 
 
   const handleRemoveFavorite = (MovieID) => {
@@ -42,81 +40,77 @@ import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
         },
       }
     )
-    .then((response) => {
-      if (response.ok) {
-        // Update the favoriteMovies state to remove the movie
-        setFavoriteMovies(
-          favoriteMovies.filter((movie) => movie._id !== MovieID)
-        );
-        return response.json();
-      } else {
-        alert("Failed to remove the movie from favorites.");
-      }
-    })
-    .then((data) => {
-      localStorage.setItem('user', JSON.stringify(data));
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("An error occurred. Please try again.");
-    });
-};
+      .then((response) => {
+        if (response.ok) {
+          // Update the favoriteMovies state to remove the movie
+          setFavoriteMovies(
+            favoriteMovies.filter((movie) => movie._id !== MovieID)
+          );
+          return response.json();
+        } else {
+          alert("Failed to remove the movie from favorites.");
+        }
+      })
+      .then((data) => {
+        localStorage.setItem("user", JSON.stringify(data));
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+      });
+  };
 
-const handleSubmit = (event) => {
-  event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const updateUser = {};
+    const updateUser = {};
 
-  if (username.trim() !== "") {
-    updateUser.username = username;
-  }
-  if (password.trim() !== "") {
-    updateUser.password = password;
-  }
-  if (email.trim() !== "") {
-    updateUser.email = email;
-  }
-
-  if (Object.keys(updateUser).length === 0) {
-    alert("Please update at least one field.");
-    return;
-  }
-
-  fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(updateUser),
-  })
-
-  .then((response) => {
-    if (response.ok) {
-      return response.json(); // Get the updated user data from the response
-    } else {
-      throw new Error('Failed to update profile.');
+    if (username.trim() !== "") {
+      updateUser.username = username;
     }
-  })
+    if (password.trim() !== "") {
+      updateUser.password = password;
+    }
+    if (email.trim() !== "") {
+      updateUser.email = email;
+    }
 
-  .then((updatedUser) => {
-    setUsername(updatedUser.username);
-    setEmail(updatedUser.email);
+    if (Object.keys(updateUser).length === 0) {
+      alert("Please update at least one field.");
+      return;
+    }
 
-    localStorage.setItem('user', JSON.stringify(updatedUser));
+    fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateUser),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json(); // Get the updated user data from the response
+        } else {
+          throw new Error("Failed to update profile.");
+        }
+      })
 
-    alert("Profile updated successfully.\n (Changes to the password will not be displayed.)");
-    window.location.reload();
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-    alert("An error occurred. Please try again.");
-  });
-};
+      .then((updatedUser) => {
+        setUsername(updatedUser.username);
+        setEmail(updatedUser.email);
 
+        localStorage.setItem("user", JSON.stringify(updatedUser));
 
-
-
+        alert(
+          "Profile updated successfully.\n (Changes to the password will not be displayed.)"
+        );
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+      });
+  };
 
   const handleLogout = () => {
     localStorage.clear();
@@ -179,9 +173,7 @@ const handleSubmit = (event) => {
               <Card.Title style={{ color: "#54B4D3" }}>
                 Change your info
               </Card.Title>
-              <Form 
-              onSubmit={handleSubmit} 
-              className="mb-4">
+              <Form onSubmit={handleSubmit} className="mb-4">
                 <Form.Group controlId="formUsername" className="mb-3">
                   <Form.Label
                     className="display-8"
@@ -189,7 +181,7 @@ const handleSubmit = (event) => {
                   >
                     Change Username
                   </Form.Label>
-                  <Form.Control 
+                  <Form.Control
                     style={{ color: "white" }}
                     type="text"
                     onChange={(e) => setUsername(e.target.value)}
@@ -204,7 +196,7 @@ const handleSubmit = (event) => {
                   >
                     Change Password
                   </Form.Label>
-                  <Form.Control 
+                  <Form.Control
                     style={{ color: "white" }}
                     type="password"
                     value={password}
@@ -220,7 +212,8 @@ const handleSubmit = (event) => {
                   >
                     Change Email
                   </Form.Label>
-                  <Form.Control placeholder="Enter email"
+                  <Form.Control
+                    placeholder="Enter email"
                     style={{ color: "white" }}
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
@@ -257,7 +250,12 @@ const handleSubmit = (event) => {
                 <Card.Body className="d-flex">
                   <Row className="w-100">
                     <Col
-                      md="auto"
+                      xs={4}
+                      sm={4}
+                      md={1}
+                      lg={1}
+                      xl={1}
+                      xxl={1}
                       className="col-2 d-flex justify-content-left align-items-center"
                     >
                       <img
@@ -267,30 +265,52 @@ const handleSubmit = (event) => {
                       />
                     </Col>
                     <Col
-                      md="auto"
+                      xs={8}
+                      sm={8}
+                      md={7}
+                      lg={7}
+                      xl={7}
+                      xxl={7}
+                    
                       className="col-4 d-flex justify-content-left align-items-center"
                     >
                       <Card.Title style={{ color: "#54B4D3" }} className="fs-6">
                         {movie.Title}
                       </Card.Title>
                     </Col>
+                    
                     <Col
-                      md="auto"
+                      xs={6}
+                      sm={6}
+                      md={3}
+                      lg={2}
+                      xl={2}
+                      xxl={2}
+                     
                       className="col-3 d-flex justify-content-center align-items-center"
                     >
                       <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-                        <Button className="btn-sm" variant="warning">
+                        <Button
+                          className="btn-sm fs-6 fs-md-5"
+                          variant="warning"
+                        >
                           More info
                         </Button>
                       </Link>
                     </Col>
                     <Col
-                      md="auto"
-                      className="col-3 d-flex justify-content-right align-items-center"
+                      xs={6}
+                      sm={6}
+                      md={3}
+                      lg={2}
+                      xl={2}
+                      xxl={2}
+                    
+                      className="d-flex justify-content-right align-items-center"
                     >
                       <Button
                         variant="outline-light"
-                        className="ms-auto btn-sm"
+                        className="btn-sm fs-6 fs-md-5"
                         onClick={() => handleRemoveFavorite(movie._id)}
                         alt="Remove from favourites."
                       >

@@ -37,22 +37,23 @@ export const SignupView = () => {
     <><img src={logo} alt="CMDB" className="logo-large" />
     <Form className="signup" onSubmit={handleSubmit}>
       <h4>Sign Up:</h4>
-    <Form.Group controlId="formUsername" >
-      <Form.Label >Username:</Form.Label>
-
-      <Form.Control style={{ color: "white"}} className="placeholder margin-bottom"
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        required
-        minLength="3" 
-       placeholder="Choose a username of min 5 characters."
-      />
-    </Form.Group>
+      <Form.Group controlId="formUsername">
+          <Form.Label>Username:</Form.Label>
+          <Form.Control
+            className="placeholder margin-bottom"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            minLength="3"
+            placeholder="Choose a username of min 5 characters."
+            aria-label="Choose a username of min 5 characters."
+          />
+        </Form.Group>
 
     <Form.Group controlId="formPassword">
       <Form.Label>Password:</Form.Label>
-      <Form.Control className="margin-bottom placeholder"  style={{ color: "white"}}
+      <Form.Control className="margin-bottom placeholder"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}

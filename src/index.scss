@@ -3,6 +3,7 @@ $light: #ffffff;
 $body-bg: #222222;
 $btn-border-radius: 20%;
 $form-text-color: #ffffff;
+$input-color: #ffffff;
 
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
@@ -60,21 +61,48 @@ $form-text-color: #ffffff;
   margin-bottom: 15px;
 }
 
+/* Use !important to force the styles */
+::placeholder {
+  color: white !important;
+  opacity: 0.5 !important; /* Ensures the color is not faded */
+  font-size: 0.8rem;
+}
+
+
+//filter
+
+.custom-select {
+  background-color: #292929; 
+  color: #ffffff; 
+  border: 1px solid $warning; /* Yellow border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px;
+}
+
+.custom-select:focus {
+  border-color: #ffffff;
+  box-shadow: none;
+}
+
+// placeholder fields
+
+
 .placeholder {
   display: inline-block;
   min-height: 1em;
   vertical-align: middle;
   cursor: wait;
-  background-color: white;
-  color: #292929;
-  opacity: 75%; 
-  // $placeholder-opacity-min;
+  color: white;
 
   &.btn::before {
     display: inline-block;
     content: "";
   }
 }
+
+
+
+
 
 .filled {
   color: #ffffff;

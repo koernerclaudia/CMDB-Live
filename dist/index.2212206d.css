@@ -2077,7 +2077,7 @@ progress {
 }
 
 .form-control {
-  color: var(--bs-body-color);
+  color: #fff;
   appearance: none;
   background-color: var(--bs-body-bg);
   border: var(--bs-border-width) solid var(--bs-border-color);
@@ -2107,7 +2107,7 @@ progress {
 }
 
 .form-control:focus {
-  color: var(--bs-body-color);
+  color: #fff;
   background-color: var(--bs-body-bg);
   border-color: #86b7fe;
   outline: 0;
@@ -2136,7 +2136,7 @@ progress {
 }
 
 .form-control::file-selector-button {
-  color: var(--bs-body-color);
+  color: #fff;
   background-color: var(--bs-tertiary-bg);
   pointer-events: none;
   border-color: inherit;
@@ -2249,7 +2249,7 @@ textarea.form-control-lg {
 
 .form-select {
   --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-  color: var(--bs-body-color);
+  color: #fff;
   appearance: none;
   background-color: var(--bs-body-bg);
   background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
@@ -2290,7 +2290,7 @@ textarea.form-control-lg {
 
 .form-select:-moz-focusring {
   color: #0000;
-  text-shadow: 0 0 0 var(--bs-body-color);
+  text-shadow: 0 0 #fff;
 }
 
 .form-select-sm {
@@ -2671,7 +2671,7 @@ textarea.form-control-lg {
 }
 
 .input-group-text {
-  color: var(--bs-body-color);
+  color: #fff;
   text-align: center;
   white-space: nowrap;
   background-color: var(--bs-tertiary-bg);
@@ -16969,12 +16969,29 @@ x .card-text, .form-text, .card-body {
   margin-bottom: 15px;
 }
 
+::placeholder {
+  font-size: .8rem;
+  color: #fff !important;
+  opacity: .5 !important;
+}
+
+.custom-select {
+  color: #fff;
+  background-color: #292929;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.custom-select:focus {
+  box-shadow: none;
+  border-color: #fff;
+}
+
 .placeholder {
   vertical-align: middle;
   cursor: wait;
-  color: #292929;
-  opacity: .75;
-  background-color: #fff;
+  color: #fff;
   min-height: 1em;
   display: inline-block;
 }

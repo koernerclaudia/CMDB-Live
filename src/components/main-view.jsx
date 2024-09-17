@@ -11,7 +11,6 @@ import { ProfileView } from "./profile-view/profile-view";
 import Form from "react-bootstrap/Form";
 import "../index.scss";
 
-
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
@@ -22,7 +21,7 @@ export const MainView = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("default");
   const [genreFilter, setGenreFilter] = useState("all");
-
+  
   useEffect(() => {
     if (!token) return;
     setLoading(true);
@@ -101,7 +100,7 @@ export const MainView = () => {
   };
 
   const getUniqueGenres = () => {
-    const genres = movies.map(movie => movie.Genre.Type);
+    const genres = movies.map((movie) => movie.Genre.Type);
     return ["all", ...new Set(genres)];
   };
 
@@ -110,7 +109,7 @@ export const MainView = () => {
 
     // Apply genre filter
     if (genreFilter !== "all") {
-      result = result.filter(movie => movie.Genre.Type === genreFilter);
+      result = result.filter((movie) => movie.Genre.Type === genreFilter);
     }
 
     // Apply sorting
@@ -124,7 +123,6 @@ export const MainView = () => {
   };
 
   const sortedAndFilteredMovies = sortAndFilterMovies();
-
 
   if (loading) {
     return <div className="centered-loading">Loading movies...</div>;
@@ -148,8 +146,10 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col
-                  xxl={6} lg={6}
-                  md={6} sm={8}
+                    xxl={6}
+                    lg={6}
+                    md={6}
+                    sm={8}
                     xs={12}
                     className="d-flex flex-column align-items-center"
                   >
@@ -167,8 +167,10 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col
-                  xxl={6} lg={6}
-                  md={6} sm={8}
+                    xxl={6}
+                    lg={6}
+                    md={6}
+                    sm={8}
                     xs={12}
                     className="d-flex flex-column align-items-center"
                   >
@@ -192,7 +194,10 @@ export const MainView = () => {
                 ) : movies.length === 0 ? (
                   <Col>The list is empty!</Col>
                 ) : (
-                  <Col md={12} className="d-flex flex-column align-items-center">
+                  <Col
+                    md={12}
+                    className="d-flex flex-column align-items-center"
+                  >
                     <MovieView
                       movies={movies}
                       getSimilarMovies={getSimilarMovies}
@@ -217,25 +222,35 @@ export const MainView = () => {
                     <Row className="mb-3 justify-content-center algin-content-center">
                       <Col md={6} sm={6} xs={12} className="mx-auto margin-top">
                         <Form.Control
-                          className="placeholder w-100"
+                          className="placeholder custom-select"
                           noValidate
-                          style={{ color: "white"}}
+                          style={{ color: "white" }}
                           type="text"
                           placeholder="Search by movie title, genre, actor or director"
                           value={searchTerm}
                           onChange={handleSearch}
                         />
                       </Col>
+
                       <Col md={3} sm={3} xs={6} className="mx-auto margin-top">
-                        <Form.Select className="placeholder" onChange={handleSortChange} value={sortOrder} >
+                       
+                        <Form.Select
+                          className="placeholder custom-select"
+                          onChange={handleSortChange}
+                          value={sortOrder}
+                        >
                           <option value="default">Sort by...</option>
                           <option value="aToZ">A to Z</option>
                           <option value="zToA">Z to A</option>
                         </Form.Select>
                       </Col>
                       <Col md={3} sm={3} xs={6} className="mx-auto margin-top">
-                        <Form.Select className="placeholder"  onChange={handleGenreChange} value={genreFilter}>
-                          {getUniqueGenres().map(genre => (
+                        <Form.Select
+                          className="placeholder custom-select"
+                          onChange={handleGenreChange}
+                          value={genreFilter}
+                        >
+                          {getUniqueGenres().map((genre) => (
                             <option key={genre} value={genre}>
                               {genre === "all" ? "All Genres" : genre}
                             </option>
@@ -252,8 +267,7 @@ export const MainView = () => {
                     ) : (
                       sortedAndFilteredMovies.map((movie) => (
                         <Col className="mb-4" key={movie._id} md={4} xs={12}>
-                          <MovieCard 
-                          movie={movie} />
+                          <MovieCard movie={movie} />
                         </Col>
                       ))
                     )}
@@ -269,11 +283,7 @@ export const MainView = () => {
                 <Navigate to="/login" replace />
               ) : (
                 <Col md={12}>
-                  <ProfileView
-                    user={user}
-                    token={token}
-                    movies={movies}
-                  />
+                  <ProfileView user={user} token={token} movies={movies} />
                 </Col>
               )
             }

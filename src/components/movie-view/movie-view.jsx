@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../../index.scss";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -7,9 +7,7 @@ import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
-import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
+import AddRemoveBtn from "../common/addremovebtn";
 
 export const MovieView = ({
   movies,
@@ -18,84 +16,8 @@ export const MovieView = ({
 }) => {
   const { MovieID } = useParams();
   const movie = movies.find((movie) => movie._id === MovieID);
-  const [isFavorite, setIsFavorite] = useState(false);
   const similarMovies = getSimilarMovies(movie);
   const directorMovies = getMoviesByDirector(movie);
-
-
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user && user.FavoriteMovies && user.FavoriteMovies.includes(MovieID)) {
-      setIsFavorite(true);
-    } else {
-      setIsFavorite(false); // Reset state when movie is not in favorites
-    }
-  }, [MovieID]); 
-
-  const handleAddToFav = async (MovieID) => {
-    try {
-      const user = JSON.parse(localStorage.getItem("user"));
-      const token = localStorage.getItem("token");
-      if (!token) throw new Error("No token found");
-
-      const response = await fetch(
-        `https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${MovieID}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      if (!response.ok) {
-        if (response.status === 401) throw new Error("Unauthorized");
-        throw new Error("Failed to add movie to favorites");
-      }
-
-      const updatedUser = await response.json();
-      localStorage.setItem("user", JSON.stringify(updatedUser));
-      setIsFavorite(true);
-    } catch (error) {
-      console.log(
-        `An error occurred while adding the movie to favorites: ${error.message}`
-      );
-    }
-  };
-
-  const handleRemoveFromFav = async (MovieID) => {
-    try {
-      const user = JSON.parse(localStorage.getItem("user"));
-      const token = localStorage.getItem("token");
-      if (!token) throw new Error("No token found");
-
-      const response = await fetch(
-        `https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${MovieID}`,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      if (!response.ok) {
-        if (response.status === 401) throw new Error("Unauthorized");
-        throw new Error("Failed to remove movie from favorites");
-      }
-
-      const updatedUser = await response.json();
-      localStorage.setItem("user", JSON.stringify(updatedUser));
-      setIsFavorite(false);
-      // alert("Movie removed from your favorite list successfully!");
-    } catch (error) {
-      console.log(
-        `An error occurred while removing the movie from favorites: ${error.message}`
-      );
-    }
-  };
 
   return (
     <>
@@ -133,28 +55,7 @@ export const MovieView = ({
                 </ListGroup>
               </Card>
               <br />
-              {isFavorite ? (
-                <Button
-                  className="btn-sm"
-                  variant="outline-light"
-                  onClick={() => handleRemoveFromFav(movie._id)}
-                  alt="Remove from favourites."
-                >
-                  <FontAwesomeIcon icon={solidHeart} style={{ color: "red" }} />
-                  &nbsp;Remove
-                </Button>
-              ) : (
-                <Button
-                  className="btn-sm"
-                  variant="outline-info"
-                  onClick={() => handleAddToFav(movie._id)}
-                  alt="Add to favourties."
-                >
-                  <FontAwesomeIcon icon={regularHeart} />
-                  &nbsp;Add to List
-                </Button>
-              )}
-
+              <AddRemoveBtn movieId={MovieID} />
               <br />
               <br />
               <Link to={`/`}>
@@ -214,10 +115,8 @@ export const MovieView = ({
                       <h6>
                         More movies by director: 
                         <span style={{ color: "#f6c344" }}>
-                       
                           &nbsp;{movie.Director.Name}&nbsp;
                         </span>
-                        
                       </h6>
                     </Card.Title>
                     {directorMovies.length > 0 ? (

@@ -40,34 +40,36 @@ export const SignupView = () => {
       <Form.Group controlId="formUsername">
           <Form.Label>Username:</Form.Label>
           <Form.Control
-            className="placeholder margin-bottom"
+            className="margin-bottom input"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
             minLength="3"
-            placeholder="Choose a username of min 5 characters."
-            aria-label="Choose a username of min 5 characters."
+            placeholder="Choose a username of min 5 characters"
+            aria-label="Choose a username of min 5 characters"
           />
         </Form.Group>
 
     <Form.Group controlId="formPassword">
       <Form.Label>Password:</Form.Label>
-      <Form.Control className="margin-bottom placeholder"
+      <Form.Control className="margin-bottom input"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
-        placeholder="Choose a password of min 8 characters, no symbols."
+        placeholder="Choose a password of min 8 characters, no symbols"
+        aria-label="Choose a password of min 8 characters, no symbols"
      />
     </Form.Group>
     <Form.Group controlId="formEmail">
       <Form.Label>Email:</Form.Label>
-      <Form.Control type="email"  style={{ color: "white"}} className="placeholder"
+      <Form.Control type="email"  style={{ color: "white"}} className="input"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-       placeholder="Enter your email address."
+       placeholder="Enter an email address"
+      aria-label="Enter an email address"
       />
     </Form.Group>
     <Button variant="info" className="margin-top btn-sm" type="submit">

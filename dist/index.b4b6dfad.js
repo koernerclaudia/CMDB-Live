@@ -70907,14 +70907,14 @@ const SignupView = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                className: "placeholder margin-bottom",
+                                className: "margin-bottom input",
                                 type: "text",
                                 value: username,
                                 onChange: (e)=>setUsername(e.target.value),
                                 required: true,
                                 minLength: "3",
-                                placeholder: "Choose a username of min 5 characters.",
-                                "aria-label": "Choose a username of min 5 characters."
+                                placeholder: "Choose a username of min 5 characters",
+                                "aria-label": "Choose a username of min 5 characters"
                             }, void 0, false, {
                                 fileName: "src/components/signup-view/signup-view.jsx",
                                 lineNumber: 42,
@@ -70937,12 +70937,13 @@ const SignupView = ()=>{
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
-                                className: "margin-bottom placeholder",
+                                className: "margin-bottom input",
                                 type: "password",
                                 value: password,
                                 onChange: (e)=>setPassword(e.target.value),
                                 required: true,
-                                placeholder: "Choose a password of min 8 characters, no symbols."
+                                placeholder: "Choose a password of min 8 characters, no symbols",
+                                "aria-label": "Choose a password of min 8 characters, no symbols"
                             }, void 0, false, {
                                 fileName: "src/components/signup-view/signup-view.jsx",
                                 lineNumber: 56,
@@ -70961,7 +70962,7 @@ const SignupView = ()=>{
                                 children: "Email:"
                             }, void 0, false, {
                                 fileName: "src/components/signup-view/signup-view.jsx",
-                                lineNumber: 65,
+                                lineNumber: 66,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -70969,20 +70970,21 @@ const SignupView = ()=>{
                                 style: {
                                     color: "white"
                                 },
-                                className: "placeholder",
+                                className: "input",
                                 value: email,
                                 onChange: (e)=>setEmail(e.target.value),
                                 required: true,
-                                placeholder: "Enter your email address."
+                                placeholder: "Enter an email address",
+                                "aria-label": "Enter an email address"
                             }, void 0, false, {
                                 fileName: "src/components/signup-view/signup-view.jsx",
-                                lineNumber: 66,
+                                lineNumber: 67,
                                 columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -70992,7 +70994,7 @@ const SignupView = ()=>{
                         children: "Submit"
                     }, void 0, false, {
                         fileName: "src/components/signup-view/signup-view.jsx",
-                        lineNumber: 73,
+                        lineNumber: 75,
                         columnNumber: 5
                     }, undefined)
                 ]

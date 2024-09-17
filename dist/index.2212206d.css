@@ -6983,6 +6983,15 @@ textarea.form-control-lg {
   overflow-y: auto;
 }
 
+.placeholder {
+  vertical-align: middle;
+  cursor: wait;
+  opacity: .5;
+  background-color: currentColor;
+  min-height: 1em;
+  display: inline-block;
+}
+
 .placeholder-xs {
   min-height: .6em;
 }

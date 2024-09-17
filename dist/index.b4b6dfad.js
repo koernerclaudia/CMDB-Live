@@ -27689,7 +27689,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./movie-card/movie-card":"bwuIu","./movie-view/movie-view":"ggaUx","./login-view/login-view":"9YtA0","./signup-view/signup-view":"4OGiN","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","./navigation/navigation":"bt3LP","./profile-view/profile-view":"2vVqf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap/Form":"iBZ80","../index.scss":"lJZlQ"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./movie-card/movie-card":"bwuIu","./movie-view/movie-view":"ggaUx","./login-view/login-view":"9YtA0","./signup-view/signup-view":"4OGiN","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","./navigation/navigation":"bt3LP","./profile-view/profile-view":"2vVqf","react-bootstrap/Form":"iBZ80","../index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27732,13 +27732,13 @@ const MovieCard = ({ movie })=>{
                             alt: "Movie Image"
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 17,
-                            columnNumber: 11
+                            lineNumber: 21,
+                            columnNumber: 3
                         }, undefined)
-                    }, void 0, false, {
+                    }, `${movie._id}-image-link`, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 16,
-                        columnNumber: 9
+                        lineNumber: 20,
+                        columnNumber: 1
                     }, undefined)
                 ]
             }, void 0, true, {
@@ -27755,7 +27755,7 @@ const MovieCard = ({ movie })=>{
                         children: movie.Title
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 21,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
@@ -27764,15 +27764,24 @@ const MovieCard = ({ movie })=>{
                                 children: "With:"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 23,
-                                columnNumber: 11
+                                lineNumber: 33,
+                                columnNumber: 3
                             }, undefined),
                             " ",
-                            movie.Actors.join(", ")
+                            movie.Actors.map((actor, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    children: [
+                                        actor,
+                                        index < movie.Actors.length - 1 ? ", " : ""
+                                    ]
+                                }, `${movie._id}-actor-${index}`, true, {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 35,
+                                    columnNumber: 5
+                                }, undefined))
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 22,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cardDefault.default).Text, {
@@ -27781,7 +27790,7 @@ const MovieCard = ({ movie })=>{
                                 children: "Directed by:"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 26,
+                                lineNumber: 40,
                                 columnNumber: 11
                             }, undefined),
                             " ",
@@ -27789,8 +27798,8 @@ const MovieCard = ({ movie })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 25,
-                        columnNumber: 9
+                        lineNumber: 39,
+                        columnNumber: 1
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
                         children: [
@@ -27804,43 +27813,43 @@ const MovieCard = ({ movie })=>{
                                         children: "More info"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 31,
-                                        columnNumber: 15
+                                        lineNumber: 53,
+                                        columnNumber: 3
                                     }, undefined)
-                                }, void 0, false, {
+                                }, `${movie._id}-more-info-link`, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 30,
-                                    columnNumber: 13
+                                    lineNumber: 52,
+                                    columnNumber: 1
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 29,
+                                lineNumber: 43,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                 className: "col-6 d-flex justify-content-right align-items-right",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _addremovebtnDefault.default), {
                                     movieId: movie._id
-                                }, void 0, false, {
+                                }, `${movie._id}-add-remove-btn`, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 37,
-                                    columnNumber: 13
+                                    lineNumber: 60,
+                                    columnNumber: 11
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 36,
+                                lineNumber: 59,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 28,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 20,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined)
         ]
@@ -27876,7 +27885,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt","react-bootstrap/Card":"lAynp","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../index.scss":"lJZlQ","../common/addremovebtn":"2ZG8L"}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../index.scss":"lJZlQ","prop-types":"7wKI2","react-bootstrap/Button":"aPzUt","react-bootstrap/Card":"lAynp","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-router-dom":"9xmpe","../common/addremovebtn":"2ZG8L","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -30114,7 +30123,7 @@ exports.default = Col;
 
 },{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9xmpe":[function(require,module,exports) {
 /**
- * React Router DOM v6.26.1
+ * React Router DOM v6.26.2
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -31549,7 +31558,7 @@ let savedScrollPositions = {};
 
 },{"react":"21dqq","react-dom":"j6uA9","react-router":"dbWyW","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dbWyW":[function(require,module,exports) {
 /**
- * React Router v6.26.1
+ * React Router v6.26.2
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -32826,7 +32835,7 @@ function createMemoryRouter(routes, opts) {
 
 },{"react":"21dqq","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ncDG":[function(require,module,exports) {
 /**
- * @remix-run/router v1.19.1
+ * @remix-run/router v1.19.2
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -34248,7 +34257,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
     let pendingPatchRoutes = new Map();
     // Flag to ignore the next history update, so we can revert the URL change on
     // a POP navigation that was blocked by the user without touching router state
-    let ignoreNextHistoryUpdate = false;
+    let unblockBlockerHistoryUpdate = undefined;
     // Initialize the router, all side effects should be kicked off from here.
     // Implemented as a Fluent API for ease of:
     //   let router = createRouter(init).initialize();
@@ -34259,8 +34268,9 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
             let { action: historyAction, location, delta } = _ref;
             // Ignore this event if it was just us resetting the URL from a
             // blocked POP navigation
-            if (ignoreNextHistoryUpdate) {
-                ignoreNextHistoryUpdate = false;
+            if (unblockBlockerHistoryUpdate) {
+                unblockBlockerHistoryUpdate();
+                unblockBlockerHistoryUpdate = undefined;
                 return;
             }
             warning(blockerFunctions.size === 0 || delta != null, "You are trying to use a blocker on a POP navigation to a location that was not created by @remix-run/router. This will fail silently in production. This can happen if you are navigating outside the router via `window.history.pushState`/`window.location.hash` instead of using router navigation APIs.  This can also happen if you are using createHashRouter and the user manually changes the URL.");
@@ -34271,7 +34281,9 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
             });
             if (blockerKey && delta != null) {
                 // Restore the URL to match the current UI, but don't update router state
-                ignoreNextHistoryUpdate = true;
+                let nextHistoryUpdatePromise = new Promise((resolve)=>{
+                    unblockBlockerHistoryUpdate = resolve;
+                });
                 init.history.go(delta * -1);
                 // Put the blocker into a blocked state
                 updateBlocker(blockerKey, {
@@ -34284,8 +34296,10 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
                             reset: undefined,
                             location
                         });
-                        // Re-do the same POP navigation we just blocked
-                        init.history.go(delta);
+                        // Re-do the same POP navigation we just blocked, after the url
+                        // restoration is also complete.  See:
+                        // https://github.com/remix-run/react-router/issues/11613
+                        nextHistoryUpdatePromise.then(()=>init.history.go(delta));
                     },
                     reset () {
                         let blockers = new Map(state.blockers);
@@ -34554,7 +34568,9 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         // navigation to the navigation.location but do not trigger an uninterrupted
         // revalidation so that history correctly updates once the navigation completes
         startNavigation(pendingAction || state.historyAction, state.navigation.location, {
-            overrideNavigation: state.navigation
+            overrideNavigation: state.navigation,
+            // Proxy through any rending view transition
+            enableViewTransition: pendingViewTransitionEnabled === true
         });
     }
     // Start a navigation to the given action/location.  Can optionally provide a
@@ -34723,10 +34739,10 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
             })
         };
         else {
-            let results = await callDataStrategy("action", request, [
+            let results = await callDataStrategy("action", state, request, [
                 actionMatch
-            ], matches);
-            result = results[0];
+            ], matches, null);
+            result = results[actionMatch.route.id];
             if (request.signal.aborted) return {
                 shortCircuited: true
             };
@@ -34741,7 +34757,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
                 let location = normalizeRedirectLocation(result.response.headers.get("Location"), new URL(request.url), basename);
                 replace = location === state.location.pathname + state.location.search;
             }
-            await startRedirectNavigation(request, result, {
+            await startRedirectNavigation(request, result, true, {
                 submission,
                 replace
             });
@@ -34882,7 +34898,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         // Proxy navigation abort through to revalidation fetchers
         let abortPendingFetchRevalidations = ()=>revalidatingFetchers.forEach((f)=>abortFetcher(f.key));
         if (pendingNavigationController) pendingNavigationController.signal.addEventListener("abort", abortPendingFetchRevalidations);
-        let { loaderResults, fetcherResults } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, request);
+        let { loaderResults, fetcherResults } = await callLoadersAndMaybeResolveData(state, matches, matchesToLoad, revalidatingFetchers, request);
         if (request.signal.aborted) return {
             shortCircuited: true
         };
@@ -34892,19 +34908,22 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         if (pendingNavigationController) pendingNavigationController.signal.removeEventListener("abort", abortPendingFetchRevalidations);
         revalidatingFetchers.forEach((rf)=>fetchControllers.delete(rf.key));
         // If any loaders returned a redirect Response, start a new REPLACE navigation
-        let redirect = findRedirect([
-            ...loaderResults,
-            ...fetcherResults
-        ]);
+        let redirect = findRedirect(loaderResults);
         if (redirect) {
-            if (redirect.idx >= matchesToLoad.length) {
-                // If this redirect came from a fetcher make sure we mark it in
-                // fetchRedirectIds so it doesn't get revalidated on the next set of
-                // loader executions
-                let fetcherKey = revalidatingFetchers[redirect.idx - matchesToLoad.length].key;
-                fetchRedirectIds.add(fetcherKey);
-            }
-            await startRedirectNavigation(request, redirect.result, {
+            await startRedirectNavigation(request, redirect.result, true, {
+                replace
+            });
+            return {
+                shortCircuited: true
+            };
+        }
+        redirect = findRedirect(fetcherResults);
+        if (redirect) {
+            // If this redirect came from a fetcher make sure we mark it in
+            // fetchRedirectIds so it doesn't get revalidated on the next set of
+            // loader executions
+            fetchRedirectIds.add(redirect.key);
+            await startRedirectNavigation(request, redirect.result, true, {
                 replace
             });
             return {
@@ -35054,10 +35073,10 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         // Call the action for the fetcher
         fetchControllers.set(key, abortController);
         let originatingLoadId = incrementingLoadId;
-        let actionResults = await callDataStrategy("action", fetchRequest, [
+        let actionResults = await callDataStrategy("action", state, fetchRequest, [
             match
-        ], requestMatches);
-        let actionResult = actionResults[0];
+        ], requestMatches, key);
+        let actionResult = actionResults[match.route.id];
         if (fetchRequest.signal.aborted) {
             // We can delete this so long as we weren't aborted by our own fetcher
             // re-submit which would have put _new_ controller is in fetchControllers
@@ -35085,7 +35104,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
                 } else {
                     fetchRedirectIds.add(key);
                     updateFetcherState(key, getLoadingFetcher(submission));
-                    return startRedirectNavigation(fetchRequest, actionResult, {
+                    return startRedirectNavigation(fetchRequest, actionResult, false, {
                         fetcherSubmission: submission
                     });
                 }
@@ -35130,28 +35149,24 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         });
         let abortPendingFetchRevalidations = ()=>revalidatingFetchers.forEach((rf)=>abortFetcher(rf.key));
         abortController.signal.addEventListener("abort", abortPendingFetchRevalidations);
-        let { loaderResults, fetcherResults } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, revalidationRequest);
+        let { loaderResults, fetcherResults } = await callLoadersAndMaybeResolveData(state, matches, matchesToLoad, revalidatingFetchers, revalidationRequest);
         if (abortController.signal.aborted) return;
         abortController.signal.removeEventListener("abort", abortPendingFetchRevalidations);
         fetchReloadIds.delete(key);
         fetchControllers.delete(key);
         revalidatingFetchers.forEach((r)=>fetchControllers.delete(r.key));
-        let redirect = findRedirect([
-            ...loaderResults,
-            ...fetcherResults
-        ]);
+        let redirect = findRedirect(loaderResults);
+        if (redirect) return startRedirectNavigation(revalidationRequest, redirect.result, false);
+        redirect = findRedirect(fetcherResults);
         if (redirect) {
-            if (redirect.idx >= matchesToLoad.length) {
-                // If this redirect came from a fetcher make sure we mark it in
-                // fetchRedirectIds so it doesn't get revalidated on the next set of
-                // loader executions
-                let fetcherKey = revalidatingFetchers[redirect.idx - matchesToLoad.length].key;
-                fetchRedirectIds.add(fetcherKey);
-            }
-            return startRedirectNavigation(revalidationRequest, redirect.result);
+            // If this redirect came from a fetcher make sure we mark it in
+            // fetchRedirectIds so it doesn't get revalidated on the next set of
+            // loader executions
+            fetchRedirectIds.add(redirect.key);
+            return startRedirectNavigation(revalidationRequest, redirect.result, false);
         }
         // Process and commit output from loaders
-        let { loaderData, errors } = processLoaderData(state, state.matches, matchesToLoad, loaderResults, undefined, revalidatingFetchers, fetcherResults, activeDeferreds);
+        let { loaderData, errors } = processLoaderData(state, matches, matchesToLoad, loaderResults, undefined, revalidatingFetchers, fetcherResults, activeDeferreds);
         // Since we let revalidations complete even if the submitting fetcher was
         // deleted, only put it back to idle if it hasn't been deleted
         if (state.fetchers.has(key)) {
@@ -35215,10 +35230,10 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         // Call the loader for this fetcher route match
         fetchControllers.set(key, abortController);
         let originatingLoadId = incrementingLoadId;
-        let results = await callDataStrategy("loader", fetchRequest, [
+        let results = await callDataStrategy("loader", state, fetchRequest, [
             match
-        ], matches);
-        let result = results[0];
+        ], matches, key);
+        let result = results[match.route.id];
         // Deferred isn't supported for fetcher loads, await everything and treat it
         // as a normal load.  resolveDeferredData will return undefined if this
         // fetcher gets aborted, so we just leave result untouched and short circuit
@@ -35243,7 +35258,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
                 return;
             } else {
                 fetchRedirectIds.add(key);
-                await startRedirectNavigation(fetchRequest, result);
+                await startRedirectNavigation(fetchRequest, result, false);
                 return;
             }
         }
@@ -35274,7 +35289,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
    * navigation (including processed redirects).  This means that we never
    * actually touch history until we've processed redirects, so we just use
    * the history action from the original navigation (PUSH or REPLACE).
-   */ async function startRedirectNavigation(request, redirect, _temp2) {
+   */ async function startRedirectNavigation(request, redirect, isNavigation, _temp2) {
         let { submission, fetcherSubmission, replace } = _temp2 === void 0 ? {} : _temp2;
         if (redirect.response.headers.has("X-Remix-Revalidate")) isRevalidationRequired = true;
         let location = redirect.response.headers.get("Location");
@@ -35315,8 +35330,9 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
             submission: _extends({}, activeSubmission, {
                 formAction: location
             }),
-            // Preserve this flag across redirects
-            preventScrollReset: pendingPreventScrollReset
+            // Preserve these flags across redirects
+            preventScrollReset: pendingPreventScrollReset,
+            enableViewTransition: isNavigation ? pendingViewTransitionEnabled : undefined
         });
         else {
             // If we have a navigation submission, we will preserve it through the
@@ -35326,55 +35342,67 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
                 overrideNavigation,
                 // Send fetcher submissions through for shouldRevalidate
                 fetcherSubmission,
-                // Preserve this flag across redirects
-                preventScrollReset: pendingPreventScrollReset
+                // Preserve these flags across redirects
+                preventScrollReset: pendingPreventScrollReset,
+                enableViewTransition: isNavigation ? pendingViewTransitionEnabled : undefined
             });
         }
     }
     // Utility wrapper for calling dataStrategy client-side without having to
     // pass around the manifest, mapRouteProperties, etc.
-    async function callDataStrategy(type, request, matchesToLoad, matches) {
+    async function callDataStrategy(type, state, request, matchesToLoad, matches, fetcherKey) {
+        let results;
+        let dataResults = {};
         try {
-            let results = await callDataStrategyImpl(dataStrategyImpl, type, request, matchesToLoad, matches, manifest, mapRouteProperties);
-            return await Promise.all(results.map((result, i)=>{
-                if (isRedirectHandlerResult(result)) {
-                    let response = result.result;
-                    return {
-                        type: ResultType.redirect,
-                        response: normalizeRelativeRoutingRedirectResponse(response, request, matchesToLoad[i].route.id, matches, basename, future.v7_relativeSplatPath)
-                    };
-                }
-                return convertHandlerResultToDataResult(result);
-            }));
+            results = await callDataStrategyImpl(dataStrategyImpl, type, state, request, matchesToLoad, matches, fetcherKey, manifest, mapRouteProperties);
         } catch (e) {
             // If the outer dataStrategy method throws, just return the error for all
             // matches - and it'll naturally bubble to the root
-            return matchesToLoad.map(()=>({
+            matchesToLoad.forEach((m)=>{
+                dataResults[m.route.id] = {
                     type: ResultType.error,
                     error: e
-                }));
+                };
+            });
+            return dataResults;
         }
+        for (let [routeId, result] of Object.entries(results))if (isRedirectDataStrategyResultResult(result)) {
+            let response = result.result;
+            dataResults[routeId] = {
+                type: ResultType.redirect,
+                response: normalizeRelativeRoutingRedirectResponse(response, request, routeId, matches, basename, future.v7_relativeSplatPath)
+            };
+        } else dataResults[routeId] = await convertDataStrategyResultToDataResult(result);
+        return dataResults;
     }
-    async function callLoadersAndMaybeResolveData(currentMatches, matches, matchesToLoad, fetchersToLoad, request) {
-        let [loaderResults, ...fetcherResults] = await Promise.all([
-            matchesToLoad.length ? callDataStrategy("loader", request, matchesToLoad, matches) : [],
-            ...fetchersToLoad.map((f)=>{
-                if (f.matches && f.match && f.controller) {
-                    let fetcherRequest = createClientSideRequest(init.history, f.path, f.controller.signal);
-                    return callDataStrategy("loader", fetcherRequest, [
-                        f.match
-                    ], f.matches).then((r)=>r[0]);
-                } else return Promise.resolve({
+    async function callLoadersAndMaybeResolveData(state, matches, matchesToLoad, fetchersToLoad, request) {
+        let currentMatches = state.matches;
+        // Kick off loaders and fetchers in parallel
+        let loaderResultsPromise = callDataStrategy("loader", state, request, matchesToLoad, matches, null);
+        let fetcherResultsPromise = Promise.all(fetchersToLoad.map(async (f)=>{
+            if (f.matches && f.match && f.controller) {
+                let results = await callDataStrategy("loader", state, createClientSideRequest(init.history, f.path, f.controller.signal), [
+                    f.match
+                ], f.matches, f.key);
+                let result = results[f.match.route.id];
+                // Fetcher results are keyed by fetcher key from here on out, not routeId
+                return {
+                    [f.key]: result
+                };
+            } else return Promise.resolve({
+                [f.key]: {
                     type: ResultType.error,
                     error: getInternalRouterError(404, {
                         pathname: f.path
                     })
-                });
-            })
-        ]);
+                }
+            });
+        }));
+        let loaderResults = await loaderResultsPromise;
+        let fetcherResults = (await fetcherResultsPromise).reduce((acc, r)=>Object.assign(acc, r), {});
         await Promise.all([
-            resolveDeferredResults(currentMatches, matchesToLoad, loaderResults, loaderResults.map(()=>request.signal), false, state.loaderData),
-            resolveDeferredResults(currentMatches, fetchersToLoad.map((f)=>f.match), fetcherResults, fetchersToLoad.map((f)=>f.controller ? f.controller.signal : null), true)
+            resolveNavigationDeferredResults(matches, loaderResults, request.signal, currentMatches, state.loaderData),
+            resolveFetcherDeferredResults(matches, fetcherResults, fetchersToLoad)
         ]);
         return {
             loaderResults,
@@ -35944,9 +35972,9 @@ function createStaticHandler(routes, opts) {
             });
         } catch (e) {
             // If the user threw/returned a Response in callLoaderOrAction for a
-            // `queryRoute` call, we throw the `HandlerResult` to bail out early
+            // `queryRoute` call, we throw the `DataStrategyResult` to bail out early
             // and then return or throw the raw Response here accordingly
-            if (isHandlerResult(e) && isResponse(e.result)) {
+            if (isDataStrategyResult(e) && isResponse(e.result)) {
                 if (e.type === ResultType.error) throw e.result;
                 return e.result;
             }
@@ -35973,7 +36001,7 @@ function createStaticHandler(routes, opts) {
             let results = await callDataStrategy("action", request, [
                 actionMatch
             ], matches, isRouteRequest, requestContext, unstable_dataStrategy);
-            result = results[0];
+            result = results[actionMatch.route.id];
             if (request.signal.aborted) throwStaticHandlerAbortedError(request, isRouteRequest, future);
         }
         if (isRedirectResult(result)) // Uhhhh - this should never happen, we should always throw these from
@@ -36083,7 +36111,7 @@ function createStaticHandler(routes, opts) {
         if (request.signal.aborted) throwStaticHandlerAbortedError(request, isRouteRequest, future);
         // Process and commit output from loaders
         let activeDeferreds = new Map();
-        let context = processRouteLoaderData(matches, matchesToLoad, results, pendingActionResult, activeDeferreds, skipLoaderErrorBubbling);
+        let context = processRouteLoaderData(matches, results, pendingActionResult, activeDeferreds, skipLoaderErrorBubbling);
         // Add a null for any non-loader matches for proper revalidation on the client
         let executedLoaders = new Set(matchesToLoad.map((match)=>match.route.id));
         matches.forEach((match)=>{
@@ -36097,18 +36125,22 @@ function createStaticHandler(routes, opts) {
     // Utility wrapper for calling dataStrategy server-side without having to
     // pass around the manifest, mapRouteProperties, etc.
     async function callDataStrategy(type, request, matchesToLoad, matches, isRouteRequest, requestContext, unstable_dataStrategy) {
-        let results = await callDataStrategyImpl(unstable_dataStrategy || defaultDataStrategy, type, request, matchesToLoad, matches, manifest, mapRouteProperties, requestContext);
-        return await Promise.all(results.map((result, i)=>{
-            if (isRedirectHandlerResult(result)) {
+        let results = await callDataStrategyImpl(unstable_dataStrategy || defaultDataStrategy, type, null, request, matchesToLoad, matches, null, manifest, mapRouteProperties, requestContext);
+        let dataResults = {};
+        await Promise.all(matches.map(async (match)=>{
+            if (!(match.route.id in results)) return;
+            let result = results[match.route.id];
+            if (isRedirectDataStrategyResultResult(result)) {
                 let response = result.result;
                 // Throw redirects and let the server handle them with an HTTP redirect
-                throw normalizeRelativeRoutingRedirectResponse(response, request, matchesToLoad[i].route.id, matches, basename, future.v7_relativeSplatPath);
+                throw normalizeRelativeRoutingRedirectResponse(response, request, match.route.id, matches, basename, future.v7_relativeSplatPath);
             }
             if (isResponse(result.result) && isRouteRequest) // For SSR single-route requests, we want to hand Responses back
             // directly without unwrapping
             throw result;
-            return convertHandlerResultToDataResult(result);
+            dataResults[match.route.id] = await convertDataStrategyResultToDataResult(result);
         }));
+        return dataResults;
     }
     return {
         dataRoutes,
@@ -36518,52 +36550,63 @@ function patchRoutesImpl(routeId, children, routesToUse, manifest, mapRoutePrope
     }));
 }
 // Default implementation of `dataStrategy` which fetches all loaders in parallel
-function defaultDataStrategy(opts) {
-    return Promise.all(opts.matches.map((m)=>m.resolve()));
+async function defaultDataStrategy(_ref6) {
+    let { matches } = _ref6;
+    let matchesToLoad = matches.filter((m)=>m.shouldLoad);
+    let results = await Promise.all(matchesToLoad.map((m)=>m.resolve()));
+    return results.reduce((acc, result, i)=>Object.assign(acc, {
+            [matchesToLoad[i].route.id]: result
+        }), {});
 }
-async function callDataStrategyImpl(dataStrategyImpl, type, request, matchesToLoad, matches, manifest, mapRouteProperties, requestContext) {
-    let routeIdsToLoad = matchesToLoad.reduce((acc, m)=>acc.add(m.route.id), new Set());
-    let loadedMatches = new Set();
+async function callDataStrategyImpl(dataStrategyImpl, type, state, request, matchesToLoad, matches, fetcherKey, manifest, mapRouteProperties, requestContext) {
+    let loadRouteDefinitionsPromises = matches.map((m)=>m.route.lazy ? loadLazyRouteModule(m.route, mapRouteProperties, manifest) : undefined);
+    let dsMatches = matches.map((match, i)=>{
+        let loadRoutePromise = loadRouteDefinitionsPromises[i];
+        let shouldLoad = matchesToLoad.some((m)=>m.route.id === match.route.id);
+        // `resolve` encapsulates route.lazy(), executing the loader/action,
+        // and mapping return values/thrown errors to a `DataStrategyResult`.  Users
+        // can pass a callback to take fine-grained control over the execution
+        // of the loader/action
+        let resolve = async (handlerOverride)=>{
+            if (handlerOverride && request.method === "GET" && (match.route.lazy || match.route.loader)) shouldLoad = true;
+            return shouldLoad ? callLoaderOrAction(type, request, match, loadRoutePromise, handlerOverride, requestContext) : Promise.resolve({
+                type: ResultType.data,
+                result: undefined
+            });
+        };
+        return _extends({}, match, {
+            shouldLoad,
+            resolve
+        });
+    });
     // Send all matches here to allow for a middleware-type implementation.
     // handler will be a no-op for unneeded routes and we filter those results
     // back out below.
     let results = await dataStrategyImpl({
-        matches: matches.map((match)=>{
-            let shouldLoad = routeIdsToLoad.has(match.route.id);
-            // `resolve` encapsulates the route.lazy, executing the
-            // loader/action, and mapping return values/thrown errors to a
-            // HandlerResult.  Users can pass a callback to take fine-grained control
-            // over the execution of the loader/action
-            let resolve = (handlerOverride)=>{
-                loadedMatches.add(match.route.id);
-                return shouldLoad ? callLoaderOrAction(type, request, match, manifest, mapRouteProperties, handlerOverride, requestContext) : Promise.resolve({
-                    type: ResultType.data,
-                    result: undefined
-                });
-            };
-            return _extends({}, match, {
-                shouldLoad,
-                resolve
-            });
-        }),
+        matches: dsMatches,
         request,
         params: matches[0].params,
+        fetcherKey,
         context: requestContext
     });
-    // Throw if any loadRoute implementations not called since they are what
-    // ensures a route is fully loaded
-    matches.forEach((m)=>invariant(loadedMatches.has(m.route.id), '`match.resolve()` was not called for route id "' + m.route.id + '". ' + "You must call `match.resolve()` on every match passed to " + "`dataStrategy` to ensure all routes are properly loaded."));
-    // Filter out any middleware-only matches for which we didn't need to run handlers
-    return results.filter((_, i)=>routeIdsToLoad.has(matches[i].route.id));
+    // Wait for all routes to load here but 'swallow the error since we want
+    // it to bubble up from the `await loadRoutePromise` in `callLoaderOrAction` -
+    // called from `match.resolve()`
+    try {
+        await Promise.all(loadRouteDefinitionsPromises);
+    } catch (e) {
+    // No-op
+    }
+    return results;
 }
 // Default logic for calling a loader/action is the user has no specified a dataStrategy
-async function callLoaderOrAction(type, request, match, manifest, mapRouteProperties, handlerOverride, staticContext) {
+async function callLoaderOrAction(type, request, match, loadRoutePromise, handlerOverride, staticContext) {
     let result;
     let onReject;
     let runHandler = (handler)=>{
         // Setup a promise we can race against so that abort signals short circuit
         let reject;
-        // This will never resolve so safe to type it as Promise<HandlerResult> to
+        // This will never resolve so safe to type it as Promise<DataStrategyResult> to
         // satisfy the function return value
         let abortPromise = new Promise((_, r)=>reject = r);
         onReject = ()=>reject();
@@ -36578,11 +36621,9 @@ async function callLoaderOrAction(type, request, match, manifest, mapRouteProper
                 ctx
             ] : []);
         };
-        let handlerPromise;
-        if (handlerOverride) handlerPromise = handlerOverride((ctx)=>actualHandler(ctx));
-        else handlerPromise = (async ()=>{
+        let handlerPromise = (async ()=>{
             try {
-                let val = await actualHandler();
+                let val = await (handlerOverride ? handlerOverride((ctx)=>actualHandler(ctx)) : actualHandler());
                 return {
                     type: "data",
                     result: val
@@ -36601,7 +36642,8 @@ async function callLoaderOrAction(type, request, match, manifest, mapRouteProper
     };
     try {
         let handler = match.route[type];
-        if (match.route.lazy) {
+        // If we have a route.lazy promise, await that first
+        if (loadRoutePromise) {
             if (handler) {
                 // Run statically defined handler in parallel with lazy()
                 let handlerError;
@@ -36612,13 +36654,13 @@ async function callLoaderOrAction(type, request, match, manifest, mapRouteProper
                     runHandler(handler).catch((e)=>{
                         handlerError = e;
                     }),
-                    loadLazyRouteModule(match.route, mapRouteProperties, manifest)
+                    loadRoutePromise
                 ]);
                 if (handlerError !== undefined) throw handlerError;
                 result = value;
             } else {
                 // Load lazy route module, then run any returned handler
-                await loadLazyRouteModule(match.route, mapRouteProperties, manifest);
+                await loadRoutePromise;
                 handler = match.route[type];
                 if (handler) // Handler still runs even if we got interrupted to maintain consistency
                 // with un-abortable behavior of handler execution on non-lazy or
@@ -36649,7 +36691,7 @@ async function callLoaderOrAction(type, request, match, manifest, mapRouteProper
         invariant(result.result !== undefined, "You defined " + (type === "action" ? "an action" : "a loader") + " for route " + ('"' + match.route.id + "\" but didn't return anything from your `" + type + "` ") + "function. Please return a value or `null`.");
     } catch (e) {
         // We should already be catching and converting normal handler executions to
-        // HandlerResults and returning them, so anything that throws here is an
+        // DataStrategyResults and returning them, so anything that throws here is an
         // unexpected error we still need to wrap
         return {
             type: ResultType.error,
@@ -36660,8 +36702,8 @@ async function callLoaderOrAction(type, request, match, manifest, mapRouteProper
     }
     return result;
 }
-async function convertHandlerResultToDataResult(handlerResult) {
-    let { result, type } = handlerResult;
+async function convertDataStrategyResultToDataResult(dataStrategyResult) {
+    let { result, type } = dataStrategyResult;
     if (isResponse(result)) {
         let data;
         try {
@@ -36794,7 +36836,7 @@ function convertSearchParamsToFormData(searchParams) {
     for (let [key, value] of searchParams.entries())formData.append(key, value);
     return formData;
 }
-function processRouteLoaderData(matches, matchesToLoad, results, pendingActionResult, activeDeferreds, skipLoaderErrorBubbling) {
+function processRouteLoaderData(matches, results, pendingActionResult, activeDeferreds, skipLoaderErrorBubbling) {
     // Fill in loaderData/errors from our loaders
     let loaderData = {};
     let errors = null;
@@ -36803,8 +36845,10 @@ function processRouteLoaderData(matches, matchesToLoad, results, pendingActionRe
     let loaderHeaders = {};
     let pendingError = pendingActionResult && isErrorResult(pendingActionResult[1]) ? pendingActionResult[1].error : undefined;
     // Process loader results into state.loaderData/state.errors
-    results.forEach((result, index)=>{
-        let id = matchesToLoad[index].route.id;
+    matches.forEach((match)=>{
+        if (!(match.route.id in results)) return;
+        let id = match.route.id;
+        let result = results[id];
         invariant(!isRedirectResult(result), "Cannot handle redirect results in processLoaderData");
         if (isErrorResult(result)) {
             let error = result.error;
@@ -36865,15 +36909,16 @@ function processRouteLoaderData(matches, matchesToLoad, results, pendingActionRe
     };
 }
 function processLoaderData(state, matches, matchesToLoad, results, pendingActionResult, revalidatingFetchers, fetcherResults, activeDeferreds) {
-    let { loaderData, errors } = processRouteLoaderData(matches, matchesToLoad, results, pendingActionResult, activeDeferreds, false // This method is only called client side so we always want to bubble
+    let { loaderData, errors } = processRouteLoaderData(matches, results, pendingActionResult, activeDeferreds, false // This method is only called client side so we always want to bubble
     );
     // Process results from our revalidating fetchers
-    for(let index = 0; index < revalidatingFetchers.length; index++){
-        let { key, match, controller } = revalidatingFetchers[index];
-        invariant(fetcherResults !== undefined && fetcherResults[index] !== undefined, "Did not find corresponding fetcher result");
-        let result = fetcherResults[index];
+    revalidatingFetchers.forEach((rf)=>{
+        let { key, match, controller } = rf;
+        let result = fetcherResults[key];
+        invariant(result, "Did not find corresponding fetcher result");
         // Process fetcher non-redirect errors
-        if (controller && controller.signal.aborted) continue;
+        if (controller && controller.signal.aborted) // Nothing to do for aborted fetchers
+        return;
         else if (isErrorResult(result)) {
             let boundaryMatch = findNearestBoundary(state.matches, match == null ? void 0 : match.route.id);
             if (!(errors && errors[boundaryMatch.route.id])) errors = _extends({}, errors, {
@@ -36890,7 +36935,7 @@ function processLoaderData(state, matches, matchesToLoad, results, pendingAction
             let doneFetcher = getDoneFetcher(result.data);
             state.fetchers.set(key, doneFetcher);
         }
-    }
+    });
     return {
         loaderData,
         errors
@@ -36971,11 +37016,12 @@ function getInternalRouterError(status, _temp5) {
 }
 // Find any returned redirect errors, starting from the lowest match
 function findRedirect(results) {
-    for(let i = results.length - 1; i >= 0; i--){
-        let result = results[i];
+    let entries = Object.entries(results);
+    for(let i = entries.length - 1; i >= 0; i--){
+        let [key, result] = entries[i];
         if (isRedirectResult(result)) return {
-            result,
-            idx: i
+            key,
+            result
         };
     }
 }
@@ -37000,10 +37046,10 @@ function isHashChangeOnly(a, b) {
 function isPromise(val) {
     return typeof val === "object" && val != null && "then" in val;
 }
-function isHandlerResult(result) {
+function isDataStrategyResult(result) {
     return result != null && typeof result === "object" && "type" in result && "result" in result && (result.type === ResultType.data || result.type === ResultType.error);
 }
-function isRedirectHandlerResult(result) {
+function isRedirectDataStrategyResultResult(result) {
     return isResponse(result.result) && redirectStatusCodes.has(result.result.status);
 }
 function isDeferredResult(result) {
@@ -37037,24 +37083,41 @@ function isValidMethod(method) {
 function isMutationMethod(method) {
     return validMutationMethods.has(method.toLowerCase());
 }
-async function resolveDeferredResults(currentMatches, matchesToLoad, results, signals, isFetcher, currentLoaderData) {
-    for(let index = 0; index < results.length; index++){
-        let result = results[index];
-        let match = matchesToLoad[index];
+async function resolveNavigationDeferredResults(matches, results, signal, currentMatches, currentLoaderData) {
+    let entries = Object.entries(results);
+    for(let index = 0; index < entries.length; index++){
+        let [routeId, result] = entries[index];
+        let match = matches.find((m)=>(m == null ? void 0 : m.route.id) === routeId);
         // If we don't have a match, then we can have a deferred result to do
         // anything with.  This is for revalidating fetchers where the route was
         // removed during HMR
         if (!match) continue;
         let currentMatch = currentMatches.find((m)=>m.route.id === match.route.id);
         let isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== undefined;
-        if (isDeferredResult(result) && (isFetcher || isRevalidatingLoader)) {
+        if (isDeferredResult(result) && isRevalidatingLoader) // Note: we do not have to touch activeDeferreds here since we race them
+        // against the signal in resolveDeferredData and they'll get aborted
+        // there if needed
+        await resolveDeferredData(result, signal, false).then((result)=>{
+            if (result) results[routeId] = result;
+        });
+    }
+}
+async function resolveFetcherDeferredResults(matches, results, revalidatingFetchers) {
+    for(let index = 0; index < revalidatingFetchers.length; index++){
+        let { key, routeId, controller } = revalidatingFetchers[index];
+        let result = results[key];
+        let match = matches.find((m)=>(m == null ? void 0 : m.route.id) === routeId);
+        // If we don't have a match, then we can have a deferred result to do
+        // anything with.  This is for revalidating fetchers where the route was
+        // removed during HMR
+        if (!match) continue;
+        if (isDeferredResult(result)) {
             // Note: we do not have to touch activeDeferreds here since we race them
             // against the signal in resolveDeferredData and they'll get aborted
             // there if needed
-            let signal = signals[index];
-            invariant(signal, "Expected an AbortSignal for revalidating fetcher deferred result");
-            await resolveDeferredData(result, signal, isFetcher).then((result)=>{
-                if (result) results[index] = result || results[index];
+            invariant(controller, "Expected an AbortController for revalidating fetcher deferred result");
+            await resolveDeferredData(result, controller.signal, true).then((result)=>{
+                if (result) results[key] = result;
             });
         }
     }
@@ -37238,145 +37301,7 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("7422ead32dcc1e6b");
-function debounce(func, delay) {
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30);
-// Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports;
-                // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
-                // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-}
-// When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        var typeID = id + " %exports% " + key;
-        Refresh.register(exportValue, typeID);
-    }
-}
-
-},{"7422ead32dcc1e6b":"786KC"}],"lJZlQ":[function() {},{}],"2ZG8L":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2ZG8L":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b64d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -70019,7 +69944,145 @@ var icons = {
     faHandPointLeft
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ggaUx":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("7422ead32dcc1e6b");
+function debounce(func, delay) {
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30);
+// Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports;
+                // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
+                // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+}
+// When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        var typeID = id + " %exports% " + key;
+        Refresh.register(exportValue, typeID);
+    }
+}
+
+},{"7422ead32dcc1e6b":"786KC"}],"ggaUx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -70534,7 +70597,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Card":"lAynp","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/ListGroup":"4tGXh","react-router":"dbWyW","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../index.scss":"lJZlQ","../common/addremovebtn":"2ZG8L"}],"lJZlQ":[function() {},{}],"9YtA0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../index.scss":"lJZlQ","react-bootstrap/Button":"aPzUt","react-bootstrap/Card":"lAynp","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/ListGroup":"4tGXh","react-router":"dbWyW","react-router-dom":"9xmpe","../common/addremovebtn":"2ZG8L","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}],"9YtA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -70729,7 +70792,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../index.scss":"lJZlQ","react-router-dom":"9xmpe","../../assets/cmdb-logo.png":"41gw8"}],"lJZlQ":[function() {},{}],"41gw8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","../../index.scss":"lJZlQ","../../assets/cmdb-logo.png":"41gw8","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}],"41gw8":[function(require,module,exports) {
 module.exports = require("4a1b237b4a189f08").getBundleURL("byUka") + "cmdb-logo.b1cffed7.png" + "?" + Date.now();
 
 },{"4a1b237b4a189f08":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -70951,7 +71014,7 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../assets/cmdb-logo.png":"41gw8"}],"bt3LP":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80","../../assets/cmdb-logo.png":"41gw8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bt3LP":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$34eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -71098,7 +71161,7 @@ $RefreshReg$(_c, "Navigation");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../index.scss":"lJZlQ","react-bootstrap/Nav":"cXyL2","react-bootstrap/Navbar":"1mHjo","react-bootstrap/Container":"hEdsw","../../assets/cmdb-logo.png":"41gw8"}],"lJZlQ":[function() {},{}],"2vVqf":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap/Nav":"cXyL2","react-bootstrap/Navbar":"1mHjo","react-bootstrap/Container":"hEdsw","react-router-dom":"9xmpe","../../assets/cmdb-logo.png":"41gw8","../../index.scss":"lJZlQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJZlQ":[function() {},{}],"2vVqf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3c12 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -71135,13 +71198,14 @@ const ProfileView = ({ token, movies })=>{
     const [password, setPassword] = (0, _react.useState)("");
     const [email, setEmail] = (0, _react.useState)(user.email);
     (0, _react.useEffect)(()=>{
-        if (!user) return;
-        // Fetching favorite movies based on user data
+        if (!user || !movies.length) return;
         const favMovies = movies.filter((movie)=>user.FavoriteMovies.includes(movie._id));
-        setFavoriteMovies(favMovies);
+        // Only update state if the favorite movies have actually changed
+        if (JSON.stringify(favMovies) !== JSON.stringify(favoriteMovies)) setFavoriteMovies(favMovies);
     }, [
         user,
-        movies
+        movies,
+        favoriteMovies
     ]);
     const handleRemoveFavorite = (MovieID)=>{
         fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}/movies/${MovieID}`, {
@@ -71219,7 +71283,7 @@ const ProfileView = ({ token, movies })=>{
         children: "Loading user data..."
     }, void 0, false, {
         fileName: "src/components/profile-view/profile-view.jsx",
-        lineNumber: 150,
+        lineNumber: 153,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -71245,12 +71309,12 @@ const ProfileView = ({ token, movies })=>{
                                         children: "Profile Information"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 159,
+                                        lineNumber: 162,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 162,
+                                        lineNumber: 165,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -71263,28 +71327,28 @@ const ProfileView = ({ token, movies })=>{
                                             email: user.email
                                         }, void 0, false, {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 164,
+                                            lineNumber: 167,
                                             columnNumber: 17
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 163,
+                                        lineNumber: 166,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 158,
+                                lineNumber: 161,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 157,
+                            lineNumber: 160,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 156,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -71306,7 +71370,7 @@ const ProfileView = ({ token, movies })=>{
                                         children: "Change your info"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 173,
+                                        lineNumber: 176,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default), {
@@ -71325,7 +71389,7 @@ const ProfileView = ({ token, movies })=>{
                                                         children: "Change Username"
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                                        lineNumber: 178,
+                                                        lineNumber: 181,
                                                         columnNumber: 19
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -71337,13 +71401,13 @@ const ProfileView = ({ token, movies })=>{
                                                         placeholder: "Enter new username (min. 5 characters)"
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                                        lineNumber: 184,
+                                                        lineNumber: 187,
                                                         columnNumber: 19
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 177,
+                                                lineNumber: 180,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -71358,7 +71422,7 @@ const ProfileView = ({ token, movies })=>{
                                                         children: "Change Password"
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                                        lineNumber: 193,
+                                                        lineNumber: 196,
                                                         columnNumber: 19
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -71371,13 +71435,13 @@ const ProfileView = ({ token, movies })=>{
                                                         placeholder: "Enter new password (min. 8 characters)"
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                                        lineNumber: 199,
+                                                        lineNumber: 202,
                                                         columnNumber: 19
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 192,
+                                                lineNumber: 195,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
@@ -71392,7 +71456,7 @@ const ProfileView = ({ token, movies })=>{
                                                         children: "Change Email"
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                                        lineNumber: 209,
+                                                        lineNumber: 212,
                                                         columnNumber: 19
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
@@ -71404,13 +71468,13 @@ const ProfileView = ({ token, movies })=>{
                                                         onChange: (e)=>setEmail(e.target.value)
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                                        lineNumber: 215,
+                                                        lineNumber: 218,
                                                         columnNumber: 19
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 208,
+                                                lineNumber: 211,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -71420,7 +71484,7 @@ const ProfileView = ({ token, movies })=>{
                                                 children: "Update Profile"
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 223,
+                                                lineNumber: 226,
                                                 columnNumber: 17
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
@@ -71431,35 +71495,35 @@ const ProfileView = ({ token, movies })=>{
                                                 children: "Delete my account"
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 230,
+                                                lineNumber: 233,
                                                 columnNumber: 17
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 176,
+                                        lineNumber: 179,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 172,
+                                lineNumber: 175,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 171,
+                            lineNumber: 174,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 170,
+                        lineNumber: 173,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 155,
+                lineNumber: 158,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
@@ -71470,7 +71534,7 @@ const ProfileView = ({ token, movies })=>{
                             children: "Favorite Movies"
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 246,
+                            lineNumber: 249,
                             columnNumber: 11
                         }, undefined),
                         favoriteMovies.length > 0 ? favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
@@ -71497,12 +71561,12 @@ const ProfileView = ({ token, movies })=>{
                                                     className: "main-view-img"
                                                 }, void 0, false, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                                    lineNumber: 261,
+                                                    lineNumber: 264,
                                                     columnNumber: 23
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 252,
+                                                lineNumber: 255,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -71521,12 +71585,12 @@ const ProfileView = ({ token, movies })=>{
                                                     children: movie.Title
                                                 }, void 0, false, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                                    lineNumber: 277,
+                                                    lineNumber: 280,
                                                     columnNumber: 23
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 267,
+                                                lineNumber: 270,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -71545,17 +71609,17 @@ const ProfileView = ({ token, movies })=>{
                                                         children: "More info"
                                                     }, void 0, false, {
                                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                                        lineNumber: 293,
+                                                        lineNumber: 296,
                                                         columnNumber: 25
                                                     }, undefined)
                                                 }, void 0, false, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                                    lineNumber: 292,
+                                                    lineNumber: 295,
                                                     columnNumber: 23
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 282,
+                                                lineNumber: 285,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
@@ -71579,52 +71643,52 @@ const ProfileView = ({ token, movies })=>{
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                                            lineNumber: 317,
+                                                            lineNumber: 320,
                                                             columnNumber: 25
                                                         }, undefined),
                                                         "\xa0Remove"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                                    lineNumber: 311,
+                                                    lineNumber: 314,
                                                     columnNumber: 23
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 301,
+                                                lineNumber: 304,
                                                 columnNumber: 21
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 251,
+                                        lineNumber: 254,
                                         columnNumber: 19
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 250,
+                                    lineNumber: 253,
                                     columnNumber: 17
                                 }, undefined)
                             }, movie._id, false, {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 249,
+                                lineNumber: 252,
                                 columnNumber: 15
                             }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
                             children: "No favorite movies found."
                         }, void 0, false, {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 329,
+                            lineNumber: 332,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 245,
+                    lineNumber: 248,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/profile-view/profile-view.jsx",
-                lineNumber: 244,
+                lineNumber: 247,
                 columnNumber: 7
             }, undefined)
         ]
@@ -71640,7 +71704,7 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap":"3AD9A","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Form":"iBZ80","./user-info":"66eot","react-router-dom":"9xmpe","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"5lkdy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../index.scss":"lJZlQ"}],"66eot":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap/Button":"aPzUt","react-bootstrap":"3AD9A","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap/Form":"iBZ80","./user-info":"66eot","react-router-dom":"9xmpe","../../index.scss":"lJZlQ","@fortawesome/react-fontawesome":"clIT3","@fortawesome/free-solid-svg-icons":"5lkdy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"66eot":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1330 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

@@ -19,14 +19,17 @@ export const ProfileView = ({ token, movies }) => {
   const [email, setEmail] = useState(user.email);
 
   useEffect(() => {
-    if (!user) return;
-
-    // Fetching favorite movies based on user data
+    if (!user || !movies.length) return;
+  
     const favMovies = movies.filter((movie) =>
       user.FavoriteMovies.includes(movie._id)
     );
-    setFavoriteMovies(favMovies);
-  }, [user, movies]);
+    
+    // Only update state if the favorite movies have actually changed
+    if (JSON.stringify(favMovies) !== JSON.stringify(favoriteMovies)) {
+      setFavoriteMovies(favMovies);
+    }
+  }, [user, movies, favoriteMovies]);
 
 
   const handleRemoveFavorite = (MovieID) => {

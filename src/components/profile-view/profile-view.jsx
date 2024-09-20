@@ -12,25 +12,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
 export const ProfileView = ({ token, movies }) => {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const [user, setUser] = useState(storedUser);
   const [favoriteMovies, setFavoriteMovies] = useState([]);
-  const [username, setUsername] = useState(user.username);
+  const [username, setUsername] = useState(user?.username || "");
   const [password, setPassword] = useState("");
-  const [email, setEmail] = useState(user.email);
+  const [email, setEmail] = useState(user?.email || "");
 
   useEffect(() => {
     if (!user || !movies.length) return;
-  
+
     const favMovies = movies.filter((movie) =>
       user.FavoriteMovies.includes(movie._id)
     );
-    
+
     // Only update state if the favorite movies have actually changed
     if (JSON.stringify(favMovies) !== JSON.stringify(favoriteMovies)) {
       setFavoriteMovies(favMovies);
     }
   }, [user, movies, favoriteMovies]);
-
 
   const handleRemoveFavorite = (MovieID) => {
     fetch(
@@ -42,26 +42,30 @@ export const ProfileView = ({ token, movies }) => {
           "Content-Type": "application/json",
         },
       }
-    )
-      .then((response) => {
-        if (response.ok) {
-          // Update the favoriteMovies state to remove the movie
-          setFavoriteMovies(
-            favoriteMovies.filter((movie) => movie._id !== MovieID)
-          );
-          return response.json();
-        } else {
-          alert("Failed to remove the movie from favorites.");
-        }
-      })
-      .then((data) => {
-        localStorage.setItem("user", JSON.stringify(data));
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
-      });
-  };
+    ) .then((response) => {
+      if (response.ok) {
+        return response.json(); // Expecting updated user data after removing a favorite
+      } else {
+        throw new Error("Failed to remove the movie from favorites.");
+      }
+    })
+    .then((updatedUser) => {
+      // Update the favorite movies state and user state
+      setFavoriteMovies(
+        favoriteMovies.filter((movie) => movie._id !== MovieID)
+      );
+
+      // Update the user state to reflect changes
+      setUser(updatedUser);
+
+      // Update localStorage with the new user data
+      localStorage.setItem("user", JSON.stringify(updatedUser));
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    });
+};
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -100,8 +104,7 @@ export const ProfileView = ({ token, movies }) => {
       })
 
       .then((updatedUser) => {
-        setUsername(updatedUser.username);
-        setEmail(updatedUser.email);
+        setUser(updatedUser);
 
         localStorage.setItem("user", JSON.stringify(updatedUser));
 
@@ -164,7 +167,7 @@ export const ProfileView = ({ token, movies }) => {
               </Card.Title>
               <br />
               <div className="display-8" style={{ color: "#ffffff" }}>
-                <UserInfo name={user.username} email={user.email} />
+              <UserInfo name={user.username} email={user.email} />
               </div>
             </Card.Body>
           </Card>
@@ -252,15 +255,15 @@ export const ProfileView = ({ token, movies }) => {
               <Card key={movie._id} className="mb-3">
                 <Card.Body className="d-flex">
                   <Row className="w-100">
-                    <Col
-                      xs={4}
-                      sm={4}
-                      md={1}
+                    <Col className="d-flex justify-content-left align-items-center"
+                      xs={3}
+                      sm={2}
+                      md={2}
                       lg={1}
                       xl={1}
                       xxl={1}
-                      className="col-2 d-flex justify-content-left align-items-center"
                     >
+                    
                       <img
                         src={movie.ImageURL}
                         style={{ width: "45px", height: "65px" }}
@@ -268,52 +271,48 @@ export const ProfileView = ({ token, movies }) => {
                       />
                     </Col>
                     <Col
-                      xs={8}
-                      sm={8}
-                      md={7}
-                      lg={7}
+                      xs={9}
+                      sm={10}
+                      md={4}
+                      lg={5}
                       xl={7}
                       xxl={7}
-                    
-                      className="col-4 d-flex justify-content-left align-items-center"
+                      className=" d-flex justify-content-left align-items-center"
                     >
-                      <Card.Title style={{ color: "#54B4D3" }} className="fs-6">
+                      <Card.Title style={{ color: "#54B4D3" }} className="fs-6 fs-sm-5 fs-md-4 margin-top justify-content-left align-items-center">
                         {movie.Title}
                       </Card.Title>
                     </Col>
-                    
                     <Col
-                      xs={6}
-                      sm={6}
+                      xs={12}
+                      sm={12}
                       md={3}
-                      lg={2}
+                      lg={3}
                       xl={2}
                       xxl={2}
-                     
-                      className="col-3 d-flex justify-content-center align-items-center"
+                      className="d-flex justify-content-center align-items-center"
                     >
-                      <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
+                      <Link to={`/movies/${encodeURIComponent(movie._id)}`} className="w-100">
                         <Button
-                          className="btn-sm fs-6 fs-md-5"
+                          className="btn-sm btn-xs margin-top w-100"
                           variant="warning"
                         >
-                          More info
+                          More&nbsp;info
                         </Button>
                       </Link>
                     </Col>
                     <Col
-                      xs={6}
-                      sm={6}
+                      xs={12}
+                      sm={12}
                       md={3}
-                      lg={2}
+                      lg={3}
                       xl={2}
                       xxl={2}
-                    
-                      className="d-flex justify-content-right align-items-center"
+                      className="d-flex justify-content-center align-items-center"
                     >
                       <Button
-                        variant="outline-light"
-                        className="btn-sm fs-6 fs-md-5"
+                        className="btn-sm btn-xs margin-top w-100"
+                          variant="outline-light"
                         onClick={() => handleRemoveFavorite(movie._id)}
                         alt="Remove from favourites."
                       >

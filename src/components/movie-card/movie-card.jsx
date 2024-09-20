@@ -11,53 +11,32 @@ import AddRemoveBtn from "../common/addremovebtn";
 export const MovieCard = ({ movie }) => {
   return (
     <Card className="h-100" border="info">
-      <div>
-        {" "}
-        {/* <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-          <img src={movie.ImageURL} className="cover-img" alt="Movie Image" />
-        </Link> */}
-
 <Link to={`/movies/${encodeURIComponent(movie._id)}`} key={`${movie._id}-image-link`}>
   <img src={movie.ImageURL} className="cover-img" alt="Movie Image" />
 </Link>
-
-      </div>
-      <Card.Body>
+      <Card.Body className="d-flex flex-column">
         <Card.Title style={{ color: "#54B4D3" }}>{movie.Title}</Card.Title>
-        {/* <Card.Text>
-          <b>With:</b> {movie.Actors.join(", ")}
-        </Card.Text>
-        <Card.Text> */}
-
         <Card.Text>
   <b>With:</b>{" "}
   {movie.Actors.map((actor, index) => (
     <span key={`${movie._id}-actor-${index}`}>{actor}{index < movie.Actors.length - 1 ? ", " : ""}</span>
   ))}
 </Card.Text>
-
 <Card.Text>
           <b>Directed by:</b> {movie.Director.Name}
         </Card.Text>
-        <Row>
+        <Row className="mt-auto">
           <Col className="col-6 d-flex justify-content-left align-items-left">
-            {/* <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-              <Button className="btn-sm margin-top" variant="warning">
-                More info
-              </Button>
-            </Link> */}
-
-
-
+        
 <Link to={`/movies/${encodeURIComponent(movie._id)}`} key={`${movie._id}-more-info-link`}>
-  <Button className="btn-sm margin-top" variant="warning">
+<div className="mt-auto"><Button className="btn-sm margin-top" variant="warning">
     More info
-  </Button>
+  </Button></div>
 </Link>
 
           </Col>
-          <Col className="col-6 d-flex justify-content-right align-items-right">
-          <AddRemoveBtn movieId={movie._id} key={`${movie._id}-add-remove-btn`} />
+          <Col className="col-6 d-flex justify-content-end align-items-center">
+          <div className="mt-auto"><AddRemoveBtn movieId={movie._id} key={`${movie._id}-add-remove-btn`} /></div>
           </Col>
         </Row>
       </Card.Body>

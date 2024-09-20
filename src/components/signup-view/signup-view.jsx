@@ -42,6 +42,7 @@ export const SignupView = () => {
           <Form.Control
             className="margin-bottom input"
             type="text"
+             style={{ color: "white" }}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -55,6 +56,7 @@ export const SignupView = () => {
       <Form.Label>Password:</Form.Label>
       <Form.Control className="margin-bottom input"
         type="password"
+        style={{ color: "white" }}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required

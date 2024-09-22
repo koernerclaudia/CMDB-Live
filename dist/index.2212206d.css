@@ -16981,7 +16981,7 @@ x .card-text, .form-text, .card-body {
 ::placeholder {
   font-size: .9rem;
   color: #fff !important;
-  opacity: .8 !important;
+  opacity: 1 !important;
 }
 
 .custom-select {

@@ -64,7 +64,7 @@ $input-color: #ffffff;
 /* Use !important to force the styles */
 ::placeholder {
   color: white !important;
-  opacity: 0.8 !important; /* Ensures the color is not faded */
+  opacity: 1 !important;
   font-size: 0.9rem;
 }
 

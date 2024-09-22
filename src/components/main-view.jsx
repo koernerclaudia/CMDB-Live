@@ -219,8 +219,8 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    <Row className="mb-3 justify-content-center algin-content-center">
-                      <Col md={6} sm={6} xs={12} className="mx-auto margin-top">
+                    <Row className="mx-auto mb-3 justify-content-center algin-content-center w-100">
+                      <Col md={6} sm={6} xs={12} className="mx-auto margin-top d-flex justify-content-center">
                         <Form.Control
                           className="placeholder custom-select"
                           noValidate
@@ -232,7 +232,7 @@ export const MainView = () => {
                         />
                       </Col>
 
-                      <Col md={3} sm={3} xs={6} className="mx-auto margin-top">
+                      <Col md={3} sm={3} xs={6} className="mx-auto margin-top justify-content-center d-flex">
                        
                         <Form.Select
                           className="placeholder custom-select"
@@ -244,7 +244,7 @@ export const MainView = () => {
                           <option value="zToA">Z to A</option>
                         </Form.Select>
                       </Col>
-                      <Col md={3} sm={3} xs={6} className="mx-auto margin-top">
+                      <Col md={3} sm={3} xs={6} className="mx-auto margin-top justify-content-center d-flex">
                         <Form.Select
                           className="placeholder custom-select"
                           onChange={handleGenreChange}

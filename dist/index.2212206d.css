@@ -16979,9 +16979,9 @@ x .card-text, .form-text, .card-body {
 }
 
 ::placeholder {
-  font-size: .8rem;
+  font-size: .9rem;
   color: #fff !important;
-  opacity: .5 !important;
+  opacity: .8 !important;
 }
 
 .custom-select {
@@ -16990,6 +16990,7 @@ x .card-text, .form-text, .card-body {
   border: 1px solid #ffc107;
   border-radius: 5px;
   padding: 5px;
+  font-size: .9rem;
 }
 
 .custom-select:focus {

@@ -64,8 +64,8 @@ $input-color: #ffffff;
 /* Use !important to force the styles */
 ::placeholder {
   color: white !important;
-  opacity: 0.5 !important; /* Ensures the color is not faded */
-  font-size: 0.8rem;
+  opacity: 0.8 !important; /* Ensures the color is not faded */
+  font-size: 0.9rem;
 }
 
 
@@ -77,6 +77,7 @@ $input-color: #ffffff;
   border: 1px solid $warning; /* Yellow border */
   border-radius: 5px; /* Rounded corners */
   padding: 5px;
+  font-size: 0.9rem;
 }
 
 .custom-select:focus {

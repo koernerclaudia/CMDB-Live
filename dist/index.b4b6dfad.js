@@ -27482,13 +27482,13 @@ const MainView = ()=>{
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                            className: "mb-3 justify-content-center algin-content-center",
+                                            className: "mx-auto mb-3 justify-content-center algin-content-center w-100",
                                             children: [
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                                     md: 6,
                                                     sm: 6,
                                                     xs: 12,
-                                                    className: "mx-auto margin-top",
+                                                    className: "mx-auto margin-top d-flex justify-content-center",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                                                         className: "placeholder custom-select",
                                                         noValidate: true,
@@ -27513,7 +27513,7 @@ const MainView = ()=>{
                                                     md: 3,
                                                     sm: 3,
                                                     xs: 6,
-                                                    className: "mx-auto margin-top",
+                                                    className: "mx-auto margin-top justify-content-center d-flex",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Select, {
                                                         className: "placeholder custom-select",
                                                         onChange: handleSortChange,
@@ -27558,7 +27558,7 @@ const MainView = ()=>{
                                                     md: 3,
                                                     sm: 3,
                                                     xs: 6,
-                                                    className: "mx-auto margin-top",
+                                                    className: "mx-auto margin-top justify-content-center d-flex",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Select, {
                                                         className: "placeholder custom-select",
                                                         onChange: handleGenreChange,

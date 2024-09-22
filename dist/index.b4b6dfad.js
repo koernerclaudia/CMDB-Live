@@ -71544,7 +71544,7 @@ const ProfileView = ({ token, movies })=>{
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-                className: "profile-view margin-top bg-info",
+                className: "margin-top bg-info",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
@@ -71555,11 +71555,11 @@ const ProfileView = ({ token, movies })=>{
                             columnNumber: 11
                         }, undefined),
                         favoriteMovies.length > 0 ? favoriteMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
-                                className: "d-flex mb-3 w-100",
+                                className: "d-flex mb-3 w-100 justify-content-center",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
-                                    className: "d-flex",
+                                    className: "d-flex justify-content-center",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                        className: "d-flex w-100",
+                                        className: "w-100 justify-content-center",
                                         children: [
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                                 className: "d-flex justify-content-left align-items-center",

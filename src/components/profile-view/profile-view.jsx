@@ -247,14 +247,14 @@ export const ProfileView = ({ token, movies }) => {
         </Col>
       </Row>
 
-      <Card className="profile-view margin-top bg-info">
+      <Card className="margin-top bg-info">
         <Card.Body>
           <Card.Title>Favorite Movies</Card.Title>
           {favoriteMovies.length > 0 ? (
             favoriteMovies.map((movie) => (
-              <Card key={movie._id} className="d-flex mb-3 w-100">
-                <Card.Body className="d-flex">
-                  <Row className="d-flex w-100">
+              <Card key={movie._id} className="d-flex mb-3 w-100 justify-content-center">
+                <Card.Body className="d-flex justify-content-center">
+                  <Row className="w-100 justify-content-center">
                     <Col className="d-flex justify-content-left align-items-center"
                       xs={3}
                       sm={2}

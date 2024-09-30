@@ -138,179 +138,164 @@ export const MainView = () => {
         }}
       />
       <Row className="justify-content-md-center">
-        <Routes>
-          <Route
-            path="/signup"
-            element={
-              <>
-                {user ? (
-                  <Navigate to="/" />
-                ) : (
-                  <Col
-                    xxl={6}
-                    lg={6}
-                    md={6}
-                    sm={8}
-                    xs={12}
-                    className="d-flex flex-column align-items-center"
-                  >
-                    <SignupView />
-                  </Col>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <>
-                {user ? (
-                  <Navigate to="/" />
-                ) : (
-                  <Col
-                    xxl={6}
-                    lg={6}
-                    md={6}
-                    sm={8}
-                    xs={12}
-                    className="d-flex flex-column align-items-center"
-                  >
-                    <LoginView
-                      onLoggedIn={(user, token) => {
-                        setUser(user);
-                        setToken(token);
-                      }}
-                    />
-                  </Col>
-                )}
-              </>
-            }
-          />
-           <Route
-            path="/about"
-            element={
-              <>
-                {user ? (
-                  <Navigate to="/about" />
-                ) : (
-                  <Col
-                    xxl={6}
-                    lg={6}
-                    md={6}
-                    sm={8}
-                    xs={12}
-                    className="d-flex flex-column align-items-center"
-                  >
-                    <About />
-                  </Col>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/movies/:MovieID"
-            element={
-              <>
-                {!user ? (
-                  <Navigate to="/login" replace />
-                ) : movies.length === 0 ? (
-                  <Col>The list is empty!</Col>
-                ) : (
-                  <Col
-                    md={12}
-                    className="d-flex flex-column align-items-center"
-                  >
-                    <MovieView
-                      movies={movies}
-                      getSimilarMovies={getSimilarMovies}
-                      getMoviesByDirector={getMoviesByDirector}
-                      updateAction={updateAction}
-                    />
-                  </Col>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/"
-            element={
-              <>
-                {!user ? (
-                  <Navigate to="/login" replace />
-                ) : movies.length === 0 ? (
-                  <Col>The list is empty!</Col>
-                ) : (
-                  <>
-                    <Row className="mx-auto mb-3 justify-content-center algin-content-center w-100">
-                      <Col md={6} sm={6} xs={12} className="mx-auto margin-top d-flex justify-content-center">
-                        <Form.Control
-                          className="placeholder custom-select"
-                          noValidate
-                          style={{ color: "white" }}
-                          type="text"
-                          placeholder="Search by movie title, genre, actor or director"
-                          value={searchTerm}
-                          onChange={handleSearch}
-                        />
-                      </Col>
+      <Routes>
+  <Route
+    path="/signup"
+    element={
+      <>
+        {user ? (
+          <Navigate to="/" />
+        ) : (
+          <Col
+            xxl={6}
+            lg={6}
+            md={6}
+            sm={8}
+            xs={12}
+            className="d-flex flex-column align-items-center"
+          >
+            <SignupView />
+          </Col>
+        )}
+      </>
+    }
+  />
+  <Route
+    path="/login"
+    element={
+      <>
+        {user ? (
+          <Navigate to="/" />
+        ) : (
+          <Col
+            xxl={6}
+            lg={6}
+            md={6}
+            sm={8}
+            xs={12}
+            className="d-flex flex-column align-items-center"
+          >
+            <LoginView
+              onLoggedIn={(user, token) => {
+                setUser(user);
+                setToken(token);
+              }}
+            />
+          </Col>
+        )}
+      </>
+    }
+  />
+  
+  {/* Updated About Route */}
+  <Route
+    path="/about"
+    element={<About />} // Accessible by both logged in and logged out users
+  />
 
-                      <Col md={3} sm={3} xs={6} className="mx-auto margin-top justify-content-center d-flex">
-                       
-                        <Form.Select
-                          className="placeholder custom-select"
-                          onChange={handleSortChange}
-                          value={sortOrder}
-                        >
-                          <option value="default">Sort by...</option>
-                          <option value="aToZ">A to Z</option>
-                          <option value="zToA">Z to A</option>
-                        </Form.Select>
-                      </Col>
-                      <Col md={3} sm={3} xs={6} className="mx-auto margin-top justify-content-center d-flex">
-                        <Form.Select
-                          className="placeholder custom-select"
-                          onChange={handleGenreChange}
-                          value={genreFilter}
-                        >
-                          {getUniqueGenres().map((genre) => (
-                            <option key={genre} value={genre}>
-                              {genre === "all" ? "All Genres" : genre}
-                            </option>
-                          ))}
-                        </Form.Select>
-                      </Col>
-                    </Row>
-                    {sortedAndFilteredMovies.length === 0 ? (
-                      <Col lg={6} md={6} sm={12} xs={12} className="mx-auto">
-                        <p style={{ color: "white" }}>
-                          Sorry, no movies found matching your criteria.
-                        </p>
-                      </Col>
-                    ) : (
-                      sortedAndFilteredMovies.map((movie) => (
-                        <Col className="mb-4" key={movie._id} md={4} xs={12}>
-                          <MovieCard movie={movie} />
-                        </Col>
-                      ))
-                    )}
-                  </>
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/myprofile"
-            element={
-              !user ? (
-                <Navigate to="/login" replace />
-              ) : (
-                <Col md={12}>
-                  <ProfileView user={user} token={token} movies={movies} />
+  <Route
+    path="/movies/:MovieID"
+    element={
+      <>
+        {!user ? (
+          <Navigate to="/login" replace />
+        ) : movies.length === 0 ? (
+          <Col>The list is empty!</Col>
+        ) : (
+          <Col
+            md={12}
+            className="d-flex flex-column align-items-center"
+          >
+            <MovieView
+              movies={movies}
+              getSimilarMovies={getSimilarMovies}
+              getMoviesByDirector={getMoviesByDirector}
+              updateAction={updateAction}
+            />
+          </Col>
+        )}
+      </>
+    }
+  />
+  <Route
+    path="/"
+    element={
+      <>
+        {!user ? (
+          <Navigate to="/login" replace />
+        ) : movies.length === 0 ? (
+          <Col>The list is empty!</Col>
+        ) : (
+          <>
+            <Row className="mx-auto mb-3 justify-content-center algin-content-center w-100">
+              <Col md={6} sm={6} xs={12} className="mx-auto margin-top d-flex justify-content-center">
+                <Form.Control
+                  className="placeholder custom-select"
+                  noValidate
+                  style={{ color: "white" }}
+                  type="text"
+                  placeholder="Search by movie title, genre, actor or director"
+                  value={searchTerm}
+                  onChange={handleSearch}
+                />
+              </Col>
+              <Col md={3} sm={3} xs={6} className="mx-auto margin-top justify-content-center d-flex">
+                <Form.Select
+                  className="placeholder custom-select"
+                  onChange={handleSortChange}
+                  value={sortOrder}
+                >
+                  <option value="default">Sort by...</option>
+                  <option value="aToZ">A to Z</option>
+                  <option value="zToA">Z to A</option>
+                </Form.Select>
+              </Col>
+              <Col md={3} sm={3} xs={6} className="mx-auto margin-top justify-content-center d-flex">
+                <Form.Select
+                  className="placeholder custom-select"
+                  onChange={handleGenreChange}
+                  value={genreFilter}
+                >
+                  {getUniqueGenres().map((genre) => (
+                    <option key={genre} value={genre}>
+                      {genre === "all" ? "All Genres" : genre}
+                    </option>
+                  ))}
+                </Form.Select>
+              </Col>
+            </Row>
+            {sortedAndFilteredMovies.length === 0 ? (
+              <Col lg={6} md={6} sm={12} xs={12} className="mx-auto">
+                <p style={{ color: "white" }}>
+                  Sorry, no movies found matching your criteria.
+                </p>
+              </Col>
+            ) : (
+              sortedAndFilteredMovies.map((movie) => (
+                <Col className="mb-4" key={movie._id} md={4} xs={12}>
+                  <MovieCard movie={movie} />
                 </Col>
-              )
-            }
-          />
-        </Routes>
+              ))
+            )}
+          </>
+        )}
+      </>
+    }
+  />
+  <Route
+    path="/myprofile"
+    element={
+      !user ? (
+        <Navigate to="/login" replace />
+      ) : (
+        <Col md={12}>
+          <ProfileView user={user} token={token} movies={movies} />
+        </Col>
+      )
+    }
+  />
+</Routes>
+
       </Row>
     </BrowserRouter>
   );

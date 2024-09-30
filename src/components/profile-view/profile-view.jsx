@@ -126,7 +126,7 @@ export const ProfileView = ({ token, movies }) => {
   const handleDeregister = () => {
     if (
       window.confirm(
-        "Are you sure you want to deregister? This action cannot be undone."
+        "Are you sure you want to delete your account? This action cannot be undone."
       )
     ) {
       fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {

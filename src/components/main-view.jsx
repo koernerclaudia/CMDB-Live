@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MovieCard } from "./movie-card/movie-card";
 import { MovieView } from "./movie-view/movie-view";
 import { LoginView } from "./login-view/login-view";
+import { About } from "./about-view/about";
 import { SignupView } from "./signup-view/signup-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -180,6 +181,27 @@ export const MainView = () => {
                         setToken(token);
                       }}
                     />
+                  </Col>
+                )}
+              </>
+            }
+          />
+           <Route
+            path="/about"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/about" />
+                ) : (
+                  <Col
+                    xxl={6}
+                    lg={6}
+                    md={6}
+                    sm={8}
+                    xs={12}
+                    className="d-flex flex-column align-items-center"
+                  >
+                    <About />
                   </Col>
                 )}
               </>

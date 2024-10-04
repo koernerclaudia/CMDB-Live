@@ -147,13 +147,7 @@ export const MainView = () => {
           <Navigate to="/" />
         ) : (
           <Col
-            xxl={6}
-            lg={6}
-            md={6}
-            sm={8}
-            xs={12}
-            className="d-flex flex-column align-items-center"
-          >
+            className="align-items-center w-100">
             <SignupView />
           </Col>
         )}
@@ -168,13 +162,7 @@ export const MainView = () => {
           <Navigate to="/" />
         ) : (
           <Col
-            xxl={6}
-            lg={6}
-            md={6}
-            sm={8}
-            xs={12}
-            className="d-flex flex-column align-items-center"
-          >
+            className="align-items-center w-100">
             <LoginView
               onLoggedIn={(user, token) => {
                 setUser(user);
@@ -190,7 +178,10 @@ export const MainView = () => {
   {/* Updated About Route */}
   <Route
     path="/about"
-    element={<About />} // Accessible by both logged in and logged out users
+    element={ 
+    <Col md={12}>
+      <About />
+      </Col>} // Accessible by both logged in and logged out users
   />
 
   <Route

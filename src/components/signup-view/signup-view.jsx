@@ -2,6 +2,9 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import logo from "../../assets/cmdb-logo.png";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 
 export const SignupView = () => {
   const [username, setUsername] = useState("");
@@ -34,9 +37,13 @@ export const SignupView = () => {
   };
 
   return (
-    <><img src={logo} alt="CMDB" className="logo-large" />
+    <Row className="justify-content-center">
+    <Col xxl={4} xl={6} lg={6} md={8} sm={8} xs={12}>
+      <img src={logo} alt="CMDB" className="logo-large d-block mx-auto mb-3" />
+      <Card className="margin-top bg-altdark mb-2 w-100" border="info">
+        <Card.Body>
+          <Card.Title className="text-light"><h4>Sign up here:</h4></Card.Title>
     <Form className="signup" onSubmit={handleSubmit}>
-      <h4>Sign Up:</h4>
       <Form.Group controlId="formUsername">
           <Form.Label>Username:</Form.Label>
           <Form.Control
@@ -46,9 +53,8 @@ export const SignupView = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
-            minLength="3"
-            placeholder="Choose a username of min 5 characters"
-            aria-label="Choose a username of min 5 characters"
+            placeholder="Min. 5 characters."
+            aria-label="Min. 5 characters."
           />
         </Form.Group>
 
@@ -60,8 +66,8 @@ export const SignupView = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
-        placeholder="Choose a password of min 8 characters, no symbols"
-        aria-label="Choose a password of min 8 characters, no symbols"
+        placeholder="Min. 8 characters, no symbols."
+        aria-label="Min. 8 characters, no symbols."
      />
     </Form.Group>
     <Form.Group controlId="formEmail">
@@ -77,6 +83,12 @@ export const SignupView = () => {
     <Button variant="info" className="margin-top btn-sm" type="submit">
         Submit
       </Button>
-  </Form></>
-  );
+  </Form>
+</Card.Body>
+</Card>
+</Col>
+</Row>
+ 
+  
+);
 };

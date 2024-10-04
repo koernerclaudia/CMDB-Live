@@ -16957,17 +16957,6 @@ a.text:hover {
   color: #fff;
 }
 
-.login, .signup {
-  color: #fff;
-  background-color: #292929;
-  border: 1px solid #0dcaf0;
-  border-radius: 20px;
-  width: 100%;
-  margin: 15px;
-  padding: 15px;
-  font-size: .7rem;
-}
-
 .logo {
   text-align: center;
   max-width: 100px;
@@ -16976,8 +16965,7 @@ a.text:hover {
 
 .logo-large {
   text-align: center;
-  max-width: 15rem;
-  padding: 15px;
+  max-width: 10rem;
 }
 
 .margin-top {

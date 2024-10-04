@@ -26,7 +26,6 @@ export const ProfileView = ({ token, movies }) => {
       user.FavoriteMovies.includes(movie._id)
     );
 
-    // Only update state if the favorite movies have actually changed
     if (JSON.stringify(favMovies) !== JSON.stringify(favoriteMovies)) {
       setFavoriteMovies(favMovies);
     }
@@ -42,30 +41,26 @@ export const ProfileView = ({ token, movies }) => {
           "Content-Type": "application/json",
         },
       }
-    ) .then((response) => {
-      if (response.ok) {
-        return response.json(); // Expecting updated user data after removing a favorite
-      } else {
-        throw new Error("Failed to remove the movie from favorites.");
-      }
-    })
-    .then((updatedUser) => {
-      // Update the favorite movies state and user state
-      setFavoriteMovies(
-        favoriteMovies.filter((movie) => movie._id !== MovieID)
-      );
-
-      // Update the user state to reflect changes
-      setUser(updatedUser);
-
-      // Update localStorage with the new user data
-      localStorage.setItem("user", JSON.stringify(updatedUser));
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("An error occurred. Please try again.");
-    });
-};
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json(); 
+        } else {
+          throw new Error("Failed to remove the movie from favorites.");
+        }
+      })
+      .then((updatedUser) => {
+        setFavoriteMovies(
+          favoriteMovies.filter((movie) => movie._id !== MovieID)
+        );
+        setUser(updatedUser);
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+      });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -97,7 +92,7 @@ export const ProfileView = ({ token, movies }) => {
     })
       .then((response) => {
         if (response.ok) {
-          return response.json(); // Get the updated user data from the response
+          return response.json(); 
         } else {
           throw new Error("Failed to update profile.");
         }
@@ -105,11 +100,9 @@ export const ProfileView = ({ token, movies }) => {
 
       .then((updatedUser) => {
         setUser(updatedUser);
-
         localStorage.setItem("user", JSON.stringify(updatedUser));
-
         alert(
-          "Profile updated successfully.\n (Changes to the password will not be displayed.)"
+          "Profile updated successfully. (Changes to the password will not be displayed.)"
         );
       })
       .catch((error) => {
@@ -126,7 +119,7 @@ export const ProfileView = ({ token, movies }) => {
   const handleDeregister = () => {
     if (
       window.confirm(
-        "Are you sure you want to deregister? This action cannot be undone."
+        "Are you sure you want to delete your account? This action cannot be undone."
       )
     ) {
       fetch(`https://cmdb-b8f3cd58963f.herokuapp.com/users/${user.username}`, {
@@ -162,12 +155,10 @@ export const ProfileView = ({ token, movies }) => {
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
           <Card className="profile-view margin-top bg-altdark" border="info">
             <Card.Body>
-              <Card.Title style={{ color: "#54B4D3" }}>
-                Profile Information
-              </Card.Title>
+              <Card.Title className="text-info">Profile Information</Card.Title>
               <br />
               <div className="display-8" style={{ color: "#ffffff" }}>
-              <UserInfo name={user.username} email={user.email} />
+                <UserInfo name={user.username} email={user.email} />
               </div>
             </Card.Body>
           </Card>
@@ -176,9 +167,7 @@ export const ProfileView = ({ token, movies }) => {
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
           <Card className="profile-view margin-top" border="info">
             <Card.Body>
-              <Card.Title style={{ color: "#54B4D3" }}>
-                Change your info
-              </Card.Title>
+              <Card.Title className="text-info">Change your info</Card.Title>
               <Form onSubmit={handleSubmit} className="mb-4">
                 <Form.Group controlId="formUsername" className="mb-3">
                   <Form.Label
@@ -233,15 +222,15 @@ export const ProfileView = ({ token, movies }) => {
                 >
                   Update Profile
                 </Button>
-                <Button
-                  variant="light"
-                  type="submit"
-                  className="me-2 btn-sm margin-top"
-                  onClick={handleDeregister}
-                >
-                  Delete my account
-                </Button>
               </Form>
+
+              <Button
+                variant="warning"
+                className="me-2 btn-sm margin-top"
+                onClick={handleDeregister}
+              >
+                Delete my account
+              </Button>
             </Card.Body>
           </Card>
         </Col>
@@ -252,10 +241,14 @@ export const ProfileView = ({ token, movies }) => {
           <Card.Title>Favorite Movies</Card.Title>
           {favoriteMovies.length > 0 ? (
             favoriteMovies.map((movie) => (
-              <Card key={movie._id} className="d-flex mb-3 w-100 justify-content-center">
+              <Card
+                key={movie._id}
+                className="d-flex mb-3 w-100 justify-content-center"
+              >
                 <Card.Body className="d-flex justify-content-center">
                   <Row className="w-100 justify-content-center">
-                    <Col className="d-flex justify-content-left align-items-center"
+                    <Col
+                      className="d-flex justify-content-left align-items-center"
                       xs={3}
                       sm={2}
                       md={2}
@@ -263,7 +256,6 @@ export const ProfileView = ({ token, movies }) => {
                       xl={1}
                       xxl={1}
                     >
-                    
                       <img
                         src={movie.ImageURL}
                         style={{ width: "45px", height: "65px" }}
@@ -279,7 +271,10 @@ export const ProfileView = ({ token, movies }) => {
                       xxl={7}
                       className=" d-flex justify-content-left align-items-center"
                     >
-                      <Card.Title style={{ color: "#54B4D3" }} className="fs-6 fs-sm-5 fs-md-4 margin-top justify-content-left align-items-center">
+                      <Card.Title
+                        style={{ color: "#54B4D3" }}
+                        className="fs-6 fs-sm-5 fs-md-4 margin-top justify-content-left align-items-center"
+                      >
                         {movie.Title}
                       </Card.Title>
                     </Col>
@@ -292,7 +287,10 @@ export const ProfileView = ({ token, movies }) => {
                       xxl={2}
                       className="d-flex justify-content-center align-items-center"
                     >
-                      <Link to={`/movies/${encodeURIComponent(movie._id)}`} className="w-100">
+                      <Link
+                        to={`/movies/${encodeURIComponent(movie._id)}`}
+                        className="w-100"
+                      >
                         <Button
                           className="btn-sm btn-xs margin-top w-100"
                           variant="warning"
@@ -312,7 +310,7 @@ export const ProfileView = ({ token, movies }) => {
                     >
                       <Button
                         className="btn-sm btn-xs margin-top w-100"
-                          variant="outline-light"
+                        variant="outline-light"
                         onClick={() => handleRemoveFavorite(movie._id)}
                         alt="Remove from favourites."
                       >

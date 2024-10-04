@@ -23,6 +23,9 @@ export const Navigation = ({ user }) => {
             <Nav className="ms-auto ">
               {!user && (
                 <>
+                 <Nav.Link as={Link} to="/about">
+                    About
+                  </Nav.Link>
                   <Nav.Link as={Link} to="/login">
                     Login
                   </Nav.Link>
@@ -33,7 +36,9 @@ export const Navigation = ({ user }) => {
               )}
               {user && (
                 <>
-                 
+                 <Nav.Link as={Link} to="/about">
+                    About
+                  </Nav.Link>
                   <Nav.Link className="nav-link" as={Link} to="/">
                     Browse Movies
                   </Nav.Link>

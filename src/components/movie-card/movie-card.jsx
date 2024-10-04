@@ -15,7 +15,7 @@ export const MovieCard = ({ movie }) => {
   <img src={movie.ImageURL} className="cover-img" alt="Movie Image" />
 </Link>
       <Card.Body className="d-flex flex-column">
-        <Card.Title style={{ color: "#54B4D3" }}>{movie.Title}</Card.Title>
+        <Card.Title className="text-info">{movie.Title}</Card.Title>
         <Card.Text>
   <b>With:</b>{" "}
   {movie.Actors.map((actor, index) => (

@@ -6,13 +6,23 @@ $form-text-color: #ffffff;
 $input-color: #ffffff;
 
 
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
 @import "../node_modules/bootstrap/scss/_functions";
 @import "../node_modules/bootstrap/scss/_variables";
 @import "../node_modules/bootstrap/scss/_variables-dark";x
 
+a.text, a.text:link, a.text:visited {
+  color: #ffffff;
+  text-decoration: underline;
+}
 
+a.text:hover {
+  color: $warning;
+  text-decoration: underline;
+
+}
 
 .card-text, .form-text, .card-body {
     color: #ffffff;

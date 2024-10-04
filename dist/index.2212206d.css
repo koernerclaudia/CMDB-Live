@@ -16943,7 +16943,17 @@ textarea.form-control-lg {
   }
 }
 
-x .card-text, .form-text, .card-body {
+x a.text, a.text:link, a.text:visited {
+  color: #fff;
+  text-decoration: underline;
+}
+
+a.text:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+.card-text, .form-text, .card-body {
   color: #fff;
 }
 

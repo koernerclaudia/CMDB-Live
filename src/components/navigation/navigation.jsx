@@ -18,9 +18,15 @@ export const Navigation = ({ user }) => {
         <Navbar.Brand>
                     <img src={logo} alt="CMDB" className="logo" />
                   </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbar-toggler-right" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto ">
+           {/* Navbar.Toggle should be placed before Navbar.Collapse to be part of the flex container */}
+           <Navbar.Toggle 
+            aria-controls="navbar-toggler-right" 
+            className="ms-auto"
+            style={{ backgroundColor: '#292929', borderColor: '#ffc107'}} // Button color
+          />
+
+        <Navbar.Collapse id="navbar-toggler-right" className="justify-content-end"> {/* Added justify-content-end */}
+          <Nav className="ms-auto"> {/* Ensure this class is applied for right alignment */}
               {!user && (
                 <>
                  <Nav.Link as={Link} to="/about">

@@ -3,7 +3,6 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../../index.scss";
-import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,15 +17,16 @@ import { faReact, faGithub } from "@fortawesome/free-brands-svg-icons"; // Corre
 export const About = () => {
   return (
     <>
-      <Row className="justify-content-md-center">
+    
+    <Row className="justify-content-md-center">
         <Col md="auto">
           <h5 className="text-info text-center mb-4">About this app</h5>
         </Col>
       </Row>
-      <Row className="justify-content-md-center">
+      <Row>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="info" className="mb-4">
-            <Card.Body>
+          <Card border="info" className="w-100 mb-4">
+            <Card.Body className="justify-content-center">
               <Card.Title className="mb-4">
                 <FontAwesomeIcon className="text-info" icon={faCircleQuestion} />
                 &nbsp;What is this app?
@@ -57,8 +57,8 @@ export const About = () => {
           </Card>
         </Col>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="info" className="mb-4">
-            <Card.Body>
+          <Card border="info" className="w-100 mb-4">
+            <Card.Body className="w-100">
               <Card.Title className="mb-4">
                 <FontAwesomeIcon className="text-info" icon={faFilm} />
                 &nbsp;Features
@@ -99,9 +99,9 @@ export const About = () => {
           </Card>
         </Col>
       </Row>
-      <Row className="justify-content-md-center">
+     <Row>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="warning" className="mb-4">
+          <Card border="warning" className="mb-4 w-100">
             <Card.Body>
               <Card.Title className="mb-4">
               <Row>
@@ -112,7 +112,7 @@ export const About = () => {
           <Col className="col-6 d-flex justify-content-end align-items-end">
            <a className="text" href="https://github.com/koernerclaudia/CMDB" target="_blank">
 <Button className="btn-sm" variant="warning">
-<FontAwesomeIcon icon={faGithub} />&nbsp; See on GitHub
+<FontAwesomeIcon icon={faGithub} />&nbsp;See&nbsp;on&nbsp;GitHub
   </Button></a>
           </Col>
         </Row>
@@ -140,7 +140,7 @@ export const About = () => {
           </Card>
         </Col>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="warning" className="mb-4">
+          <Card border="warning" className="mb-4 w-100">
             <Card.Body>
             <Card.Title className="mb-4">
             <Row>
@@ -151,7 +151,7 @@ export const About = () => {
           <Col className="col-6 d-flex justify-content-end align-items-end">
            <a className="text" href="https://github.com/koernerclaudia/CMDB-Live" target="_blank">
 <Button className="btn-sm" variant="warning">
-<FontAwesomeIcon icon={faGithub} />&nbsp; See on GitHub
+<FontAwesomeIcon icon={faGithub} />&nbsp;See&nbsp;on&nbsp;GitHub
   </Button></a>
           </Col>
         </Row>
@@ -166,9 +166,9 @@ export const About = () => {
           </Card>
         </Col>
       </Row>
-      <Row className="justify-content-md-center">
+      <Row>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="light" className="mb-4">
+          <Card border="light" className="mb-4 w-100">
             <Card.Body>
               <Card.Title className="mb-4">
                 <FontAwesomeIcon className="text-light" icon={faSection} />
@@ -222,15 +222,14 @@ export const About = () => {
           </Card>
         </Col>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="light" className="mb-4">
+          <Card border="light" className="mb-4 w-100">
             <Card.Body>
               <Card.Title className="mb-4">
                 <FontAwesomeIcon className="text-light" icon={faGavel} />
-                &nbsp; Legal Stuff
+                &nbsp; Impressum
               </Card.Title>
               <Card.Text>
                 <p>
-                  <span className="text-info fw-bold">Impressum:&nbsp;</span>
                   As this is a non-commercial, educational project, it should not
                   require a formal Impressum. However, if you have any concerns,
                   feel free to reach out to me for clarifications.

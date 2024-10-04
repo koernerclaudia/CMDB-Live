@@ -6,7 +6,6 @@ $form-text-color: #ffffff;
 $input-color: #ffffff;
 
 
-
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
 @import "../node_modules/bootstrap/scss/_functions";
@@ -29,27 +28,6 @@ a.text:hover {
 
   }
 
-.login, .signup {
-  border-radius: 20px;
-  color:#ffffff;
-  background-color: #292929;
-  border: 1px solid;
-  border-color: $info;
-  margin: 15px;
-  padding: 15px;
-  width: 100%;
-  font-size: 0.7rem;
-  
-}
-
-// .welcome-bg {
-//   background-image: url("/src/bg-movies.jpg");
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   background-position: center;
-  
-// }
-
 
 .logo {
   padding: 15px;
@@ -58,8 +36,7 @@ a.text:hover {
 }
 
 .logo-large {
-  padding: 15px;
-  max-width: 15rem;
+  max-width: 10rem;
   text-align: center;
 }
 
@@ -153,7 +130,5 @@ input:not(.placeholder) {
   &:focus {
     color: #ffffff;
   }
-
-
 
 }

@@ -153,7 +153,7 @@ export const ProfileView = ({ token, movies }) => {
     <>
       <Row>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card className="profile-view margin-top bg-altdark" border="info">
+          <Card className="margin-top bg-altdark" border="info">
             <Card.Body>
               <Card.Title className="text-info">Profile Information</Card.Title>
               <br />
@@ -165,7 +165,7 @@ export const ProfileView = ({ token, movies }) => {
         </Col>
 
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card className="profile-view margin-top" border="info">
+          <Card className="margin-top" border="info">
             <Card.Body>
               <Card.Title className="text-info">Change your info</Card.Title>
               <Form onSubmit={handleSubmit} className="mb-4">

@@ -10,6 +10,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Navigation } from "./navigation/navigation";
 import { ProfileView } from "./profile-view/profile-view";
 import Form from "react-bootstrap/Form";
+import ScrollToTop from './common/scrolltotop'; // Import the ScrollToTop component
+
 import "../index.scss";
 
 export const MainView = () => {
@@ -131,12 +133,14 @@ export const MainView = () => {
 
   return (
     <BrowserRouter>
+   
       <Navigation
         user={user}
         onLoggedOut={() => {
           setUser(null);
         }}
       />
+        <ScrollToTop />
       <Row className="justify-content-md-center">
       <Routes>
   <Route

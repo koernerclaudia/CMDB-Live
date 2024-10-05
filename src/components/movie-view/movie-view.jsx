@@ -34,21 +34,21 @@ export const MovieView = ({
               </Card>
             </Col>
             <Col xxl={6} xl={6} lg={6} md={6} sm={6} xs={12}>
-              <Card border="light">
+              <Card border="light" style={{ backgroundColor: '#222222'}}>
                 <Card.Body>
-                  <Card.Title style={{ color: "#54B4D3" }}>
+                  <Card.Title className="text-info">
                     {movie.Title}
                   </Card.Title>
                   <Card.Text>{movie.Description}</Card.Text>{" "}
                 </Card.Body>
                 <ListGroup className="list-group-flush" variant="light">
-                  <ListGroup.Item style={{ color: "#ffffff" }}>
+                  <ListGroup.Item style={{ color: "#ffffff", backgroundColor: '#222222' }}>
                     <b>Actors:</b> {movie.Actors.join(", ")}
                   </ListGroup.Item>
-                  <ListGroup.Item style={{ color: "#ffffff" }}>
+                  <ListGroup.Item style={{ color: "#ffffff", backgroundColor: '#222222' }}>
                     <b>Director:</b> {movie.Director.Name}
                   </ListGroup.Item>
-                  <ListGroup.Item style={{ color: "#ffffff" }}>
+                  <ListGroup.Item style={{ color: "#ffffff", backgroundColor: '#222222' }}>
                     <b>Genre:</b> {movie.Genre.Type} ( {movie.Genre.Description}
                     )
                   </ListGroup.Item>
@@ -71,24 +71,24 @@ export const MovieView = ({
             <Row xs={1} md={2} className="g-4">
               <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
                 {" "}
-                <Card border="light margin-bottom">
+                <Card border="light margin-bottom" style={{ backgroundColor: '#222222'}}>
                   <Card.Body>
-                    <Card.Title style={{ color: "white" }}>
+                    <Card.Title style={{ color: "white"}}>
                       <h6>
                         More of this genre: {" "}
-                        <span style={{ color: "#f6c344" }}>
+                        <span style={{ color: "#f6c344", backgroundColor: '#222222' }}>
                           {" "}
                           {movie.Genre.Type}
                         </span>
                       </h6>
                     </Card.Title>
                     {similarMovies.length > 0 ? (
-                      <ListGroup variant="flush">
+                      <ListGroup variant="flush" >
                         {similarMovies.map((similarMovie) => (
-                          <ListGroup.Item key={similarMovie._id}>
+                          <ListGroup.Item key={similarMovie._id} style={{ color: "#f6c344", backgroundColor: '#222222' }}>
                             <Link
                               to={`/movies/${similarMovie._id}`}
-                              style={{ color: "#f6c344" }}
+                              style={{ color: "#f6c344", backgroundColor: '#222222' }}
                             >
                               {similarMovie.Title}
                             </Link>
@@ -96,9 +96,9 @@ export const MovieView = ({
                         ))}
                       </ListGroup>
                     ) : (
-                      <Card.Text style={{ color: "#ffffff" }}>
+                      <Card.Text style={{ color: "#ffffff", backgroundColor: '#222222' }}>
                         There are no other movies of the  
-                        <span style={{ color: "#f6c344" }}>
+                        <span style={{ color: "#f6c344", backgroundColor: '#222222' }}>
                        
                           &nbsp;{movie.Genre.Type}&nbsp;
                         </span>
@@ -109,12 +109,12 @@ export const MovieView = ({
                 </Card>
               </Col>
               <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-                <Card border="light margin-bottom">
+                <Card border="light margin-bottom" style={{ backgroundColor: '#222222'}}>
                   <Card.Body>
-                    <Card.Title style={{ color: "white" }}>
+                    <Card.Title style={{ color: "white", backgroundColor: '#222222' }}>
                       <h6>
                         More movies by director: 
-                        <span style={{ color: "#f6c344" }}>
+                        <span style={{ color: "#f6c344", backgroundColor: '#222222'}}>
                           &nbsp;{movie.Director.Name}&nbsp;
                         </span>
                       </h6>
@@ -124,11 +124,11 @@ export const MovieView = ({
                         {directorMovies.map((directorMovie) => (
                           <ListGroup.Item
                             key={directorMovie._id}
-                            style={{ color: "#ffffff" }}
+                            style={{ color: "#ffffff", backgroundColor: '#222222' }}
                           >
                             <Link
                               to={`/movies/${directorMovie._id}`}
-                              style={{ color: "#f6c344" }}
+                              style={{ color: "#f6c344", backgroundColor: '#222222' }}
                             >
                               {directorMovie.Title}
                             </Link>
@@ -136,9 +136,9 @@ export const MovieView = ({
                         ))}
                       </ListGroup>
                     ) : (
-                      <Card.Text style={{ color: "#ffffff" }}>
+                      <Card.Text style={{ color: "#ffffff", backgroundColor: '#222222' }}>
                         There are no other movies by
-                        <span style={{ color: "#f6c344" }}>
+                        <span style={{ color: "#f6c344", backgroundColor: '#222222' }}>
                         &nbsp;{movie.Director.Name}&nbsp;
                         </span>
                         listed in this database.

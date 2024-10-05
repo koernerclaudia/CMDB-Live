@@ -25,7 +25,7 @@ export const About = () => {
       </Row>
       <Row>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="info" className="w-100 mb-4">
+          <Card border="info" className="w-100 mb-4" style={{backgroundColor: '#222222'}}>
             <Card.Body className="justify-content-center">
               <Card.Title className="mb-4">
                 <FontAwesomeIcon className="text-info" icon={faCircleQuestion} />
@@ -57,7 +57,7 @@ export const About = () => {
           </Card>
         </Col>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="info" className="w-100 mb-4">
+          <Card border="info" className="w-100 mb-4" style={{backgroundColor: '#222222'}}>
             <Card.Body className="w-100">
               <Card.Title className="mb-4">
                 <FontAwesomeIcon className="text-info" icon={faFilm} />
@@ -101,7 +101,7 @@ export const About = () => {
       </Row>
      <Row>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="warning" className="mb-4 w-100">
+          <Card border="warning" className="mb-4 w-100" style={{backgroundColor: '#222222'}}>
             <Card.Body>
               <Card.Title className="mb-4">
               <Row>
@@ -129,7 +129,7 @@ export const About = () => {
                     <FontAwesomeIcon
                       className="text-warning"
                       icon={faDatabase}
-                    />{" "}
+                    />
                     API Documentation
                   </Card.Title>
                   <p>Documentation regarding all the available API endpoints was set up with Swagger can be found <a className="text"
@@ -140,7 +140,7 @@ export const About = () => {
           </Card>
         </Col>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="warning" className="mb-4 w-100">
+          <Card border="warning" className="mb-4 w-100" style={{backgroundColor: '#222222'}}>
             <Card.Body>
             <Card.Title className="mb-4">
             <Row>
@@ -168,7 +168,7 @@ export const About = () => {
       </Row>
       <Row>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="light" className="mb-4 w-100">
+          <Card border="light" className="mb-4 w-100" style={{backgroundColor: '#222222'}}>
             <Card.Body>
               <Card.Title className="mb-4">
                 <FontAwesomeIcon className="text-light" icon={faSection} />
@@ -222,7 +222,7 @@ export const About = () => {
           </Card>
         </Col>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card border="light" className="mb-4 w-100">
+          <Card border="light" className="mb-4 w-100" style={{backgroundColor: '#222222'}}>
             <Card.Body>
               <Card.Title className="mb-4">
                 <FontAwesomeIcon className="text-light" icon={faGavel} />

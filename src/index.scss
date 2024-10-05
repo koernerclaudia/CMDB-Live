@@ -1,6 +1,6 @@
 // custom variables
 $light: #ffffff;
-$body-bg: #222222;
+$body-bg: #292929;
 $btn-border-radius: 20%;
 $form-text-color: #ffffff;
 $input-color: #ffffff;
@@ -51,7 +51,7 @@ a.text:hover {
 /* Use !important to force the styles */
 ::placeholder {
   color: white !important;
-  opacity: 1 !important;
+  opacity: 0.5 !important;
   font-size: 0.9rem;
 }
 
@@ -75,12 +75,14 @@ a.text:hover {
 // placeholder fields
 
 
-.placeholder {
+.placeholder { // Search fields in movies view
   display: inline-block;
   min-height: 1em;
   vertical-align: middle;
   cursor: wait;
   color: white;
+  opacity: 0.5 !important;
+  background-color: #222222;
 
   &.btn::before {
     display: inline-block;

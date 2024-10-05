@@ -56,7 +56,7 @@ export const LoginView = ({ onLoggedIn }) => {
     <Row className="justify-content-center">
       <Col xxl={4} xl={6} lg={6} md={8} sm={8} xs={12}>
         <img src={logo} alt="CMDB" className="logo-large d-block mx-auto mb-3" />
-        <Card className="margin-top bg-altdark mb-2 w-100" border="info">
+        <Card className="margin-top mb-2 w-100" border="info" style={{ backgroundColor: '#222222'}}>
           <Card.Body>
             <Card.Title className="text-light"><h4>Login here:</h4></Card.Title>
             <Form onSubmit={handleSubmit}>
@@ -64,7 +64,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 <Form.Label className="display-8">Username:</Form.Label>
                 <Form.Control
                   className="margin-bottom input"
-                  style={{ color: "white" }}
+                  style={{ color: "white", backgroundColor: '#292929' }}
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
@@ -78,7 +78,7 @@ export const LoginView = ({ onLoggedIn }) => {
                 <Form.Label className="display-8">Password:</Form.Label>
                 <Form.Control
                   className="margin-bottom"
-                  style={{ color: "white" }}
+                  style={{ color: "white", backgroundColor: '#292929' }}
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

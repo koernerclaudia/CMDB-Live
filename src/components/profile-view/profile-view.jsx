@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import "../../index.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 
 export const ProfileView = ({ token, movies }) => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -153,7 +153,7 @@ export const ProfileView = ({ token, movies }) => {
     <>
       <Row>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card className="margin-top bg-altdark" border="info">
+          <Card className="margin-top bg-altdark" border="info" style={{backgroundColor: '#222222'}}>
             <Card.Body>
               <Card.Title className="text-info">Profile Information</Card.Title>
               <br />
@@ -165,7 +165,7 @@ export const ProfileView = ({ token, movies }) => {
         </Col>
 
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12}>
-          <Card className="margin-top" border="info">
+          <Card className="margin-top" border="info" style={{backgroundColor: '#222222'}}>
             <Card.Body>
               <Card.Title className="text-info">Change your info</Card.Title>
               <Form onSubmit={handleSubmit} className="mb-4">
@@ -236,14 +236,15 @@ export const ProfileView = ({ token, movies }) => {
         </Col>
       </Row>
 
-      <Card className="margin-top bg-info">
+      <Card className="margin-top" style={{backgroundColor: '#222222'}} border="warning">
         <Card.Body>
-          <Card.Title>Favorite Movies</Card.Title>
+          <Card.Title  style={{ color: "#ffffff"}}>  <FontAwesomeIcon className="text-danger" icon={faHeart} />
+                      &nbsp;Favorite Movies</Card.Title>
           {favoriteMovies.length > 0 ? (
             favoriteMovies.map((movie) => (
-              <Card
+              <Card border="info"
                 key={movie._id}
-                className="d-flex mb-3 w-100 justify-content-center"
+                className="d-flex mb-3 mt-3 w-100 justify-content-center"
               >
                 <Card.Body className="d-flex justify-content-center">
                   <Row className="w-100 justify-content-center">

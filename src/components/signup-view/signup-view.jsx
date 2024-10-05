@@ -40,7 +40,7 @@ export const SignupView = () => {
     <Row className="justify-content-center">
     <Col xxl={4} xl={6} lg={6} md={8} sm={8} xs={12}>
       <img src={logo} alt="CMDB" className="logo-large d-block mx-auto mb-3" />
-      <Card className="margin-top bg-altdark mb-2 w-100" border="info">
+      <Card className="margin-top bg-altdark mb-2 w-100" border="info" style={{ backgroundColor: '#222222'}}>
         <Card.Body>
           <Card.Title className="text-light"><h4>Sign up here:</h4></Card.Title>
     <Form className="signup" onSubmit={handleSubmit}>
@@ -49,7 +49,7 @@ export const SignupView = () => {
           <Form.Control
             className="margin-bottom input"
             type="text"
-             style={{ color: "white" }}
+             style={{ color: "white" , backgroundColor: '#292929' }}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -62,7 +62,7 @@ export const SignupView = () => {
       <Form.Label>Password:</Form.Label>
       <Form.Control className="margin-bottom input"
         type="password"
-        style={{ color: "white" }}
+        style={{ color: "white" , backgroundColor: '#292929' }}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
@@ -72,7 +72,7 @@ export const SignupView = () => {
     </Form.Group>
     <Form.Group controlId="formEmail">
       <Form.Label>Email:</Form.Label>
-      <Form.Control type="email"  style={{ color: "white"}} className="input"
+      <Form.Control type="email"  style={{ color: "white", backgroundColor: '#292929' }} className="input"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required

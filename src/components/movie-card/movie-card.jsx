@@ -10,7 +10,7 @@ import AddRemoveBtn from "../common/addremovebtn";
 
 export const MovieCard = ({ movie }) => {
   return (
-    <Card className="h-100" border="info">
+    <Card className="h-100" border="info" style={{ backgroundColor: '#222222'}}>
 <Link to={`/movies/${encodeURIComponent(movie._id)}`} key={`${movie._id}-image-link`}>
   <img src={movie.ImageURL} className="cover-img" alt="Movie Image" />
 </Link>

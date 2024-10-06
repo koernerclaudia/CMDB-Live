@@ -38,10 +38,10 @@ export const About = () => {
                   href="https://careerfoundry.com/en/courses/become-a-web-developer/" target="_blank">
                    CareerFoundry
                   </a>. The
-                  app showcases my skills by allowing users to create accounts,
+                  app allows users to create accounts,
                   browse movies, and curate a list of favorites. Built with the
                   MERN stack (MongoDB, Express, React, Node.js), it was a
-                  valuable learning experience.{" "}
+                  valuable learning experience and hopefully I get to build more of these types of things in the future.{" "}
                   <FontAwesomeIcon className="text-light" icon={faFaceSmile} />
                 </p>
 
@@ -52,6 +52,23 @@ export const About = () => {
                   for demonstration purposes, not a commercial product. Enjoy
                   exploring, but keep in mind—it’s not the next IMDb!
                 </p>
+                <p>
+                 Thanks a bunch for trying it out!
+                </p>
+                <Row>
+              <Col className="col-6 d-flex align-items-start">
+              <a className="text" href="https://claudiakoerner.me" target="_blank">
+              <Button className="btn-sm" variant="info">
+My&nbsp;website&nbsp;(WIP)
+  </Button></a>
+          </Col>
+          <Col className="col-6 d-flex justify-content-end align-items-end">
+           <a className="text" href="https://github.com/koernerclaudia" target="_blank">
+<Button className="btn-sm" variant="warning">
+<FontAwesomeIcon icon={faGithub} />&nbsp;Find&nbsp;me&nbsp;on&nbsp;GitHub
+  </Button></a>
+          </Col>
+        </Row>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -129,7 +146,7 @@ export const About = () => {
                     <FontAwesomeIcon
                       className="text-warning"
                       icon={faDatabase}
-                    />
+                    />&nbsp;
                     API Documentation
                   </Card.Title>
                   <p>Documentation regarding all the available API endpoints was set up with Swagger can be found <a className="text"
@@ -176,7 +193,7 @@ export const About = () => {
               </Card.Title>
               <Card.Text>
                 <p>
-                  <span className="text-info fw-bold">
+                  <span className="text-light fw-bold">
                     For Educational Purposes Only:&nbsp;
                   </span>
                   This app was created as part of a learning project and is not
@@ -185,7 +202,7 @@ export const About = () => {
                   gains or commercial activities are involved.
                 </p>
                 <p>
-                  <span className="text-info fw-bold">
+                  <span className="text-light fw-bold">
                     Movie Data & Images used:&nbsp;
                   </span>
                   The movie information (descriptions, genres, etc.) and images
@@ -201,22 +218,14 @@ export const About = () => {
                 </p>
 
                 <p>
-                  <span className="text-info fw-bold">
+                  <span className="text-light fw-bold">
                     No Misuse Intended:&nbsp;
                   </span>
                   The app is not designed for improper use. It does not collect
                   sensitive data beyond what is necessary to demonstrate user
                   login and customization features. No personal emails,
-                  communications, or marketing materials will be sent to users.
-                </p>
-                <p>
-                  <span className="text-info fw-bold">
-                    User Accounts:&nbsp;
-                  </span>
-                  You are welcome to create an account using fake or temporary
-                  email addresses. No emails or communications will be sent to
-                  you.
-                </p>
+                  communications, or marketing materials will be sent to users. You are welcome to create an account using fake or temporary
+                  email addresses.</p>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -235,17 +244,17 @@ export const About = () => {
                   feel free to reach out to me for clarifications.
                 </p>
                 <p>
-                  <span className="text-info fw-bold">
+                  <span className="text-light fw-bold">
                     Privacy Policy:&nbsp;
                   </span>
-                  No user data is shared with
+                  User data (username, password, email) is collected in a database built with MongoDB and securely hosted on Heroku. This user data is not shared with
                 third parties. No communications or marketing emails will be
                 sent to users, and all data stays within the app for
                 demonstration purposes only. Users can delete their account and
                 associated data anytime from within the app.
                 </p>
                 <p>
-                  <span className="text-info fw-bold">Terms &amp; Conditions:&nbsp;</span>
+                  <span className="text-light fw-bold">Terms &amp; Conditions:&nbsp;</span>
                   This app is for demonstration and learning purposes only. By
                 using this app, you acknowledge that it is a student project,
                 and any data you input is not intended to be used for real-world

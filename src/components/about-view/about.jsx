@@ -223,7 +223,7 @@ My&nbsp;website&nbsp;(WIP)
                   </span>
                   The app is not designed for improper use. It does not collect
                   sensitive data beyond what is necessary to demonstrate user
-                  login and customization features. No personal emails,
+                  login and customization features. No emails will be sent to users. No personal emails,
                   communications, or marketing materials will be sent to users. You are welcome to create an account using fake or temporary
                   email addresses.</p>
               </Card.Text>

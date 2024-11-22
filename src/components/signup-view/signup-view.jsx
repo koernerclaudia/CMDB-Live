@@ -42,7 +42,14 @@ export const SignupView = () => {
       <img src={logo} alt="CMDB" className="logo-large d-block mx-auto mb-3" />
       <Card className="margin-top bg-altdark mb-2 w-100" border="info" style={{ backgroundColor: '#222222'}}>
         <Card.Body>
-          <Card.Title className="text-light"><h4>Sign up here:</h4></Card.Title>
+          <Card.Title className="text-light"><h4>Sign up here:</h4>
+          <div className="text-justify mb-4" style={{ color: "white", fontSize: "0.8rem"}}>
+       This platform is a dummy app, so you will not receive any emails.
+       After signing up, you will be taken to the login page to use your credentials.
+        
+        </div>
+          
+          </Card.Title>
     <Form className="signup" onSubmit={handleSubmit}>
       <Form.Group controlId="formUsername">
           <Form.Label>Username:</Form.Label>
@@ -86,6 +93,13 @@ export const SignupView = () => {
   </Form>
 </Card.Body>
 </Card>
+<div className="text-center mb-4" style={{ color: "white", fontSize: "0.7rem"}}>
+        Feel free to a non-existing email for this form.<br></br>
+         You will never be sent an email or contacted in any way.<br></br>
+         Head over to the <a href="/about">Disclaimer Section</a> to read more<br></br>
+         Thank you!
+        
+        </div>
 </Col>
 </Row>
  

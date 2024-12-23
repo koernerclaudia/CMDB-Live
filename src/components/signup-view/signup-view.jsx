@@ -44,8 +44,7 @@ export const SignupView = () => {
         <Card.Body>
           <Card.Title className="text-light"><h4>Sign up here:</h4>
           <div className="text-justify mb-4" style={{ color: "white", fontSize: "0.8rem"}}>
-       This platform is a dummy app, so you will not receive any emails.
-       After signing up, you will be taken to the login page to use your credentials.
+       This platform is a dummy app, so you will not receive any emails. Head over to the <a href="/about">Disclaimer Section</a> to read more about the processing of data. After signing up, you will be taken to the login page to use your credentials.
         
         </div>
           
@@ -93,13 +92,6 @@ export const SignupView = () => {
   </Form>
 </Card.Body>
 </Card>
-<div className="text-center mb-4" style={{ color: "white", fontSize: "0.7rem"}}>
-        Feel free to a non-existing email for this form.<br></br>
-         You will never be sent an email or contacted in any way.<br></br>
-         Head over to the <a href="/about">Disclaimer Section</a> to read more<br></br>
-         Thank you!
-        
-        </div>
 </Col>
 </Row>
  

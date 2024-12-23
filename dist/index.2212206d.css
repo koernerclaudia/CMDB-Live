@@ -16979,7 +16979,6 @@ a.text:hover {
 ::placeholder {
   font-size: .9rem;
   color: #fff !important;
-  opacity: .5 !important;
 }
 
 .custom-select {
